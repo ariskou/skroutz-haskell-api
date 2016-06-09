@@ -30,5 +30,16 @@ library:
     - aeson
   other-modules:
     - Web.Skroutz.Types
+    - Web.Skroutz.Types.AnySearchResult
+    - Web.Skroutz.Types.Category
+    - Web.Skroutz.Types.Manufacturer
+    - Web.Skroutz.Types.Meta
+    - Web.Skroutz.Types.Pagination
+    - Web.Skroutz.Types.Product
+    - Web.Skroutz.Types.Shop
+    - Web.Skroutz.Types.ShopLocation
+    - Web.Skroutz.Types.ShopReview
+    - Web.Skroutz.Types.SKU
+    - Web.Skroutz.Types.SKUReview
   exposed-modules:
     - Web.Skroutz
