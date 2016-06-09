@@ -1,0 +1,34 @@
+name: skroutz-haskell-api
+version: 0.1.0.0
+synopsis: Skroutz.gr HTTP API bindings.
+description: See README.md
+github: ariskou/skroutz-haskell-api
+homepage: http://github.com/ariskou/skroutz-haskell-api#readme
+bug-reports: https://github.com/ariskou/skroutz-haskell-api/issues
+license: Apache-2.0
+license-file: LICENSE
+author: Remous-Aris Koutsiamanis
+maintainer: Remous-Aris Koutsiamanis <ariskou@gmail.com>
+copyright: Copyright 2016 Remous-Aris Koutsiamanis
+stability: alpha
+category: Web
+
+extra-source-files:
+  - README.md
+  - changelog.md
+
+ghc-options:
+  - -Wall
+
+dependencies:
+  - base >= 4.7 && < 5
+  - text
+
+library:
+  source-dirs: src
+  dependencies:
+    - aeson
+  other-modules:
+    - Web.Skroutz.Types
+  exposed-modules:
+    - Web.Skroutz

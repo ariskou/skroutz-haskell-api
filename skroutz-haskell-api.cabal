@@ -1,0 +1,41 @@
+-- This file has been generated from package.yaml by hpack version 0.14.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           skroutz-haskell-api
+version:        0.1.0.0
+synopsis:       Skroutz.gr HTTP API bindings.
+description:    See README.md
+category:       Web
+stability:      alpha
+homepage:       http://github.com/ariskou/skroutz-haskell-api#readme
+bug-reports:    https://github.com/ariskou/skroutz-haskell-api/issues
+author:         Remous-Aris Koutsiamanis
+maintainer:     Remous-Aris Koutsiamanis <ariskou@gmail.com>
+copyright:      Copyright 2016 Remous-Aris Koutsiamanis
+license:        Apache-2.0
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    changelog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/ariskou/skroutz-haskell-api
+
+library
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      base >= 4.7 && < 5
+    , text
+    , aeson
+  exposed-modules:
+      Web.Skroutz
+  other-modules:
+      Web.Skroutz.Types
+  default-language: Haskell2010
