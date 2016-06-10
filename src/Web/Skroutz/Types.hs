@@ -12,7 +12,19 @@
 
 module Web.Skroutz.Types
   (
-  ) where
+    module Web.Skroutz.Types.AnySearchResult
+  , module Web.Skroutz.Types.Category
+  , module Web.Skroutz.Types.Manufacturer
+  , module Web.Skroutz.Types.Meta
+  , module Web.Skroutz.Types.Pagination
+  , module Web.Skroutz.Types.Product
+  , module Web.Skroutz.Types.Shop
+  , module Web.Skroutz.Types.ShopLocation
+  , module Web.Skroutz.Types.ShopReview
+  , module Web.Skroutz.Types.SKU
+  , module Web.Skroutz.Types.SKUReview
+  )
+where
 
 
 import Web.Skroutz.Types.AnySearchResult

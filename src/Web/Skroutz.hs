@@ -12,6 +12,7 @@
 
 module Web.Skroutz
   (
+    module Web.Skroutz.Types
   ) where
 
-import qualified Web.Skroutz.Types           as Types
+import Web.Skroutz.Types
