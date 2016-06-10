@@ -33,7 +33,9 @@ library
   build-depends:
       base >= 4.7 && < 5
     , text
+    , scientific
     , aeson
+    , lens
   exposed-modules:
       Web.Skroutz
   other-modules:
