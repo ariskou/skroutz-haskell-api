@@ -1,3 +1,7 @@
+{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE FunctionalDependencies #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Category
@@ -13,3 +17,30 @@
 module Web.Skroutz.Types.Category
   (
   ) where
+
+import GHC.Generics (Generic)
+import Data.Aeson.TH
+import Data.Scientific
+import Data.Text
+import Control.Lens (makeFields, makePrisms)
+import Web.Skroutz.Types.Utilities.TH
+
+data Category = Category {
+    _categoryId :: Scientific
+  , _categoryName :: Text
+  , _categoryChildrenCount :: Scientific
+  , _categoryImageUrl :: Text
+  , _categoryParentId :: Scientific
+  , _categoryFashion :: Bool
+  , _categoryLayoutMode :: Text
+  , _categoryWebUri :: Text
+  , _categoryCode :: Text
+  , _categoryPath :: Text
+  , _categoryShowSpecifications :: Bool
+  , _categoryManufacturerTitle :: Text
+  } deriving (Generic)
+
+
+makeFields ''Category
+makePrisms ''Category
+deriveJSON (dropAndCamelcaseToUnderscoreDefaultOptions "_category") ''Category
