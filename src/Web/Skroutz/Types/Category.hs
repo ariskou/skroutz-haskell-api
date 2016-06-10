@@ -37,7 +37,7 @@ data Category = Category {
   , _categoryPath :: Text
   , _categoryShowSpecifications :: Bool
   , _categoryManufacturerTitle :: Text
-  } deriving (Generic)
+  } deriving (Generic, Show)
 
 
 makeFields ''Category
