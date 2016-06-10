@@ -15,8 +15,7 @@
 ----------------------------------------------------------------------------
 
 module Web.Skroutz.Types.Category
-  (
-  ) where
+where
 
 import GHC.Generics (Generic)
 import Data.Aeson.TH
