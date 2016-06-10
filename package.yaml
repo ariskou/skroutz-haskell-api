@@ -41,5 +41,6 @@ library:
     - Web.Skroutz.Types.ShopReview
     - Web.Skroutz.Types.SKU
     - Web.Skroutz.Types.SKUReview
+    - Web.Skroutz.Types.Utilities.TH
   exposed-modules:
     - Web.Skroutz
