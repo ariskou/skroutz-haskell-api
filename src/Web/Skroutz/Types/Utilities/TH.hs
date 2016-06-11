@@ -12,12 +12,16 @@
 
 module Web.Skroutz.Types.Utilities.TH
   (
-    dropAndCamelcaseToUnderscoreDefaultOptions
+    customDefaultOptions
   ) where
 
 import Data.Aeson.Types
 
-dropAndCamelcaseToUnderscoreDefaultOptions :: String -> Options
-dropAndCamelcaseToUnderscoreDefaultOptions prefix = defaultOptions {
-    fieldLabelModifier = camelTo2 '_' . drop (length prefix)
+customDefaultOptions :: String -> Options
+customDefaultOptions prefix = defaultOptions {
+    fieldLabelModifier = \haskellFieldName ->
+      -- drop the prefix and then convert came case into underscore-separated naming convention.
+      let fieldName = camelTo2 '_' $ drop (length prefix) haskellFieldName
+      -- special case: if the name is "identifier", rename to id in JSON. Used in order to avoid generating a field accessor in Haskell named "id".
+      in if fieldName == "identifier" then "id" else fieldName
   }

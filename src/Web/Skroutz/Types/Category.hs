@@ -25,7 +25,7 @@ import Control.Lens (makeFields, makePrisms)
 import Web.Skroutz.Types.Utilities.TH
 
 data Category = Category {
-    _categoryId :: Scientific
+    _categoryIdentifier :: Scientific
   , _categoryName :: Text
   , _categoryChildrenCount :: Scientific
   , _categoryImageUrl :: Text
@@ -42,4 +42,4 @@ data Category = Category {
 
 makeFields ''Category
 makePrisms ''Category
-deriveJSON (dropAndCamelcaseToUnderscoreDefaultOptions "_category") ''Category
+deriveJSON (customDefaultOptions "_category") ''Category
