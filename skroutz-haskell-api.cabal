@@ -21,6 +21,8 @@ cabal-version:  >= 1.10
 extra-source-files:
     changelog.md
     README.md
+    test/fixtures/category/successful_all_response_body.json.formatted.json
+    test/fixtures/category/successful_one_response_body.json.formatted.json
 
 source-repository head
   type: git
@@ -36,6 +38,8 @@ library
     , scientific
     , aeson
     , lens
+    , lens-aeson
+    , network-uri
   exposed-modules:
       Web.Skroutz
   other-modules:
@@ -52,4 +56,25 @@ library
       Web.Skroutz.Types.SKU
       Web.Skroutz.Types.SKUReview
       Web.Skroutz.Types.Utilities.TH
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >= 4.7 && < 5
+    , text
+    , scientific
+    , aeson
+    , lens
+    , lens-aeson
+    , network-uri
+    , skroutz-haskell-api
+    , bytestring
+    , filepath
+    , directory
+    , hspec
   default-language: Haskell2010

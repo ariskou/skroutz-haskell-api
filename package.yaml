@@ -16,6 +16,8 @@ category: Web
 extra-source-files:
   - README.md
   - changelog.md
+  - test/fixtures/*/*.json
+
 
 ghc-options:
   - -Wall
@@ -47,3 +49,15 @@ library:
     - Web.Skroutz.Types.Utilities.TH
   exposed-modules:
     - Web.Skroutz
+
+tests:
+  spec:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N
+    dependencies:
+      - skroutz-haskell-api
+      - bytestring
+      - filepath
+      - directory
+      - hspec
