@@ -24,12 +24,13 @@ dependencies:
   - base >= 4.7 && < 5
   - text
   - scientific
+  - aeson
+  - lens
+  - lens-aeson
+  - network-uri
 
 library:
   source-dirs: src
-  dependencies:
-    - aeson
-    - lens
   other-modules:
     - Web.Skroutz.Types
     - Web.Skroutz.Types.AnySearchResult
