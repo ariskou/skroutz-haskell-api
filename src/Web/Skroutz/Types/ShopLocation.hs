@@ -9,7 +9,5 @@
 --
 -- Provides the 'ShopLocation' type, the location of a specific physical shop store.
 ----------------------------------------------------------------------------
-
 module Web.Skroutz.Types.ShopLocation
-  (
-  ) where
+where

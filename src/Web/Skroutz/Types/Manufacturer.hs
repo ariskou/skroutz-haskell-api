@@ -9,7 +9,5 @@
 --
 -- Provides the 'Manufacturer' type.
 ----------------------------------------------------------------------------
-
 module Web.Skroutz.Types.Manufacturer
-  (
-  ) where
+where

@@ -9,7 +9,5 @@
 --
 -- Provides the 'SKUReview' type, a user reviw of an 'SKU'.
 ----------------------------------------------------------------------------
-
 module Web.Skroutz.Types.SKUReview
-  (
-  ) where
+where

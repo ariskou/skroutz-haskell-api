@@ -9,7 +9,5 @@
 --
 -- Provides the 'AnySearchResult' type, representing multiple types of serach results.
 ----------------------------------------------------------------------------
-
 module Web.Skroutz.Types.AnySearchResult
-  (
-  ) where
+where

@@ -9,7 +9,5 @@
 --
 -- Provides the 'Shop' type, which is a merchant, not a physical store.
 ----------------------------------------------------------------------------
-
 module Web.Skroutz.Types.Shop
-  (
-  ) where
+where

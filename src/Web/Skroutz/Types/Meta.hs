@@ -9,7 +9,5 @@
 --
 -- Provides the 'Meta' type, used for metadata in results, such as 'Pagination'.
 ----------------------------------------------------------------------------
-
 module Web.Skroutz.Types.Meta
-  (
-  ) where
+where

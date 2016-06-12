@@ -9,7 +9,5 @@
 --
 -- Provides the 'SKU' type, where SKU (Stock Keeping Unit) is an aggregation of products.
 ----------------------------------------------------------------------------
-
 module Web.Skroutz.Types.SKU
-  (
-  ) where
+where

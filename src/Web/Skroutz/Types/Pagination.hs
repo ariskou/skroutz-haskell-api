@@ -9,7 +9,5 @@
 --
 -- Provides the 'Pagination' type.
 ----------------------------------------------------------------------------
-
 module Web.Skroutz.Types.Pagination
-  (
-  ) where
+where

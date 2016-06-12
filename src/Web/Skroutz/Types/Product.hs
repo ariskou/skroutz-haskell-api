@@ -9,7 +9,5 @@
 --
 -- Provides the 'Product' type.
 ----------------------------------------------------------------------------
-
 module Web.Skroutz.Types.Product
-  (
-  ) where
+where

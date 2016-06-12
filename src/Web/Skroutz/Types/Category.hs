@@ -13,7 +13,6 @@
 --
 -- Provides the 'Category' type, a category of products.
 ----------------------------------------------------------------------------
-
 module Web.Skroutz.Types.Category
 where
 

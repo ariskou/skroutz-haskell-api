@@ -9,7 +9,5 @@
 --
 -- Provides the 'ShopReview' type, a user review of a shop.
 ----------------------------------------------------------------------------
-
 module Web.Skroutz.Types.ShopReview
-  (
-  ) where
+where
