@@ -12,29 +12,19 @@
 
 module Web.Skroutz.Types
   (
-    module Web.Skroutz.Types.AnySearchResult
-  , module Web.Skroutz.Types.Category
-  , module Web.Skroutz.Types.Manufacturer
-  , module Web.Skroutz.Types.Meta
-  , module Web.Skroutz.Types.Pagination
-  , module Web.Skroutz.Types.Product
-  , module Web.Skroutz.Types.Shop
-  , module Web.Skroutz.Types.ShopLocation
-  , module Web.Skroutz.Types.ShopReview
-  , module Web.Skroutz.Types.SKU
-  , module Web.Skroutz.Types.SKUReview
+    module X
   )
 where
 
 
-import Web.Skroutz.Types.AnySearchResult
-import Web.Skroutz.Types.Category
-import Web.Skroutz.Types.Manufacturer
-import Web.Skroutz.Types.Meta
-import Web.Skroutz.Types.Pagination
-import Web.Skroutz.Types.Product
-import Web.Skroutz.Types.Shop
-import Web.Skroutz.Types.ShopLocation
-import Web.Skroutz.Types.ShopReview
-import Web.Skroutz.Types.SKU
-import Web.Skroutz.Types.SKUReview
+import Web.Skroutz.Types.AnySearchResult        as X
+import Web.Skroutz.Types.Category               as X
+import Web.Skroutz.Types.Manufacturer           as X
+import Web.Skroutz.Types.Meta                   as X
+import Web.Skroutz.Types.Pagination             as X
+import Web.Skroutz.Types.Product                as X
+import Web.Skroutz.Types.Shop                   as X
+import Web.Skroutz.Types.ShopLocation           as X
+import Web.Skroutz.Types.ShopReview             as X
+import Web.Skroutz.Types.SKU                    as X
+import Web.Skroutz.Types.SKUReview              as X
