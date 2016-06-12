@@ -14,15 +14,14 @@ module Web.Skroutz.Types.Category
 where
 
 import GHC.Generics (Generic)
-import Data.Scientific
 import Data.Text
 
 data Category = Category {
-    _categoryIdentifier :: Scientific
+    _categoryIdentifier :: Int
   , _categoryName :: Text
-  , _categoryChildrenCount :: Scientific
+  , _categoryChildrenCount :: Int
   , _categoryImageUrl :: Text
-  , _categoryParentId :: Scientific
+  , _categoryParentId :: Int
   , _categoryFashion :: Bool
   , _categoryLayoutMode :: Text
   , _categoryWebUri :: Text

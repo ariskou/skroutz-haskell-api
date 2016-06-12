@@ -36,12 +36,12 @@ library
   build-depends:
       base >= 4.7 && < 5
     , text
-    , scientific
     , aeson
     , lens
     , lens-aeson
     , network-uri
     , template-haskell
+    , bytestring
   exposed-modules:
       Web.Skroutz
       Web.Skroutz.TH
@@ -70,12 +70,12 @@ test-suite spec
   build-depends:
       base >= 4.7 && < 5
     , text
-    , scientific
     , aeson
     , lens
     , lens-aeson
     , network-uri
     , template-haskell
+    , bytestring
     , skroutz-haskell-api
     , bytestring
     , filepath

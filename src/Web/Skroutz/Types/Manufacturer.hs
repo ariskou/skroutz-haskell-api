@@ -14,11 +14,10 @@ module Web.Skroutz.Types.Manufacturer
 where
 
 import GHC.Generics (Generic)
-import Data.Scientific
 import Data.Text
 
 data Manufacturer = Manufacturer {
-    _manufacturerIdentifier :: Scientific
+    _manufacturerIdentifier :: Int
   , _manufacturerName :: Text
   , _manufacturerImageUrl :: Maybe Text
   } deriving (Generic, Show)

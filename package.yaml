@@ -25,12 +25,12 @@ ghc-options:
 dependencies:
   - base >= 4.7 && < 5
   - text
-  - scientific
   - aeson
   - lens
   - lens-aeson
   - network-uri
   - template-haskell
+  - bytestring
 
 library:
   source-dirs: src
