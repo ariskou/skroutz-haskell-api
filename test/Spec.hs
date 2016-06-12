@@ -67,3 +67,11 @@ main = hspec $ do
         (item ^. Skroutz.path) `shouldBe` "76,1269,2,1"
         (item ^. Skroutz.showSpecifications) `shouldBe` False
         (item ^. Skroutz.manufacturerTitle) `shouldBe` "Κατασκευαστές"
+
+
+      it "parses a single Manufacturer" $ do
+        resp <- readJSON "manufacturer" "successful_one_response_body.json.formatted"
+        let item = resp ^?! (key "manufacturer" . _JSON) :: Skroutz.Manufacturer
+        (item ^. Skroutz.identifier) `shouldBe` 12907
+        (item ^. Skroutz.name) `shouldBe` "Rapala"
+        (item ^. Skroutz.imageUrl) `shouldBe` Nothing

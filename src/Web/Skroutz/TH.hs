@@ -22,3 +22,4 @@ import Web.Skroutz.Types
 import Web.Skroutz.TH.Internal
 
 makeTH ''Category "_category"
+makeTH ''Manufacturer "_manufacturer"
