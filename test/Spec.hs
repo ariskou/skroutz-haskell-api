@@ -14,6 +14,7 @@ module Main
 where
 
 import qualified Web.Skroutz              as Skroutz
+import qualified Web.Skroutz.TH           as Skroutz
 import qualified Data.ByteString          as BS
 import           Test.Hspec
 import           System.FilePath          ((</>))

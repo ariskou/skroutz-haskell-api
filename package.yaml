@@ -30,6 +30,7 @@ dependencies:
   - lens
   - lens-aeson
   - network-uri
+  - template-haskell
 
 library:
   source-dirs: src
@@ -46,9 +47,10 @@ library:
     - Web.Skroutz.Types.ShopReview
     - Web.Skroutz.Types.SKU
     - Web.Skroutz.Types.SKUReview
-    - Web.Skroutz.Types.Utilities.TH
+    - Web.Skroutz.TH.Internal
   exposed-modules:
     - Web.Skroutz
+    - Web.Skroutz.TH
 
 tests:
   spec:
