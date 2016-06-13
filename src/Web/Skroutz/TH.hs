@@ -1,8 +1,3 @@
-{-# LANGUAGE DeriveGeneric #-}
-{-# LANGUAGE MultiParamTypeClasses #-}
-{-# LANGUAGE FunctionalDependencies #-}
-{-# LANGUAGE FlexibleInstances #-}
-{-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.TH
@@ -12,14 +7,26 @@
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides TemplateHaskell-generated fields and typeclasses.
+-- Provides utility functions for generating the TemplateHaskell-based fields.
 ----------------------------------------------------------------------------
-
 module Web.Skroutz.TH
-where
+  (
+    makeLensesAndJSON
+  ) where
 
-import Web.Skroutz.Types
-import Web.Skroutz.TH.Internal
+import           Control.Lens        (makeLenses)
+import           Data.Aeson.TH
+import           Data.Aeson.Types
+import           Language.Haskell.TH
 
-makeTH ''Category "_category"
-makeTH ''Manufacturer "_manufacturer"
+customDefaultOptions :: String -> Options
+customDefaultOptions prefix = defaultOptions {
+    -- drop the prefix and then convert came case into underscore-separated naming convention.
+    fieldLabelModifier = camelTo2 '_' . Prelude.drop (Prelude.length prefix)
+  }
+
+makeLensesAndJSON :: Name -> String -> Q [Dec]
+makeLensesAndJSON typeName prefix = do
+  lenses <- makeLenses typeName
+  jsonInstances <- deriveJSON (customDefaultOptions prefix) typeName
+  return $ lenses ++ jsonInstances

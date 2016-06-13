@@ -1,4 +1,5 @@
-{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE DeriveGeneric          #-}
+{-# LANGUAGE TemplateHaskell        #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Category
@@ -13,20 +14,24 @@
 module Web.Skroutz.Types.Category
 where
 
-import GHC.Generics (Generic)
-import Data.Text
+import           Data.Text
+import           GHC.Generics          (Generic)
+import           Web.Skroutz.TH
+import           Web.Skroutz.Types.URI
 
 data Category = Category {
-    _categoryIdentifier :: Int
-  , _categoryName :: Text
-  , _categoryChildrenCount :: Int
-  , _categoryImageUrl :: Text
-  , _categoryParentId :: Int
-  , _categoryFashion :: Bool
-  , _categoryLayoutMode :: Text
-  , _categoryWebUri :: Text
-  , _categoryCode :: Text
-  , _categoryPath :: Text
+    _categoryId                 :: Int
+  , _categoryName               :: Text
+  , _categoryChildrenCount      :: Int
+  , _categoryImageUrl           :: URI
+  , _categoryParentId           :: Int
+  , _categoryFashion            :: Bool
+  , _categoryLayoutMode         :: Text
+  , _categoryWebUri             :: URI
+  , _categoryCode               :: Text
+  , _categoryPath               :: Text
   , _categoryShowSpecifications :: Bool
-  , _categoryManufacturerTitle :: Text
+  , _categoryManufacturerTitle  :: Text
   } deriving (Generic, Show)
+
+makeLensesAndJSON ''Category "_category"

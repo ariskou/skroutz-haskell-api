@@ -31,6 +31,7 @@ dependencies:
   - network-uri
   - template-haskell
   - bytestring
+  - deepseq
 
 library:
   source-dirs: src
@@ -47,10 +48,10 @@ library:
     - Web.Skroutz.Types.ShopReview
     - Web.Skroutz.Types.SKU
     - Web.Skroutz.Types.SKUReview
-    - Web.Skroutz.TH.Internal
+    - Web.Skroutz.Types.URI
+    - Web.Skroutz.TH
   exposed-modules:
     - Web.Skroutz
-    - Web.Skroutz.TH
 
 tests:
   spec:

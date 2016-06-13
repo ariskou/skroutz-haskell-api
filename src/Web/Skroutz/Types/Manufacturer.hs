@@ -1,4 +1,5 @@
-{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE DeriveGeneric          #-}
+{-# LANGUAGE TemplateHaskell        #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Manufacturer
@@ -13,11 +14,15 @@
 module Web.Skroutz.Types.Manufacturer
 where
 
-import GHC.Generics (Generic)
-import Data.Text
+import           Data.Text
+import           GHC.Generics          (Generic)
+import           Web.Skroutz.TH
+import           Web.Skroutz.Types.URI
 
 data Manufacturer = Manufacturer {
-    _manufacturerIdentifier :: Int
-  , _manufacturerName :: Text
-  , _manufacturerImageUrl :: Maybe Text
+    _manufacturerId       :: Int
+  , _manufacturerName     :: Text
+  , _manufacturerImageUrl :: Maybe URI
   } deriving (Generic, Show)
+
+makeLensesAndJSON ''Manufacturer "_manufacturer"

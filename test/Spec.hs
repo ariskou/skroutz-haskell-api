@@ -13,65 +13,66 @@
 module Main
 where
 
-import qualified Web.Skroutz              as Skroutz
-import qualified Web.Skroutz.TH           as Skroutz
-import qualified Data.ByteString          as BS
-import           Test.Hspec
-import           System.FilePath          ((</>))
-import           System.Directory         (getCurrentDirectory)
-import           Control.Lens
-import           Data.Aeson.Lens          (key, nth, _JSON)
+import           Control.Lens       ((^.), (^?!))
+import           Data.Aeson.Lens    (key, nth, _JSON)
+import           Data.ByteString    (readFile)
+import           Data.Coerce        (coerce)
+import           Data.Maybe         (fromJust)
 import qualified Data.Text
-import qualified Data.Text.Encoding
-
-default (Data.Text.Text)
+import           Data.Text.Encoding (decodeUtf8)
+import           Network.URI        (parseURI)
+import           System.Directory   (getCurrentDirectory)
+import           System.FilePath    ((</>))
+import           Test.Hspec         (describe, hspec, it, shouldBe)
+import qualified Web.Skroutz        as Skroutz
 
 readJSON :: FilePath -> FilePath -> IO Data.Text.Text
 readJSON category result = do
   dir <- getCurrentDirectory
-  Data.Text.Encoding.decodeUtf8 <$> BS.readFile (dir </> "test" </> "fixtures" </> category </> (result ++ ".json"))
+  Data.Text.Encoding.decodeUtf8 <$> Data.ByteString.readFile (dir </> "test" </> "fixtures" </> category </> (result ++ ".json"))
+
+mkUri :: String -> Skroutz.URI
+mkUri = coerce . fromJust . parseURI
 
 main :: IO ()
-main = hspec $ do
-  describe "Skroutz" $ do
+main = hspec $
+  describe "Skroutz" $
     describe "JSON Parsing" $ do
       it "parses a single Category" $ do
         resp <- readJSON "category" "successful_one_response_body.json.formatted"
         let item = resp ^?! (key "category" . _JSON) :: Skroutz.Category
-        (item ^. Skroutz.identifier) `shouldBe` 1442
-        (item ^. Skroutz.name) `shouldBe` "Ξαπλώστρες Κήπου & Βεράντας"
-        (item ^. Skroutz.childrenCount) `shouldBe` 0
-        (item ^. Skroutz.imageUrl) `shouldBe` "http://a.scdn.gr/ds/categories/1442/1442.jpg"
-        (item ^. Skroutz.parentId) `shouldBe` 1434
-        (item ^. Skroutz.fashion) `shouldBe` False
-        (item ^. Skroutz.layoutMode) `shouldBe` "tiles"
-        (item ^. Skroutz.webUri) `shouldBe` "http://skroutz.gr/c/1442/xaplostres-kipou-verantas.html"
-        (item ^. Skroutz.code) `shouldBe` "xaplostres-kipou-verantas"
-        (item ^. Skroutz.path) `shouldBe` "76,11,1052,1434,1442"
-        (item ^. Skroutz.showSpecifications) `shouldBe` False
-        (item ^. Skroutz.manufacturerTitle) `shouldBe` "Κατασκευαστές"
-
+        (item ^. Skroutz.categoryId) `shouldBe` 1442
+        (item ^. Skroutz.categoryName) `shouldBe` "Ξαπλώστρες Κήπου & Βεράντας"
+        (item ^. Skroutz.categoryChildrenCount) `shouldBe` 0
+        (item ^. Skroutz.categoryImageUrl) `shouldBe` mkUri "http://a.scdn.gr/ds/categories/1442/1442.jpg"
+        (item ^. Skroutz.categoryParentId) `shouldBe` 1434
+        (item ^. Skroutz.categoryFashion) `shouldBe` False
+        (item ^. Skroutz.categoryLayoutMode) `shouldBe` "tiles"
+        (item ^. Skroutz.categoryWebUri) `shouldBe` mkUri "http://skroutz.gr/c/1442/xaplostres-kipou-verantas.html"
+        (item ^. Skroutz.categoryCode) `shouldBe` "xaplostres-kipou-verantas"
+        (item ^. Skroutz.categoryPath) `shouldBe` "76,11,1052,1434,1442"
+        (item ^. Skroutz.categoryShowSpecifications) `shouldBe` False
+        (item ^. Skroutz.categoryManufacturerTitle) `shouldBe` "Κατασκευαστές"
 
       it "parses a list of Categories" $ do
         resp <- readJSON "category" "successful_all_response_body.json.formatted"
         let item = resp ^?! (key "categories" . nth 0 . _JSON) :: Skroutz.Category
-        (item ^. Skroutz.identifier) `shouldBe` 1
-        (item ^. Skroutz.name) `shouldBe` "Σταθερή Τηλεφωνία"
-        (item ^. Skroutz.childrenCount) `shouldBe` 5
-        (item ^. Skroutz.imageUrl) `shouldBe` "http://c.scdn.gr/ds/categories/1/20150508125916_c7ffab14.jpg"
-        (item ^. Skroutz.parentId) `shouldBe` 2
-        (item ^. Skroutz.fashion) `shouldBe` False
-        (item ^. Skroutz.layoutMode) `shouldBe` "list"
-        (item ^. Skroutz.webUri) `shouldBe` "http://skroutz.gr/c/1/statherh-tilefwnia.html"
-        (item ^. Skroutz.code) `shouldBe` "statherh-tilefwnia"
-        (item ^. Skroutz.path) `shouldBe` "76,1269,2,1"
-        (item ^. Skroutz.showSpecifications) `shouldBe` False
-        (item ^. Skroutz.manufacturerTitle) `shouldBe` "Κατασκευαστές"
-
+        (item ^. Skroutz.categoryId) `shouldBe` 1
+        (item ^. Skroutz.categoryName) `shouldBe` "Σταθερή Τηλεφωνία"
+        (item ^. Skroutz.categoryChildrenCount) `shouldBe` 5
+        (item ^. Skroutz.categoryImageUrl) `shouldBe` mkUri "http://c.scdn.gr/ds/categories/1/20150508125916_c7ffab14.jpg"
+        (item ^. Skroutz.categoryParentId) `shouldBe` 2
+        (item ^. Skroutz.categoryFashion) `shouldBe` False
+        (item ^. Skroutz.categoryLayoutMode) `shouldBe` "list"
+        (item ^. Skroutz.categoryWebUri) `shouldBe` mkUri "http://skroutz.gr/c/1/statherh-tilefwnia.html"
+        (item ^. Skroutz.categoryCode) `shouldBe` "statherh-tilefwnia"
+        (item ^. Skroutz.categoryPath) `shouldBe` "76,1269,2,1"
+        (item ^. Skroutz.categoryShowSpecifications) `shouldBe` False
+        (item ^. Skroutz.categoryManufacturerTitle) `shouldBe` "Κατασκευαστές"
 
       it "parses a single Manufacturer" $ do
         resp <- readJSON "manufacturer" "successful_one_response_body.json.formatted"
         let item = resp ^?! (key "manufacturer" . _JSON) :: Skroutz.Manufacturer
-        (item ^. Skroutz.identifier) `shouldBe` 12907
-        (item ^. Skroutz.name) `shouldBe` "Rapala"
-        (item ^. Skroutz.imageUrl) `shouldBe` Nothing
+        (item ^. Skroutz.manufacturerId) `shouldBe` 12907
+        (item ^. Skroutz.manufacturerName) `shouldBe` "Rapala"
+        (item ^. Skroutz.manufacturerImageUrl) `shouldBe` Nothing

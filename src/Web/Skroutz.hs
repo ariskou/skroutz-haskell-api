@@ -9,10 +9,9 @@
 --
 -- Provides the Skroutz API functions
 ----------------------------------------------------------------------------
-
 module Web.Skroutz
   (
     module Web.Skroutz.Types
   ) where
 
-import Web.Skroutz.Types
+import           Web.Skroutz.Types
