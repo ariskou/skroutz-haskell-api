@@ -50,6 +50,7 @@ library:
     - Web.Skroutz.Types.SKUReview
     - Web.Skroutz.Types.URI
     - Web.Skroutz.TH
+    - Web.Skroutz.Endpoints
   exposed-modules:
     - Web.Skroutz
 
