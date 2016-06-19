@@ -120,4 +120,7 @@ test-suite spec
     , filepath
     , directory
     , hspec
+  other-modules:
+      Web.Skroutz.Common
+      Web.Skroutz.Types.CategorySpec
   default-language: Haskell2010
