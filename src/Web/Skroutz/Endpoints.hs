@@ -16,3 +16,4 @@ module Web.Skroutz.Endpoints
 where
 
 import           Web.Skroutz.Endpoints.Auth as X
+import           Web.Skroutz.Endpoints.Data as X

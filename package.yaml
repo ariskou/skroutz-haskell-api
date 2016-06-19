@@ -59,6 +59,7 @@ library:
     - Web.Skroutz.TH
     - Web.Skroutz.Endpoints
     - Web.Skroutz.Endpoints.Auth
+    - Web.Skroutz.Endpoints.Data
   exposed-modules:
     - Web.Skroutz
 
