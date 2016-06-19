@@ -24,7 +24,7 @@ import           Web.Skroutz.Types.Product         as X
 import           Web.Skroutz.Types.Shop            as X
 import           Web.Skroutz.Types.ShopLocation    as X
 import           Web.Skroutz.Types.ShopReview      as X
-import           Web.Skroutz.Types.SKU             as X
-import           Web.Skroutz.Types.SKUReview       as X
+import           Web.Skroutz.Types.Sku             as X
+import           Web.Skroutz.Types.SkuReview       as X
 import           Web.Skroutz.Types.Token           as X
 import           Web.Skroutz.Types.URI             as X
