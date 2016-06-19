@@ -64,6 +64,12 @@ library
     , template-haskell
     , bytestring
     , deepseq
+    , transformers
+    , either
+    , servant
+    , servant-client
+    , http-client
+    , http-client-tls
   exposed-modules:
       Web.Skroutz
   other-modules:
@@ -100,6 +106,12 @@ test-suite spec
     , template-haskell
     , bytestring
     , deepseq
+    , transformers
+    , either
+    , servant
+    , servant-client
+    , http-client
+    , http-client-tls
     , skroutz-haskell-api
     , bytestring
     , filepath

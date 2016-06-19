@@ -32,6 +32,12 @@ dependencies:
   - template-haskell
   - bytestring
   - deepseq
+  - transformers
+  - either
+  - servant
+  - servant-client
+  - http-client
+  - http-client-tls
 
 library:
   source-dirs: src
