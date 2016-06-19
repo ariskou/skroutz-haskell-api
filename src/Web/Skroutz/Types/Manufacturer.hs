@@ -15,8 +15,9 @@ module Web.Skroutz.Types.Manufacturer
 where
 
 import           Data.Text
-import           GHC.Generics          (Generic)
+import           GHC.Generics           (Generic)
 import           Web.Skroutz.TH
+import           Web.Skroutz.Types.Meta
 import           Web.Skroutz.Types.URI
 
 data Manufacturer = Manufacturer {
@@ -26,3 +27,16 @@ data Manufacturer = Manufacturer {
   } deriving (Generic, Show)
 
 makeLensesAndJSON ''Manufacturer "_manufacturer"
+
+data SingleManufacturerResponse = SingleManufacturerResponse {
+    _singleManufacturerResponseManufacturer :: Manufacturer
+  } deriving (Generic, Show)
+
+makeLensesAndJSON ''SingleManufacturerResponse "_singleManufacturerResponse"
+
+data MultipleManufacturerResponse = MultipleManufacturerResponse {
+    _multipleManufacturerResponseManufacturers :: [Manufacturer]
+  , _multipleManufacturerResponseMeta          :: Meta
+  } deriving (Generic, Show)
+
+makeLensesAndJSON ''MultipleManufacturerResponse "_multipleManufacturerResponse"
