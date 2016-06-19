@@ -1,3 +1,5 @@
+{-# LANGUAGE DeriveGeneric   #-}
+{-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Sku
@@ -11,3 +13,40 @@
 ----------------------------------------------------------------------------
 module Web.Skroutz.Types.Sku
 where
+
+import           Data.Text
+import           GHC.Generics                (Generic)
+import           Web.Skroutz.TH
+import           Web.Skroutz.Types.Meta
+import           Web.Skroutz.Types.SkuImages
+import           Web.Skroutz.Types.URI
+
+data Sku = Sku {
+    _skuId                   :: Int
+  , _skuEan                  :: Text
+  , _skuPn                   :: Text
+  , _skuName                 :: Text
+  , _skuCategoryId           :: Int
+  , _skuFirstProductShopInfo :: Maybe Text
+  , _skuClickUrl             :: Maybe URI
+  , _skuPriceMax             :: Double
+  , _skuPriceMin             :: Double
+  , _skuReviewscore          :: Double
+  , _skuShopCount            :: Int
+  , _skuPlainSpecSummary     :: Text
+  , _skuManufacturerId       :: Int
+  , _skuFuture               :: Bool
+  , _skuReviewsCount         :: Int
+  , _skuVirtual              :: Bool
+  , _skuImages               :: SkuImages
+  , _skuWebUri               :: URI
+  } deriving (Generic, Show)
+
+makeLensesAndJSON ''Sku "_sku"
+
+data MultipleSkuResponse = MultipleSkuResponse {
+    _multipleSkuResponseSkus :: [Sku]
+  , _multipleSkuResponseMeta :: Meta
+  } deriving (Generic, Show)
+
+makeLensesAndJSON ''MultipleSkuResponse "_multipleSkuResponse"

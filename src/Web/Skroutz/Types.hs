@@ -28,6 +28,7 @@ import           Web.Skroutz.Types.ShopPaymentMethods  as X
 import           Web.Skroutz.Types.ShopReview          as X
 import           Web.Skroutz.Types.ShopShipping        as X
 import           Web.Skroutz.Types.Sku                 as X
+import           Web.Skroutz.Types.SkuImages           as X
 import           Web.Skroutz.Types.SkuReview           as X
 import           Web.Skroutz.Types.Token               as X
 import           Web.Skroutz.Types.URI                 as X

@@ -87,6 +87,7 @@ library
       Web.Skroutz.Types.ShopLocationAddress
       Web.Skroutz.Types.ShopReview
       Web.Skroutz.Types.Sku
+      Web.Skroutz.Types.SkuImages
       Web.Skroutz.Types.SkuReview
       Web.Skroutz.Types.Token
       Web.Skroutz.Types.URI

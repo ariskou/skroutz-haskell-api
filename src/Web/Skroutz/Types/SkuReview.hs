@@ -1,3 +1,5 @@
+{-# LANGUAGE DeriveGeneric   #-}
+{-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.SkuReview
@@ -11,3 +13,28 @@
 ----------------------------------------------------------------------------
 module Web.Skroutz.Types.SkuReview
 where
+
+import           Data.Text
+import           GHC.Generics           (Generic)
+import           Web.Skroutz.TH
+import           Web.Skroutz.Types.Meta
+
+data SkuReview = SkuReview {
+    _skuReviewId                :: Int
+  , _skuReviewUserId            :: Int
+  , _skuReviewReview            :: Text
+  , _skuReviewRating            :: Int
+  , _skuReviewCreatedAt         :: Text
+  , _skuReviewDemoted           :: Bool
+  , _skuReviewVotesCount        :: Int
+  , _skuReviewHelpfulVotesCount :: Int
+  } deriving (Generic, Show)
+
+makeLensesAndJSON ''SkuReview "_skuReview"
+
+data MultipleSkuReviewResponse = MultipleSkuReviewResponse {
+    _multipleSkuReviewResponseReviews :: [SkuReview]
+  , _multipleSkuReviewResponseMeta    :: Meta
+  } deriving (Generic, Show)
+
+makeLensesAndJSON ''MultipleSkuReviewResponse "_multipleSkuReviewResponse"
