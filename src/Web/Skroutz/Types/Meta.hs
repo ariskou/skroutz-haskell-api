@@ -1,3 +1,5 @@
+{-# LANGUAGE DeriveGeneric   #-}
+{-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Pagination
@@ -11,3 +13,13 @@
 ----------------------------------------------------------------------------
 module Web.Skroutz.Types.Meta
 where
+
+import           GHC.Generics                 (Generic)
+import           Web.Skroutz.TH
+import           Web.Skroutz.Types.Pagination
+
+data Meta = Meta {
+    _metaPagination :: Pagination
+  } deriving (Generic, Show)
+
+makeLensesAndJSON ''Meta "_meta"
