@@ -18,6 +18,7 @@ import           Data.Text
 import           GHC.Generics          (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.URI
+import           Web.Skroutz.Types.Meta
 
 data Category = Category {
     _categoryId                 :: Int
@@ -35,3 +36,16 @@ data Category = Category {
   } deriving (Generic, Show)
 
 makeLensesAndJSON ''Category "_category"
+
+data SingleCategoryResponse = SingleCategoryResponse {
+    _singleCategoryResponseCategory :: Category
+  } deriving (Generic, Show)
+
+makeLensesAndJSON ''SingleCategoryResponse "_singleCategoryResponse"
+
+data MultipleCategoryResponse = MultipleCategoryResponse {
+    _multipleCategoryResponseCategories :: [Category]
+  , _multipleCategoryResponseMeta       :: Meta
+  } deriving (Generic, Show)
+
+makeLensesAndJSON ''MultipleCategoryResponse "_multipleCategoryResponse"
