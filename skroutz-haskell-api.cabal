@@ -89,6 +89,7 @@ library
       Web.Skroutz.Types.URI
       Web.Skroutz.TH
       Web.Skroutz.Endpoints
+      Web.Skroutz.Endpoints.Auth
   default-language: Haskell2010
 
 test-suite spec

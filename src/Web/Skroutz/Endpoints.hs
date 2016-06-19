@@ -9,7 +9,10 @@
 --
 -- Provides the Skroutz API endpoints/methods.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Endoints
+module Web.Skroutz.Endpoints
+(
+  module X
+)
 where
 
-import           Web.Skroutz.Types
+import           Web.Skroutz.Endpoints.Auth as X
