@@ -43,7 +43,7 @@ data SingleProductResponse = SingleProductResponse {
 makeLensesAndJSON ''SingleProductResponse "_singleProductResponse"
 
 data MultipleProductResponse = MultipleProductResponse {
-    _multipleProductResponseCategories :: [Product]
+    _multipleProductResponseProducts :: [Product]
   , _multipleProductResponseMeta       :: Meta
   } deriving (Generic, Show)
 
