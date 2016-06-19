@@ -20,7 +20,7 @@ import           Web.Skroutz.TH
 
 data Token = Token {
     _tokenAccessToken :: Text
-  , _tokenTokenType  :: Text
+  , _tokenTokenType   :: Text
   , _tokenExpiresIn   :: Int
   } deriving (Generic, Show)
 

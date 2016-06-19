@@ -1,5 +1,5 @@
-{-# LANGUAGE DeriveGeneric          #-}
-{-# LANGUAGE TemplateHaskell        #-}
+{-# LANGUAGE DeriveGeneric   #-}
+{-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Category
@@ -15,10 +15,10 @@ module Web.Skroutz.Types.Category
 where
 
 import           Data.Text
-import           GHC.Generics          (Generic)
+import           GHC.Generics           (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.URI
 import           Web.Skroutz.Types.Meta
+import           Web.Skroutz.Types.URI
 
 data Category = Category {
     _categoryId                 :: Int

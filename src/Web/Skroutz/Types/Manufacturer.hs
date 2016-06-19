@@ -1,5 +1,5 @@
-{-# LANGUAGE DeriveGeneric          #-}
-{-# LANGUAGE TemplateHaskell        #-}
+{-# LANGUAGE DeriveGeneric   #-}
+{-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Manufacturer
