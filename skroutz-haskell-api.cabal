@@ -23,7 +23,28 @@ extra-source-files:
     README.md
     test/fixtures/category/successful_all_response_body.json.formatted.json
     test/fixtures/category/successful_one_response_body.json.formatted.json
+    test/fixtures/get_application_token/successful_response_body.json.formatted.json
+    test/fixtures/manufacturer/not_found_one_response_body.json.formatted.json
+    test/fixtures/manufacturer/successful_all_response_body.json.formatted.json
     test/fixtures/manufacturer/successful_one_response_body.json.formatted.json
+    test/fixtures/product/no_results_response_body.json.formatted.json
+    test/fixtures/product/successful_one_response_body.json.formatted.json
+    test/fixtures/product/successful_search_response_body.json.formatted.json
+    test/fixtures/search/no_results_response_body.json.formatted.json
+    test/fixtures/search/successful_response_body.json.formatted.json
+    test/fixtures/shop/no_results_response_body.json.formatted.json
+    test/fixtures/shop/successful_one_location_one_response_body.json.formatted.json
+    test/fixtures/shop/successful_one_locations_embed_address_response_body.json.formatted.json
+    test/fixtures/shop/successful_one_locations_response_body.json.formatted.json
+    test/fixtures/shop/successful_one_response_body.json.formatted.json
+    test/fixtures/shop/successful_one_reviews_response_body.json.formatted.json
+    test/fixtures/shop/successful_search_response_body.json.formatted.json
+    test/fixtures/sku/no_results_response_body.json.formatted.json
+    test/fixtures/sku/successful_all_response_body.json.formatted.json
+    test/fixtures/sku/successful_one_products_response_body.json.formatted.json
+    test/fixtures/sku/successful_one_response_body.json.formatted.json
+    test/fixtures/sku/successful_one_reviews_response_body.json.formatted.json
+    test/fixtures/sku/successful_search_response_body.json.formatted.json
 
 source-repository head
   type: git

@@ -1,0 +1,11 @@
+{
+    "products": [],
+    "meta": {
+        "pagination": {
+            "total_results": 0,
+            "total_pages": 0,
+            "page": 1,
+            "per": 25
+        }
+    }
+}
