@@ -85,6 +85,7 @@ library
       Web.Skroutz.Types.ShopReview
       Web.Skroutz.Types.SKU
       Web.Skroutz.Types.SKUReview
+      Web.Skroutz.Types.Token
       Web.Skroutz.Types.URI
       Web.Skroutz.TH
       Web.Skroutz.Endpoints
