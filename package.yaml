@@ -53,6 +53,7 @@ library:
     - Web.Skroutz.Types.ShopPaymentMethods
     - Web.Skroutz.Types.ShopShipping
     - Web.Skroutz.Types.ShopLocation
+    - Web.Skroutz.Types.ShopLocationAddress
     - Web.Skroutz.Types.ShopReview
     - Web.Skroutz.Types.SKU
     - Web.Skroutz.Types.SKUReview
