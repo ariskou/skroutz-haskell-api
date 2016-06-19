@@ -81,6 +81,8 @@ library
       Web.Skroutz.Types.Pagination
       Web.Skroutz.Types.Product
       Web.Skroutz.Types.Shop
+      Web.Skroutz.Types.ShopPaymentMethods
+      Web.Skroutz.Types.ShopShipping
       Web.Skroutz.Types.ShopLocation
       Web.Skroutz.Types.ShopReview
       Web.Skroutz.Types.SKU
