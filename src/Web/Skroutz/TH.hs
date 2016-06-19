@@ -16,13 +16,14 @@ module Web.Skroutz.TH
 
 import           Control.Lens        (makeLenses)
 import           Data.Aeson.TH
-import           Data.Aeson.Types
-import           Language.Haskell.TH
+import           Data.List           (stripPrefix)
+import           Data.Maybe          (fromMaybe)
+import           Language.Haskell.TH (Dec, Name, Q)
 
 customDefaultOptions :: String -> Options
 customDefaultOptions prefix = defaultOptions {
     -- drop the prefix and then convert came case into underscore-separated naming convention.
-    fieldLabelModifier = camelTo2 '_' . Prelude.drop (Prelude.length prefix)
+    fieldLabelModifier = \fieldName -> fromMaybe fieldName (stripPrefix prefix fieldName)
   }
 
 makeLensesAndJSON :: Name -> String -> Q [Dec]
