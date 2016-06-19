@@ -1,3 +1,5 @@
+{-# LANGUAGE DeriveGeneric   #-}
+{-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Pagination
@@ -11,3 +13,15 @@
 ----------------------------------------------------------------------------
 module Web.Skroutz.Types.Pagination
 where
+
+import           GHC.Generics   (Generic)
+import           Web.Skroutz.TH
+
+data Pagination = Pagination {
+    _paginationTotalResults :: Int
+  , _paginationTotalPages   :: Int
+  , _paginationPage         :: Int
+  , _paginationPer          :: Int
+  } deriving (Generic, Show)
+
+makeLensesAndJSON ''Pagination "_pagination"
