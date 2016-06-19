@@ -15,16 +15,19 @@ module Web.Skroutz.Types
   )
 where
 
-import           Web.Skroutz.Types.AnySearchResult as X
-import           Web.Skroutz.Types.Category        as X
-import           Web.Skroutz.Types.Manufacturer    as X
-import           Web.Skroutz.Types.Meta            as X
-import           Web.Skroutz.Types.Pagination      as X
-import           Web.Skroutz.Types.Product         as X
-import           Web.Skroutz.Types.Shop            as X
-import           Web.Skroutz.Types.ShopLocation    as X
-import           Web.Skroutz.Types.ShopReview      as X
-import           Web.Skroutz.Types.Sku             as X
-import           Web.Skroutz.Types.SkuReview       as X
-import           Web.Skroutz.Types.Token           as X
-import           Web.Skroutz.Types.URI             as X
+import           Web.Skroutz.Types.AnySearchResult     as X
+import           Web.Skroutz.Types.Category            as X
+import           Web.Skroutz.Types.Manufacturer        as X
+import           Web.Skroutz.Types.Meta                as X
+import           Web.Skroutz.Types.Pagination          as X
+import           Web.Skroutz.Types.Product             as X
+import           Web.Skroutz.Types.Shop                as X
+import           Web.Skroutz.Types.ShopLocation        as X
+import           Web.Skroutz.Types.ShopLocationAddress as X
+import           Web.Skroutz.Types.ShopPaymentMethods  as X
+import           Web.Skroutz.Types.ShopReview          as X
+import           Web.Skroutz.Types.ShopShipping        as X
+import           Web.Skroutz.Types.Sku                 as X
+import           Web.Skroutz.Types.SkuReview           as X
+import           Web.Skroutz.Types.Token               as X
+import           Web.Skroutz.Types.URI                 as X
