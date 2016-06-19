@@ -32,7 +32,7 @@ makeLensesAndJSON ''ShopReview "_shopReview"
 
 data MultipleShopReviewResponse = MultipleShopReviewResponse {
     _multipleShopReviewResponseReviews :: [ShopReview]
-  , _multipleShopReviewResponseMeta     :: Meta
+  , _multipleShopReviewResponseMeta    :: Meta
   } deriving (Generic, Show)
 
 makeLensesAndJSON ''MultipleShopReviewResponse "_multipleShopReviewResponse"

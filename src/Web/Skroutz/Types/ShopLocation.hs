@@ -38,7 +38,7 @@ makeLensesAndJSON ''ShopLocation "_shopLocation"
 
 data MultipleShopLocationResponse = MultipleShopLocationResponse {
     _multipleShopLocationResponseLocations :: [ShopLocation]
-  , _multipleShopLocationResponseMeta     :: Meta
+  , _multipleShopLocationResponseMeta      :: Meta
   } deriving (Generic, Show)
 
 makeLensesAndJSON ''MultipleShopLocationResponse "_multipleShopLocationResponse"

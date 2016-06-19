@@ -46,7 +46,7 @@ makeLensesAndJSON ''SingleShopResponse "_singleShopResponse"
 
 data MultipleShopResponse = MultipleShopResponse {
     _multipleShopResponseShops :: [Shop]
-  , _multipleShopResponseMeta       :: Meta
+  , _multipleShopResponseMeta  :: Meta
   } deriving (Generic, Show)
 
 makeLensesAndJSON ''MultipleShopResponse "_multipleShopResponse"
