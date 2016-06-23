@@ -31,6 +31,7 @@ data Shop = Shop {
   , _shopThumbshotUrl       :: URI
   , _shopReviewsCount       :: Int
   , _shopLatestReviewsCount :: Int
+  , _shopReviewScore        :: Double
   , _shopPaymentMethods     :: ShopPaymentMethods
   , _shopShipping           :: ShopShipping
   , _shopWebUri             :: URI
