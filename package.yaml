@@ -74,6 +74,7 @@ tests:
     other-modules:
       - Web.Skroutz.Common
       - Web.Skroutz.Types.CategorySpec
+      - Web.Skroutz.Types.ManufacturerSpec
     ghc-options: -threaded -rtsopts -with-rtsopts=-N
     dependencies:
       - skroutz-haskell-api

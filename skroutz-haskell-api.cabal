@@ -24,7 +24,6 @@ extra-source-files:
     test/fixtures/category/successful_all_response_body.json.formatted.json
     test/fixtures/category/successful_one_response_body.json.formatted.json
     test/fixtures/get_application_token/successful_response_body.json.formatted.json
-    test/fixtures/manufacturer/not_found_one_response_body.json.formatted.json
     test/fixtures/manufacturer/successful_all_response_body.json.formatted.json
     test/fixtures/manufacturer/successful_one_response_body.json.formatted.json
     test/fixtures/product/no_results_response_body.json.formatted.json
@@ -127,4 +126,5 @@ test-suite spec
   other-modules:
       Web.Skroutz.Common
       Web.Skroutz.Types.CategorySpec
+      Web.Skroutz.Types.ManufacturerSpec
   default-language: Haskell2010
