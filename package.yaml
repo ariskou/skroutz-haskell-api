@@ -75,6 +75,7 @@ tests:
       - Web.Skroutz.Common
       - Web.Skroutz.Types.CategorySpec
       - Web.Skroutz.Types.ManufacturerSpec
+      - Web.Skroutz.Types.ProductSpec
     ghc-options: -threaded -rtsopts -with-rtsopts=-N
     dependencies:
       - skroutz-haskell-api
