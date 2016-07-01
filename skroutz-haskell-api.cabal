@@ -69,6 +69,16 @@ library
     , servant-client
     , http-client
     , http-client-tls
+    , wreq
+    , rest-core
+    , rest-gen
+    , rest-types
+    , rest-client
+    , rest-stringmap
+    , resourcet
+    , http-api-data
+    , http-conduit
+    , http-types
   exposed-modules:
       Web.Skroutz
   other-modules:
@@ -118,6 +128,16 @@ test-suite spec
     , servant-client
     , http-client
     , http-client-tls
+    , wreq
+    , rest-core
+    , rest-gen
+    , rest-types
+    , rest-client
+    , rest-stringmap
+    , resourcet
+    , http-api-data
+    , http-conduit
+    , http-types
     , skroutz-haskell-api
     , bytestring
     , filepath

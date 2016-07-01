@@ -38,6 +38,16 @@ dependencies:
   - servant-client
   - http-client
   - http-client-tls
+  - wreq
+  - rest-core
+  - rest-gen
+  - rest-types
+  - rest-client
+  - rest-stringmap
+  - resourcet
+  - http-api-data
+  - http-conduit
+  - http-types
 
 library:
   source-dirs: src
