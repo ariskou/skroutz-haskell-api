@@ -98,6 +98,8 @@ library
       Web.Skroutz.Types.Sku
       Web.Skroutz.Types.SkuImages
       Web.Skroutz.Types.SkuReview
+      Web.Skroutz.Types.SkuSpecification
+      Web.Skroutz.Types.SkuPrice
       Web.Skroutz.Types.Token
       Web.Skroutz.Types.URI
       Web.Skroutz.TH
