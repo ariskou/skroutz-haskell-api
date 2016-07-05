@@ -81,6 +81,7 @@ library:
     - Web.Skroutz.Endpoints.Types.Product
     - Web.Skroutz.Endpoints.Types.Shop
     - Web.Skroutz.Endpoints.Types.ShopLocation
+    - Web.Skroutz.Endpoints.Types.ShopReview
   exposed-modules:
     - Web.Skroutz
 
