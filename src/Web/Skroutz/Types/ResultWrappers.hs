@@ -17,6 +17,7 @@ where
 
 import           Web.Skroutz.Types.ResultWrappers.Alternative         as X
 import           Web.Skroutz.Types.ResultWrappers.AppliedFilters      as X
+import           Web.Skroutz.Types.ResultWrappers.Autocomplete        as X
 import           Web.Skroutz.Types.ResultWrappers.AvailableFilters    as X
 import           Web.Skroutz.Types.ResultWrappers.Category            as X
 import           Web.Skroutz.Types.ResultWrappers.FilterGroup         as X
