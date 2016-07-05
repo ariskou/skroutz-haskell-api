@@ -44,6 +44,12 @@ data Sku = Sku {
 
 makeLensesAndJSON ''Sku "_sku"
 
+data SingleSkuResponse = SingleSkuResponse {
+    _singleSkuResponseSku :: Sku
+  } deriving (Generic, Show)
+
+makeLensesAndJSON ''SingleSkuResponse "_singleSkuResponse"
+
 data MultipleSkuResponse = MultipleSkuResponse {
     _multipleSkuResponseSkus :: [Sku]
   , _multipleSkuResponseMeta :: Meta
