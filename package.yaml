@@ -54,7 +54,7 @@ library:
   source-dirs: src
   other-modules:
     - Web.Skroutz.Types
-    - Web.Skroutz.Types.AnySearchResult
+    - Web.Skroutz.Types.GeneralSearchResult
     - Web.Skroutz.Types.AppliedFilters
     - Web.Skroutz.Types.AvailableFilters
     - Web.Skroutz.Types.Category
