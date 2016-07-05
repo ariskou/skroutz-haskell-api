@@ -30,5 +30,6 @@ import           Web.Skroutz.Types.ShopShipping        as X
 import           Web.Skroutz.Types.Sku                 as X
 import           Web.Skroutz.Types.SkuImages           as X
 import           Web.Skroutz.Types.SkuReview           as X
+import           Web.Skroutz.Types.SkuSpecification    as X
 import           Web.Skroutz.Types.Token               as X
 import           Web.Skroutz.Types.URI                 as X
