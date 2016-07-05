@@ -16,6 +16,7 @@ module Web.Skroutz.Types
 where
 
 import           Web.Skroutz.Types.AnySearchResult     as X
+import           Web.Skroutz.Types.AppliedFilters      as X
 import           Web.Skroutz.Types.Category            as X
 import           Web.Skroutz.Types.Manufacturer        as X
 import           Web.Skroutz.Types.Meta                as X
