@@ -55,6 +55,7 @@ library:
     - Web.Skroutz.Types
     - Web.Skroutz.Types.AnySearchResult
     - Web.Skroutz.Types.AppliedFilters
+    - Web.Skroutz.Types.AvailableFilters
     - Web.Skroutz.Types.Category
     - Web.Skroutz.Types.Manufacturer
     - Web.Skroutz.Types.Meta
