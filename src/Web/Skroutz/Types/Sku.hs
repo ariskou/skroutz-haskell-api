@@ -14,10 +14,12 @@
 module Web.Skroutz.Types.Sku
 where
 
-import           Data.Text                   (Text)
-import           GHC.Generics                (Generic)
+import           Data.Text                      (Text)
+import           GHC.Generics                   (Generic)
 import           Web.Skroutz.TH
+import           Web.Skroutz.Types.Manufacturer
 import           Web.Skroutz.Types.Meta
+import           Web.Skroutz.Types.Product
 import           Web.Skroutz.Types.SkuImages
 import           Web.Skroutz.Types.URI
 
@@ -40,6 +42,8 @@ data Sku = Sku {
   , _skuVirtual              :: Bool
   , _skuImages               :: SkuImages
   , _skuWebUri               :: URI
+  , _skuProducts             :: Maybe [Product]
+  , _skuManufacturer         :: Maybe Manufacturer
   } deriving (Generic, Show)
 
 makeLensesAndJSON ''Sku "_sku"
