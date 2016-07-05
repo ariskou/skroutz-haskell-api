@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ShopReview
+-- Module      :  Web.Skroutz.Types.Base.ShopReview
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -11,13 +11,13 @@
 --
 -- Provides the 'ShopReview' type, a user review of a shop.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ShopReview
+module Web.Skroutz.Types.Base.ShopReview
 where
 
 import           Data.Text              (Text)
 import           GHC.Generics           (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Meta
+import           Web.Skroutz.Types.Base.Meta
 
 data ShopReview = ShopReview {
     _shopReviewId        :: Int

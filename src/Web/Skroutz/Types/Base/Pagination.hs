@@ -2,24 +2,26 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.AppliedFilters
+-- Module      :  Web.Skroutz.Types.Base.Pagination
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the 'AppliedFilters' type.
+-- Provides the 'Pagination' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.AppliedFilters
+module Web.Skroutz.Types.Base.Pagination
 where
 
 import           GHC.Generics   (Generic)
 import           Web.Skroutz.TH
 
-data AppliedFilters = AppliedFilters {
-    _appliedFiltersFilters       :: Maybe [Int]
-  , _appliedFiltersManufacturers :: Maybe [Int]
+data Pagination = Pagination {
+    _paginationTotalResults :: Int
+  , _paginationTotalPages   :: Int
+  , _paginationPage         :: Int
+  , _paginationPer          :: Int
   } deriving (Generic, Show)
 
-makeLensesAndJSON ''AppliedFilters "_appliedFilters"
+makeLensesAndJSON ''Pagination "_pagination"

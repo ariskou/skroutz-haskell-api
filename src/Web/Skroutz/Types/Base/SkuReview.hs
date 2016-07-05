@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.SkuReview
+-- Module      :  Web.Skroutz.Types.Base.SkuReview
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -11,13 +11,13 @@
 --
 -- Provides the 'SkuReview' type, a user review of an 'SKU'.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.SkuReview
+module Web.Skroutz.Types.Base.SkuReview
 where
 
 import           Data.Text              (Text)
 import           GHC.Generics           (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Meta
+import           Web.Skroutz.Types.Base.Meta
 
 data SkuReview = SkuReview {
     _skuReviewId                :: Int

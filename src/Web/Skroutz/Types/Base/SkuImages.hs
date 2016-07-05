@@ -2,26 +2,25 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Token
+-- Module      :  Web.Skroutz.Types.Base.SkuImages
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the 'Token' type, the access token required to access the API.
+-- Provides the 'SkuImages' type, the structured images of a 'Sku'.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Token
+module Web.Skroutz.Types.Base.SkuImages
 where
 
-import           Data.Text      (Text)
-import           GHC.Generics   (Generic)
+import           GHC.Generics          (Generic)
 import           Web.Skroutz.TH
+import           Web.Skroutz.Types.Base.URI
 
-data Token = Token {
-    _tokenAccessToken :: Text
-  , _tokenTokenType   :: Text
-  , _tokenExpiresIn   :: Int
+data SkuImages = SkuImages {
+    _skuImagesMain         :: URI
+  , _skuImagesAlternatives :: [URI]
   } deriving (Generic, Show)
 
-makeLensesAndJSON ''Token "_token"
+makeLensesAndJSON ''SkuImages "_skuImages"

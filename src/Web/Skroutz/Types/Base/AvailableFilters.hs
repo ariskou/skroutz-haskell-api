@@ -2,25 +2,26 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.SkuImages
+-- Module      :  Web.Skroutz.Types.Base.AvailableFilters
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the 'SkuImages' type, the structured images of a 'Sku'.
+-- Provides the 'AvailableFilters' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.SkuImages
+module Web.Skroutz.Types.Base.AvailableFilters
 where
 
-import           GHC.Generics          (Generic)
+import           Data.Map       (Map)
+import           Data.Text      (Text)
+import           GHC.Generics   (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.URI
 
-data SkuImages = SkuImages {
-    _skuImagesMain         :: URI
-  , _skuImagesAlternatives :: [URI]
+data AvailableFilters = AvailableFilters {
+    _availableFiltersFilters       :: Maybe (Map Text Int)
+  , _availableFiltersManufacturers :: Maybe (Map Text Int)
   } deriving (Generic, Show)
 
-makeLensesAndJSON ''SkuImages "_skuImages"
+makeLensesAndJSON ''AvailableFilters "_availableFilters"

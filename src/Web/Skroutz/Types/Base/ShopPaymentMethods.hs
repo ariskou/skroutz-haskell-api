@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ShopPaymentMethods
+-- Module      :  Web.Skroutz.Types.Base.ShopPaymentMethods
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -11,7 +11,7 @@
 --
 -- Provides the 'ShopPaymentMethods' type, the payment methods supported by a shop.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ShopPaymentMethods
+module Web.Skroutz.Types.Base.ShopPaymentMethods
 where
 
 import           Data.Text      (Text)

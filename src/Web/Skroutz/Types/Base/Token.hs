@@ -2,26 +2,26 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.AvailableFilters
+-- Module      :  Web.Skroutz.Types.Base.Token
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the 'AvailableFilters' type.
+-- Provides the 'Token' type, the access token required to access the API.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.AvailableFilters
+module Web.Skroutz.Types.Base.Token
 where
 
-import           Data.Map       (Map)
 import           Data.Text      (Text)
 import           GHC.Generics   (Generic)
 import           Web.Skroutz.TH
 
-data AvailableFilters = AvailableFilters {
-    _availableFiltersFilters       :: Maybe (Map Text Int)
-  , _availableFiltersManufacturers :: Maybe (Map Text Int)
+data Token = Token {
+    _tokenAccessToken :: Text
+  , _tokenTokenType   :: Text
+  , _tokenExpiresIn   :: Int
   } deriving (Generic, Show)
 
-makeLensesAndJSON ''AvailableFilters "_availableFilters"
+makeLensesAndJSON ''Token "_token"

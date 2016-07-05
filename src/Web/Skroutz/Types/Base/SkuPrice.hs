@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.SkuPrice
+-- Module      :  Web.Skroutz.Types.Base.SkuPrice
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -11,7 +11,7 @@
 --
 -- Provides the 'SkuPrice' type, the price of an 'SKU'.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.SkuPrice
+module Web.Skroutz.Types.Base.SkuPrice
 where
 
 import           Data.Text      (Text)

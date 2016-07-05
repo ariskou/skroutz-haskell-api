@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ShopLocationAddress
+-- Module      :  Web.Skroutz.Types.Base.ShopLocationAddress
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -11,7 +11,7 @@
 --
 -- Provides the 'ShopLocationAddress' type, the structured address of a shop location.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ShopLocationAddress
+module Web.Skroutz.Types.Base.ShopLocationAddress
 where
 
 import           Data.Text      (Text)

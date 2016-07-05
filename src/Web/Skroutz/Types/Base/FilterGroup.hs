@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.FilterGroup
+-- Module      :  Web.Skroutz.Types.Base.FilterGroup
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -11,13 +11,13 @@
 --
 -- Provides the 'FilterGroup' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.FilterGroup
+module Web.Skroutz.Types.Base.FilterGroup
 where
 
 import           Data.Text              (Text)
 import           GHC.Generics           (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Meta
+import           Web.Skroutz.Types.Base.Meta
 
 data FilterGroup = FilterGroup {
     _filterGroupId         :: Int

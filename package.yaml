@@ -54,29 +54,29 @@ library:
   source-dirs: src
   other-modules:
     - Web.Skroutz.Types
-    - Web.Skroutz.Types.GeneralSearchResult
-    - Web.Skroutz.Types.AppliedFilters
-    - Web.Skroutz.Types.AvailableFilters
-    - Web.Skroutz.Types.Category
-    - Web.Skroutz.Types.FilterGroup
-    - Web.Skroutz.Types.Manufacturer
-    - Web.Skroutz.Types.Meta
-    - Web.Skroutz.Types.Pagination
-    - Web.Skroutz.Types.Product
-    - Web.Skroutz.Types.Shop
-    - Web.Skroutz.Types.ShopPaymentMethods
-    - Web.Skroutz.Types.ShopShipping
-    - Web.Skroutz.Types.ShopLocation
-    - Web.Skroutz.Types.ShopLocationAddress
-    - Web.Skroutz.Types.ShopReview
-    - Web.Skroutz.Types.Sku
-    - Web.Skroutz.Types.SkuImages
-    - Web.Skroutz.Types.SkuReview
-    - Web.Skroutz.Types.SkuSpecification
-    - Web.Skroutz.Types.SkuPrice
-    - Web.Skroutz.Types.StrongMatches
-    - Web.Skroutz.Types.Token
-    - Web.Skroutz.Types.URI
+    - Web.Skroutz.Types.Base.GeneralSearchResult
+    - Web.Skroutz.Types.Base.AppliedFilters
+    - Web.Skroutz.Types.Base.AvailableFilters
+    - Web.Skroutz.Types.Base.Category
+    - Web.Skroutz.Types.Base.FilterGroup
+    - Web.Skroutz.Types.Base.Manufacturer
+    - Web.Skroutz.Types.Base.Meta
+    - Web.Skroutz.Types.Base.Pagination
+    - Web.Skroutz.Types.Base.Product
+    - Web.Skroutz.Types.Base.Shop
+    - Web.Skroutz.Types.Base.ShopPaymentMethods
+    - Web.Skroutz.Types.Base.ShopShipping
+    - Web.Skroutz.Types.Base.ShopLocation
+    - Web.Skroutz.Types.Base.ShopLocationAddress
+    - Web.Skroutz.Types.Base.ShopReview
+    - Web.Skroutz.Types.Base.Sku
+    - Web.Skroutz.Types.Base.SkuImages
+    - Web.Skroutz.Types.Base.SkuReview
+    - Web.Skroutz.Types.Base.SkuSpecification
+    - Web.Skroutz.Types.Base.SkuPrice
+    - Web.Skroutz.Types.Base.StrongMatches
+    - Web.Skroutz.Types.Base.Token
+    - Web.Skroutz.Types.Base.URI
     - Web.Skroutz.TH
     - Web.Skroutz.Endpoints
     - Web.Skroutz.Endpoints.Auth
