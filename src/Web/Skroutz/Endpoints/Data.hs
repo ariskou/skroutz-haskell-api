@@ -25,10 +25,27 @@ import           Servant.API
 import           Servant.Client
 import           Web.Skroutz.Types
 
-type WithRateLimitingHeaders a = Headers '[
+type WithHeaders a = Headers '[
     Header "X-RateLimit-Limit" Int
   , Header "X-RateLimit-Remaining" Int
   , Header "X-RateLimit-Reset" Int
+  , Header "Content-Type" Text
+  , Header "Vary" Text
+  , Header "X-Frame-Options" Text
+  , Header "X-XSS-Protection" Text
+  , Header "X-Content-Type-Options" Text
+  , Header "Link" Text
+  , Header "Cache-Control" Text
+  , Header "ETag" Text
+  , Header "X-Request-Id" Text
+  , Header "X-DNS-Prefetch-Control" Text
+  , Header "Access-Control-Allow-Origin" Text
+  , Header "Access-Control-Allow-Methods" Text
+  , Header "Content-Length" Text
+  , Header "Accept-Ranges" Text
+  , Header "Date" Text
+  , Header "Age" Text
+  , Header "X-Cache" Text
   ] a
 
 type AcceptHeader = Header "Accept" Text
@@ -38,7 +55,7 @@ type AuthorizationHeader = Header "Authorization" Text
 type DataAPIMethod a =
   AcceptHeader
   :> AuthorizationHeader
-  :> Get '[JSON] (WithRateLimitingHeaders a)
+  :> Get '[JSON] (WithHeaders a)
 
 type DataAPI =
   "categories" :> Capture "category_id" Int :> DataAPIMethod Category
@@ -46,7 +63,7 @@ type DataAPI =
 dataAPI :: Proxy DataAPI
 dataAPI = Proxy
 
-getCategory :: Int -> Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO (WithRateLimitingHeaders Category)
+getCategory :: Int -> Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO (WithHeaders Category)
 getCategory = client dataAPI
 
 defaultDataManagerSettings :: ManagerSettings
