@@ -83,15 +83,10 @@ library
   exposed-modules:
       Web.Skroutz
   other-modules:
-      Web.Skroutz.Types
-      Web.Skroutz.Types.Base.GeneralSearchResult
-      Web.Skroutz.Types.Base.AppliedFilters
-      Web.Skroutz.Types.Base.AvailableFilters
+      Web.Skroutz.Types.Base
       Web.Skroutz.Types.Base.Category
       Web.Skroutz.Types.Base.FilterGroup
       Web.Skroutz.Types.Base.Manufacturer
-      Web.Skroutz.Types.Base.Meta
-      Web.Skroutz.Types.Base.Pagination
       Web.Skroutz.Types.Base.Product
       Web.Skroutz.Types.Base.Shop
       Web.Skroutz.Types.Base.ShopPaymentMethods
@@ -104,9 +99,26 @@ library
       Web.Skroutz.Types.Base.SkuReview
       Web.Skroutz.Types.Base.SkuSpecification
       Web.Skroutz.Types.Base.SkuPrice
-      Web.Skroutz.Types.Base.StrongMatches
       Web.Skroutz.Types.Base.Token
       Web.Skroutz.Types.Base.URI
+      Web.Skroutz.Types.ResultWrappers
+      Web.Skroutz.Types.ResultWrappers.GeneralSearchResult
+      Web.Skroutz.Types.ResultWrappers.AppliedFilters
+      Web.Skroutz.Types.ResultWrappers.AvailableFilters
+      Web.Skroutz.Types.ResultWrappers.Category
+      Web.Skroutz.Types.ResultWrappers.FilterGroup
+      Web.Skroutz.Types.ResultWrappers.Manufacturer
+      Web.Skroutz.Types.ResultWrappers.Meta
+      Web.Skroutz.Types.ResultWrappers.Pagination
+      Web.Skroutz.Types.ResultWrappers.Product
+      Web.Skroutz.Types.ResultWrappers.Shop
+      Web.Skroutz.Types.ResultWrappers.ShopLocation
+      Web.Skroutz.Types.ResultWrappers.ShopReview
+      Web.Skroutz.Types.ResultWrappers.Sku
+      Web.Skroutz.Types.ResultWrappers.SkuReview
+      Web.Skroutz.Types.ResultWrappers.SkuSpecification
+      Web.Skroutz.Types.ResultWrappers.SkuPrice
+      Web.Skroutz.Types.ResultWrappers.StrongMatches
       Web.Skroutz.TH
       Web.Skroutz.Endpoints
       Web.Skroutz.Endpoints.Auth

@@ -25,16 +25,3 @@ data SkuPrice = SkuPrice {
   } deriving (Generic, Show)
 
 makeLensesAndJSON ''SkuPrice "_skuPrice"
-
-data MultipleSkuPriceResponse = MultipleSkuPriceResponse {
-    _multipleSkuPriceResponseAverage :: [SkuPrice]
-  , _multipleSkuPriceResponseLowest  ::  [SkuPrice]
-  } deriving (Generic, Show)
-
-makeLensesAndJSON ''MultipleSkuPriceResponse "_multipleSkuPriceResponse"
-
-data HistoricalSkuPriceResponse = HistoricalSkuPriceResponse {
-    _historicalSkuPriceResponseHistory :: MultipleSkuPriceResponse
-  } deriving (Generic, Show)
-
-makeLensesAndJSON ''HistoricalSkuPriceResponse "_historicalSkuPriceResponse"

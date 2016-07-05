@@ -17,7 +17,6 @@ where
 import           Data.Text              (Text)
 import           GHC.Generics           (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.Meta
 
 data FilterGroup = FilterGroup {
     _filterGroupId         :: Int
@@ -32,10 +31,3 @@ data FilterGroup = FilterGroup {
   } deriving (Generic, Show)
 
 makeLensesAndJSON ''FilterGroup "_filterGroup"
-
-data MultipleFilterGroupResponse = MultipleFilterGroupResponse {
-    _multipleFilterGroupResponseFilterGroups :: [FilterGroup]
-  , _multipleFilterGroupResponseMeta         :: Meta
-  } deriving (Generic, Show)
-
-makeLensesAndJSON ''MultipleFilterGroupResponse "_multipleFilterGroupResponse"

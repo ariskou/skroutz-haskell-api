@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.AppliedFilters
+-- Module      :  Web.Skroutz.Types.ResultWrappers.AppliedFilters
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -11,7 +11,7 @@
 --
 -- Provides the 'AppliedFilters' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.AppliedFilters
+module Web.Skroutz.Types.ResultWrappers.AppliedFilters
 where
 
 import           GHC.Generics   (Generic)

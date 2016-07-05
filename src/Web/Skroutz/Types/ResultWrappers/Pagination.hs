@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.Pagination
+-- Module      :  Web.Skroutz.Types.ResultWrappers.Pagination
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -11,7 +11,7 @@
 --
 -- Provides the 'Pagination' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.Pagination
+module Web.Skroutz.Types.ResultWrappers.Pagination
 where
 
 import           GHC.Generics   (Generic)

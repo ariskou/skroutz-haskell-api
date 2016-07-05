@@ -17,7 +17,6 @@ where
 import           Data.Text              (Text)
 import           GHC.Generics           (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.Meta
 
 data ShopReview = ShopReview {
     _shopReviewId        :: Int
@@ -29,10 +28,3 @@ data ShopReview = ShopReview {
   } deriving (Generic, Show)
 
 makeLensesAndJSON ''ShopReview "_shopReview"
-
-data MultipleShopReviewResponse = MultipleShopReviewResponse {
-    _multipleShopReviewResponseReviews :: [ShopReview]
-  , _multipleShopReviewResponseMeta    :: Meta
-  } deriving (Generic, Show)
-
-makeLensesAndJSON ''MultipleShopReviewResponse "_multipleShopReviewResponse"

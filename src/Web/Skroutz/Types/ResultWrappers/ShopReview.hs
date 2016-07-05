@@ -2,31 +2,27 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.SkuReview
+-- Module      :  Web.Skroutz.Types.ResultWrappers.ShopReview
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the 'SkuReview' type, a user review of an 'SKU'.
+-- Provides the 'ShopReview' type, a user review of a shop.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.SkuReview
+module Web.Skroutz.Types.ResultWrappers.ShopReview
 where
 
 import           Data.Text              (Text)
 import           GHC.Generics           (Generic)
 import           Web.Skroutz.TH
+import           Web.Skroutz.Types.ResultWrappers.Meta
+import           Web.Skroutz.Types.Base.ShopReview
 
-data SkuReview = SkuReview {
-    _skuReviewId                :: Int
-  , _skuReviewUserId            :: Int
-  , _skuReviewReview            :: Text
-  , _skuReviewRating            :: Int
-  , _skuReviewCreatedAt         :: Text
-  , _skuReviewDemoted           :: Bool
-  , _skuReviewVotesCount        :: Int
-  , _skuReviewHelpfulVotesCount :: Int
+data MultipleShopReviewResponse = MultipleShopReviewResponse {
+    _multipleShopReviewResponseReviews :: [ShopReview]
+  , _multipleShopReviewResponseMeta    :: Meta
   } deriving (Generic, Show)
 
-makeLensesAndJSON ''SkuReview "_skuReview"
+makeLensesAndJSON ''MultipleShopReviewResponse "_multipleShopReviewResponse"

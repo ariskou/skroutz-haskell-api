@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.AvailableFilters
+-- Module      :  Web.Skroutz.Types.ResultWrappers.AvailableFilters
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -11,7 +11,7 @@
 --
 -- Provides the 'AvailableFilters' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.AvailableFilters
+module Web.Skroutz.Types.ResultWrappers.AvailableFilters
 where
 
 import           Data.Map       (Map)

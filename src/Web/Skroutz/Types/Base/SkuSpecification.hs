@@ -35,10 +35,3 @@ data SkuSpecification = SkuSpecification {
   } deriving (Generic, Show)
 
 makeLensesAndJSON ''SkuSpecification "_skuSpecification"
-
-data MultipleSkuSpecificationResponse = MultipleSkuSpecificationResponse {
-    _multipleSkuSpecificationResponseSpecifications :: [SkuSpecification]
-  , _multipleSkuSpecificationResponseGroups         :: Maybe [SkuSpecificationsGroup]
-  } deriving (Generic, Show)
-
-makeLensesAndJSON ''MultipleSkuSpecificationResponse "_multipleSkuSpecificationResponse"

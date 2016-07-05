@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.StrongMatches
+-- Module      :  Web.Skroutz.Types.ResultWrappers.StrongMatches
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -11,7 +11,7 @@
 --
 -- Provides the 'StrongMatches' type, used for strong match metadata in results.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.StrongMatches
+module Web.Skroutz.Types.ResultWrappers.StrongMatches
 where
 
 import           GHC.Generics                   (Generic)

@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.GeneralSearchResult
+-- Module      :  Web.Skroutz.Types.ResultWrappers.GeneralSearchResult
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -11,13 +11,13 @@
 --
 -- Provides the 'GeneralSearchResult' type, representing multiple types of search results.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.GeneralSearchResult
+module Web.Skroutz.Types.ResultWrappers.GeneralSearchResult
 where
 
 import           GHC.Generics               (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.Base.Category
-import           Web.Skroutz.Types.Base.Meta
+import           Web.Skroutz.Types.ResultWrappers.Meta
 
 data MultipleGeneralSearchResultResponse = MultipleGeneralSearchResultResponse {
     _multipleGeneralSearchResultResponseCategories :: [Category]
