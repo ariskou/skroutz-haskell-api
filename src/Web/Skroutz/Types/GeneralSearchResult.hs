@@ -1,3 +1,5 @@
+{-# LANGUAGE DeriveGeneric   #-}
+{-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.GeneralSearchResult
@@ -11,3 +13,15 @@
 ----------------------------------------------------------------------------
 module Web.Skroutz.Types.GeneralSearchResult
 where
+
+import           GHC.Generics               (Generic)
+import           Web.Skroutz.TH
+import           Web.Skroutz.Types.Category
+import           Web.Skroutz.Types.Meta
+
+data MultipleGeneralSearchResultResponse = MultipleGeneralSearchResultResponse {
+    _multipleGeneralSearchResultResponseCategories :: [Category]
+  , _multipleGeneralSearchResultResponseMeta       :: Meta
+  } deriving (Generic, Show)
+
+makeLensesAndJSON ''MultipleGeneralSearchResultResponse "_multipleGeneralSearchResultResponse"
