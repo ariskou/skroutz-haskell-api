@@ -15,6 +15,7 @@ module Web.Skroutz.Types.ResultWrappers
   )
 where
 
+import           Web.Skroutz.Types.ResultWrappers.Alternative         as X
 import           Web.Skroutz.Types.ResultWrappers.AppliedFilters      as X
 import           Web.Skroutz.Types.ResultWrappers.AvailableFilters    as X
 import           Web.Skroutz.Types.ResultWrappers.Category            as X

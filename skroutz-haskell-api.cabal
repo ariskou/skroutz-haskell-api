@@ -103,6 +103,7 @@ library
       Web.Skroutz.Types.Base.Token
       Web.Skroutz.Types.Base.URI
       Web.Skroutz.Types.ResultWrappers
+      Web.Skroutz.Types.ResultWrappers.Alternative
       Web.Skroutz.Types.ResultWrappers.GeneralSearchResult
       Web.Skroutz.Types.ResultWrappers.AppliedFilters
       Web.Skroutz.Types.ResultWrappers.AvailableFilters
