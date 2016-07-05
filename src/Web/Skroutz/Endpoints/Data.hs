@@ -1,6 +1,7 @@
 {-# LANGUAGE DataKinds         #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TypeOperators     #-}
+{-# LANGUAGE DeriveGeneric   #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Endoints.Data
@@ -19,6 +20,7 @@ import           Control.Monad.Trans.Except (ExceptT)
 import           Data.Monoid                ((<>))
 import           Data.Proxy                 (Proxy (..))
 import           Data.Text                  (Text)
+import           GHC.Generics               (Generic)
 import           Network.HTTP.Client        (Manager, ManagerSettings,
                                              defaultManagerSettings)
 import           Servant.API
@@ -57,11 +59,27 @@ type DataAPIMethod a =
   :> AuthorizationHeader
   :> Get '[JSON] (WithHeaders a)
 
+data ManufacturerOrderBy = ManufacturerOrderByName | ManufacturerOrderByPopularity
+ deriving (Generic, Show)
+
+instance ToHttpApiData ManufacturerOrderBy where
+  toQueryParam ManufacturerOrderByName = "name"
+  toQueryParam ManufacturerOrderByPopularity = "popularity"
+
+data ManufacturerOrderDir = ManufacturerOrderDirAscending | ManufacturerOrderDirDescending
+ deriving (Generic, Show)
+
+instance ToHttpApiData ManufacturerOrderDir where
+  toQueryParam ManufacturerOrderDirAscending = "asc"
+  toQueryParam ManufacturerOrderDirDescending = "desc"
+
 type DataAPI =
         "categories" :> DataAPIMethod MultipleCategoryResponse
   :<|>  "categories" :> Capture "category_id" Int :> DataAPIMethod Category
   :<|>  "categories" :> Capture "category_id" Int :> "parent" :> DataAPIMethod Category
   :<|>  "categories" :> "root" :> DataAPIMethod Category
+  :<|>  "categories" :> Capture "category_id" Int :> "children" :> DataAPIMethod MultipleCategoryResponse
+  :<|>  "categories" :> Capture "category_id" Int :> "manufacturers" :> QueryParam "order_by" ManufacturerOrderBy :> QueryParam "order_dir" ManufacturerOrderDir :> DataAPIMethod MultipleManufacturerResponse
 
 dataAPI :: Proxy DataAPI
 dataAPI = Proxy
@@ -76,7 +94,11 @@ getCategoryParent :: Int -> StandardParams Category
 
 getCategoryRoot :: StandardParams Category
 
-getCategories :<|> getCategory :<|> getCategoryParent :<|> getCategoryRoot = client dataAPI
+getCategoryChildren :: Int -> StandardParams MultipleCategoryResponse
+
+getCategoryManufacturers :: Int -> Maybe ManufacturerOrderBy -> Maybe ManufacturerOrderDir -> StandardParams MultipleManufacturerResponse
+
+getCategories :<|> getCategory :<|> getCategoryParent :<|> getCategoryRoot :<|> getCategoryChildren :<|> getCategoryManufacturers = client dataAPI
 
 defaultDataManagerSettings :: ManagerSettings
 defaultDataManagerSettings = defaultManagerSettings
