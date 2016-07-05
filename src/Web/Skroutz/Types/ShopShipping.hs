@@ -14,7 +14,7 @@
 module Web.Skroutz.Types.ShopShipping
 where
 
-import           Data.Text
+import           Data.Text      (Text)
 import           GHC.Generics   (Generic)
 import           Web.Skroutz.TH
 
