@@ -16,12 +16,12 @@
 module Web.Skroutz.Endpoints.Types.Category
 where
 
-import           Data.Proxy                 (Proxy (..))
-import           GHC.Generics               (Generic)
+import           Data.Proxy                         (Proxy (..))
+import           GHC.Generics                       (Generic)
 import           Servant.API
 import           Servant.Client
-import           Web.Skroutz.Types
 import           Web.Skroutz.Endpoints.Types.Common
+import           Web.Skroutz.Types
 
 data ManufacturerOrderBy = ManufacturerOrderByName | ManufacturerOrderByPopularity
  deriving (Generic, Show)
