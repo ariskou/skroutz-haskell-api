@@ -79,6 +79,7 @@ library
     , http-api-data
     , http-conduit
     , http-types
+    , containers
   exposed-modules:
       Web.Skroutz
   other-modules:
