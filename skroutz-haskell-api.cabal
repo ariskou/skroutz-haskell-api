@@ -110,6 +110,7 @@ library
       Web.Skroutz.Endpoints.Types.Sku
       Web.Skroutz.Endpoints.Types.Product
       Web.Skroutz.Endpoints.Types.Shop
+      Web.Skroutz.Endpoints.Types.ShopLocation
   default-language: Haskell2010
 
 test-suite spec

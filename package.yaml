@@ -80,6 +80,7 @@ library:
     - Web.Skroutz.Endpoints.Types.Sku
     - Web.Skroutz.Endpoints.Types.Product
     - Web.Skroutz.Endpoints.Types.Shop
+    - Web.Skroutz.Endpoints.Types.ShopLocation
   exposed-modules:
     - Web.Skroutz
 
