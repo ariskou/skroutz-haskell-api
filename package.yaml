@@ -73,7 +73,9 @@ library:
     - Web.Skroutz.TH
     - Web.Skroutz.Endpoints
     - Web.Skroutz.Endpoints.Auth
-    - Web.Skroutz.Endpoints.Data
+    - Web.Skroutz.Endpoints.Types
+    - Web.Skroutz.Endpoints.Types.Common
+    - Web.Skroutz.Endpoints.Types.Category
   exposed-modules:
     - Web.Skroutz
 
