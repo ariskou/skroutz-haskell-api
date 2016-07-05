@@ -58,13 +58,25 @@ type DataAPIMethod a =
   :> Get '[JSON] (WithHeaders a)
 
 type DataAPI =
-  "categories" :> Capture "category_id" Int :> DataAPIMethod Category
+        "categories" :> DataAPIMethod MultipleCategoryResponse
+  :<|>  "categories" :> Capture "category_id" Int :> DataAPIMethod Category
+  :<|>  "categories" :> Capture "category_id" Int :> "parent" :> DataAPIMethod Category
+  :<|>  "categories" :> "root" :> DataAPIMethod Category
 
 dataAPI :: Proxy DataAPI
 dataAPI = Proxy
 
-getCategory :: Int -> Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO (WithHeaders Category)
-getCategory = client dataAPI
+type StandardParams a = Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO (WithHeaders a)
+
+getCategories :: StandardParams MultipleCategoryResponse
+
+getCategory :: Int -> StandardParams Category
+
+getCategoryParent :: Int -> StandardParams Category
+
+getCategoryRoot :: StandardParams Category
+
+getCategories :<|> getCategory :<|> getCategoryParent :<|> getCategoryRoot = client dataAPI
 
 defaultDataManagerSettings :: ManagerSettings
 defaultDataManagerSettings = defaultManagerSettings
