@@ -19,13 +19,13 @@ import           GHC.Generics   (Generic)
 import           Web.Skroutz.TH
 
 data ShopLocationAddress = ShopLocationAddress {
-    _shopLocationAddressId           :: Int
-  , _shopLocationAddressStreetNumber :: Text
-  , _shopLocationAddressStreet       :: Text
-  , _shopLocationAddressPostcode     :: Text
-  , _shopLocationAddressCity         :: Text
-  , _shopLocationAddressRegion       :: Text
-  , _shopLocationAddressCountry      :: Text
+    _shopLocationAddressId           :: Maybe Int
+  , _shopLocationAddressStreetNumber :: Maybe Text
+  , _shopLocationAddressStreet       :: Maybe Text
+  , _shopLocationAddressPostcode     :: Maybe Text
+  , _shopLocationAddressCity         :: Maybe Text
+  , _shopLocationAddressRegion       :: Maybe Text
+  , _shopLocationAddressCountry      :: Maybe Text
   } deriving (Generic, Show)
 
 makeLensesAndJSON ''ShopLocationAddress "_shopLocationAddress"

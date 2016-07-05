@@ -31,10 +31,16 @@ data ShopLocation = ShopLocation {
   , _shopLocationLat         :: Text
   , _shopLocationLng         :: Text
   , _shopLocationInfo        :: Text
-  , _shopLocationAddress     :: ShopLocationAddress
+  , _shopLocationAddress     :: Maybe ShopLocationAddress
   } deriving (Generic, Show)
 
 makeLensesAndJSON ''ShopLocation "_shopLocation"
+
+data SingleShopLocationResponse = SingleShopLocationResponse {
+    _singleShopLocationResponseLocation :: ShopLocation
+  } deriving (Generic, Show)
+
+makeLensesAndJSON ''SingleShopLocationResponse "_singleShopLocationResponse"
 
 data MultipleShopLocationResponse = MultipleShopLocationResponse {
     _multipleShopLocationResponseLocations :: [ShopLocation]
