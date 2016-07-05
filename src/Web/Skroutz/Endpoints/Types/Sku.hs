@@ -1,5 +1,6 @@
 {-# LANGUAGE DataKinds         #-}
 {-# LANGUAGE DeriveGeneric     #-}
+{-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TypeOperators     #-}
 ----------------------------------------------------------------------------
@@ -17,12 +18,22 @@ module Web.Skroutz.Endpoints.Types.Sku
 where
 
 import           Data.Proxy                         (Proxy (..))
-import           Data.Text                          (Text)
+import           Data.Text                          (Text, intercalate)
 import           GHC.Generics                       (Generic)
 import           Servant.API
 import           Servant.Client
 import           Web.Skroutz.Endpoints.Types.Common
 import           Web.Skroutz.Types
+
+data SkuEmbed = SkuEmbedProducts | SkuEmbedManufacturer
+ deriving (Generic, Show)
+
+instance ToHttpApiData SkuEmbed where
+  toQueryParam SkuEmbedProducts = "products"
+  toQueryParam SkuEmbedManufacturer = "manufacturer"
+
+instance ToHttpApiData [SkuEmbed] where
+  toQueryParam xs = intercalate "," $ fmap toQueryParam xs
 
 data SkuOrderBy = SkuOrderByPriceVAT | SkuOrderByPopularity | SkuOrderByRating
  deriving (Generic, Show)
@@ -45,7 +56,6 @@ data SkuSpecificationInclude = SkuSpecificationIncludeGroup
 instance ToHttpApiData SkuSpecificationInclude where
   toQueryParam SkuSpecificationIncludeGroup = "group"
 
-
 data SkuIncludeMeta = SkuIncludeMetaAvailableFilters | SkuIncludeMetaAppliedFilters
  deriving (Generic, Show)
 
@@ -63,16 +73,17 @@ type SkuSearchAPI =
   :> QueryParam "q" Text
   :> QueryParams "manufacturer_ids[]" Int
   :> QueryParams "filter_ids[]" Int
+  :> QueryParam "embed" [SkuEmbed]
   :> DataAPIMethod MultipleSkuResponse
 
 type SkuAPI =
         SkuSearchAPI
-  :<|>  "skus" :> Capture "sku_id" Int :> DataAPIMethod SingleSkuResponse
-  :<|>  "skus" :> Capture "sku_id" Int :> "similar" :> DataAPIMethod MultipleSkuResponse
-  :<|>  "skus" :> Capture "sku_id" Int :> "products" :> DataAPIMethod MultipleProductResponse
-  :<|>  "skus" :> Capture "sku_id" Int :> "reviews" :> DataAPIMethod MultipleSkuReviewResponse
-  :<|>  "skus" :> Capture "sku_id" Int :> "specifications" :> QueryParam "include" SkuSpecificationInclude :> DataAPIMethod MultipleSkuSpecificationResponse
-  :<|>  "skus" :> Capture "sku_id" Int :> "price_history" :> DataAPIMethod HistoricalSkuPriceResponse
+  :<|>  "skus" :> Capture "sku_id" Int :> QueryParam "embed" [SkuEmbed] :> DataAPIMethod SingleSkuResponse
+  :<|>  "skus" :> Capture "sku_id" Int :> "similar" :> QueryParam "embed" [SkuEmbed] :> DataAPIMethod MultipleSkuResponse
+  :<|>  "skus" :> Capture "sku_id" Int :> "products" :> QueryParam "embed" [SkuEmbed] :> DataAPIMethod MultipleProductResponse
+  :<|>  "skus" :> Capture "sku_id" Int :> "reviews" :> QueryParam "embed" [SkuEmbed] :> DataAPIMethod MultipleSkuReviewResponse
+  :<|>  "skus" :> Capture "sku_id" Int :> "specifications" :> QueryParam "include" SkuSpecificationInclude :> QueryParam "embed" [SkuEmbed] :> DataAPIMethod MultipleSkuSpecificationResponse
+  :<|>  "skus" :> Capture "sku_id" Int :> "price_history" :> QueryParam "embed" [SkuEmbed] :> DataAPIMethod HistoricalSkuPriceResponse
 
 skuAPI :: Proxy SkuAPI
 skuAPI = Proxy
@@ -85,18 +96,19 @@ getCategorySkus ::
   -> Maybe Text
   -> [Int]
   -> [Int]
+  -> Maybe [SkuEmbed]
   -> StandardDataParams MultipleSkuResponse
 
-getSku :: Int -> StandardDataParams SingleSkuResponse
+getSku :: Int -> Maybe [SkuEmbed] -> StandardDataParams SingleSkuResponse
 
-getSimilarSkus :: Int -> StandardDataParams MultipleSkuResponse
+getSimilarSkus :: Int -> Maybe [SkuEmbed] -> StandardDataParams MultipleSkuResponse
 
-getSkuProducts :: Int -> StandardDataParams MultipleProductResponse
+getSkuProducts :: Int -> Maybe [SkuEmbed] -> StandardDataParams MultipleProductResponse
 
-getSkuReviews :: Int -> StandardDataParams MultipleSkuReviewResponse
+getSkuReviews :: Int -> Maybe [SkuEmbed] -> StandardDataParams MultipleSkuReviewResponse
 
-getSkuSpecifications :: Int -> Maybe SkuSpecificationInclude -> StandardDataParams MultipleSkuSpecificationResponse
+getSkuSpecifications :: Int -> Maybe SkuSpecificationInclude -> Maybe [SkuEmbed] -> StandardDataParams MultipleSkuSpecificationResponse
 
-getSkuPriceHistory :: Int -> StandardDataParams HistoricalSkuPriceResponse
+getSkuPriceHistory :: Int -> Maybe [SkuEmbed] -> StandardDataParams HistoricalSkuPriceResponse
 
 getCategorySkus :<|> getSku :<|> getSimilarSkus :<|> getSkuProducts :<|> getSkuReviews :<|> getSkuSpecifications :<|> getSkuPriceHistory = client skuAPI
