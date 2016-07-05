@@ -23,3 +23,4 @@ import           Web.Skroutz.Endpoints.Types.Common       as X
 import           Web.Skroutz.Endpoints.Types.Manufacturer as X
 import           Web.Skroutz.Endpoints.Types.Product      as X
 import           Web.Skroutz.Endpoints.Types.Sku          as X
+import           Web.Skroutz.Endpoints.Types.Shop         as X
