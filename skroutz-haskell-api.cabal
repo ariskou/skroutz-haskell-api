@@ -118,6 +118,7 @@ library
       Web.Skroutz.Endpoints.Types.Shop
       Web.Skroutz.Endpoints.Types.ShopLocation
       Web.Skroutz.Endpoints.Types.ShopReview
+      Web.Skroutz.Endpoints.Types.FilterGroup
   default-language: Haskell2010
 
 test-suite spec
