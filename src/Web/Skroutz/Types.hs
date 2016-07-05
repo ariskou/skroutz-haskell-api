@@ -19,6 +19,7 @@ import           Web.Skroutz.Types.AnySearchResult     as X
 import           Web.Skroutz.Types.AppliedFilters      as X
 import           Web.Skroutz.Types.AvailableFilters    as X
 import           Web.Skroutz.Types.Category            as X
+import           Web.Skroutz.Types.FilterGroup         as X
 import           Web.Skroutz.Types.Manufacturer        as X
 import           Web.Skroutz.Types.Meta                as X
 import           Web.Skroutz.Types.Pagination          as X

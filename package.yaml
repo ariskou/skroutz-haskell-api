@@ -58,6 +58,7 @@ library:
     - Web.Skroutz.Types.AppliedFilters
     - Web.Skroutz.Types.AvailableFilters
     - Web.Skroutz.Types.Category
+    - Web.Skroutz.Types.FilterGroup
     - Web.Skroutz.Types.Manufacturer
     - Web.Skroutz.Types.Meta
     - Web.Skroutz.Types.Pagination
