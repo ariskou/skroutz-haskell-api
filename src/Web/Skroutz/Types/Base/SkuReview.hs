@@ -14,8 +14,8 @@
 module Web.Skroutz.Types.Base.SkuReview
 where
 
-import           Data.Text              (Text)
-import           GHC.Generics           (Generic)
+import           Data.Text      (Text)
+import           GHC.Generics   (Generic)
 import           Web.Skroutz.TH
 
 data SkuReview = SkuReview {

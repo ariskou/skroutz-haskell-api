@@ -14,8 +14,8 @@
 module Web.Skroutz.Types.Base.FilterGroup
 where
 
-import           Data.Text              (Text)
-import           GHC.Generics           (Generic)
+import           Data.Text      (Text)
+import           GHC.Generics   (Generic)
 import           Web.Skroutz.TH
 
 data FilterGroup = FilterGroup {

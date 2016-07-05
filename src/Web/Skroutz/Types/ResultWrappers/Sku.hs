@@ -14,15 +14,10 @@
 module Web.Skroutz.Types.ResultWrappers.Sku
 where
 
-import           Data.Text                      (Text)
-import           GHC.Generics                   (Generic)
+import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.Manufacturer
-import           Web.Skroutz.Types.ResultWrappers.Meta
-import           Web.Skroutz.Types.Base.Product
-import           Web.Skroutz.Types.Base.SkuImages
-import           Web.Skroutz.Types.Base.URI
 import           Web.Skroutz.Types.Base.Sku
+import           Web.Skroutz.Types.ResultWrappers.Meta
 
 data SingleSkuResponse = SingleSkuResponse {
     _singleSkuResponseSku :: Sku

@@ -14,7 +14,7 @@
 module Web.Skroutz.Types.ResultWrappers.GeneralSearchResult
 where
 
-import           GHC.Generics               (Generic)
+import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.Base.Category
 import           Web.Skroutz.Types.ResultWrappers.Meta

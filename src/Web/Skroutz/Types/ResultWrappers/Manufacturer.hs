@@ -14,12 +14,10 @@
 module Web.Skroutz.Types.ResultWrappers.Manufacturer
 where
 
-import           Data.Text              (Text)
-import           GHC.Generics           (Generic)
+import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.ResultWrappers.Meta
-import           Web.Skroutz.Types.Base.URI
 import           Web.Skroutz.Types.Base.Manufacturer
+import           Web.Skroutz.Types.ResultWrappers.Meta
 
 data SingleManufacturerResponse = SingleManufacturerResponse {
     _singleManufacturerResponseManufacturer :: Manufacturer

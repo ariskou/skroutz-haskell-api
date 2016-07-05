@@ -14,8 +14,7 @@
 module Web.Skroutz.Types.ResultWrappers.SkuSpecification
 where
 
-import           Data.Text      (Text)
-import           GHC.Generics   (Generic)
+import           GHC.Generics                            (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.Base.SkuSpecification
 

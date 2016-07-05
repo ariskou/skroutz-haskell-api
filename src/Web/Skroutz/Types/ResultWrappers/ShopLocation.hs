@@ -14,12 +14,10 @@
 module Web.Skroutz.Types.ResultWrappers.ShopLocation
 where
 
-import           Data.Text                             (Text)
 import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.ResultWrappers.Meta
-import           Web.Skroutz.Types.Base.ShopLocationAddress
 import           Web.Skroutz.Types.Base.ShopLocation
+import           Web.Skroutz.Types.ResultWrappers.Meta
 
 data SingleShopLocationResponse = SingleShopLocationResponse {
     _singleShopLocationResponseLocation :: ShopLocation

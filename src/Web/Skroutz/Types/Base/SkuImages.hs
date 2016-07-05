@@ -14,7 +14,7 @@
 module Web.Skroutz.Types.Base.SkuImages
 where
 
-import           GHC.Generics          (Generic)
+import           GHC.Generics               (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.Base.URI
 

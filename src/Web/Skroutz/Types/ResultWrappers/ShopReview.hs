@@ -14,11 +14,10 @@
 module Web.Skroutz.Types.ResultWrappers.ShopReview
 where
 
-import           Data.Text              (Text)
-import           GHC.Generics           (Generic)
+import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.ResultWrappers.Meta
 import           Web.Skroutz.Types.Base.ShopReview
+import           Web.Skroutz.Types.ResultWrappers.Meta
 
 data MultipleShopReviewResponse = MultipleShopReviewResponse {
     _multipleShopReviewResponseReviews :: [ShopReview]

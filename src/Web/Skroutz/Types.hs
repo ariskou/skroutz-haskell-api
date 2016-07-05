@@ -15,5 +15,5 @@ module Web.Skroutz.Types
   )
 where
 
-import           Web.Skroutz.Types.Base      as X
-import           Web.Skroutz.Types.ResultWrappers    as X
+import           Web.Skroutz.Types.Base           as X
+import           Web.Skroutz.Types.ResultWrappers as X

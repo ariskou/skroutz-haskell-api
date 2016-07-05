@@ -14,11 +14,10 @@
 module Web.Skroutz.Types.ResultWrappers.SkuReview
 where
 
-import           Data.Text              (Text)
-import           GHC.Generics           (Generic)
+import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.ResultWrappers.Meta
 import           Web.Skroutz.Types.Base.SkuReview
+import           Web.Skroutz.Types.ResultWrappers.Meta
 
 data MultipleSkuReviewResponse = MultipleSkuReviewResponse {
     _multipleSkuReviewResponseReviews :: [SkuReview]

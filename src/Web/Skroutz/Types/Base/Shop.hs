@@ -14,8 +14,8 @@
 module Web.Skroutz.Types.Base.Shop
 where
 
-import           Data.Text                            (Text)
-import           GHC.Generics                         (Generic)
+import           Data.Text                                 (Text)
+import           GHC.Generics                              (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.Base.ShopPaymentMethods
 import           Web.Skroutz.Types.Base.ShopShipping

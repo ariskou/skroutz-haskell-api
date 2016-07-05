@@ -14,12 +14,10 @@
 module Web.Skroutz.Types.ResultWrappers.Product
 where
 
-import           Data.Text              (Text)
-import           GHC.Generics           (Generic)
+import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.ResultWrappers.Meta
-import           Web.Skroutz.Types.Base.URI
 import           Web.Skroutz.Types.Base.Product
+import           Web.Skroutz.Types.ResultWrappers.Meta
 
 data SingleProductResponse = SingleProductResponse {
     _singleProductResponseProduct :: Product

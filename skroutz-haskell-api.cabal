@@ -83,6 +83,7 @@ library
   exposed-modules:
       Web.Skroutz
   other-modules:
+      Web.Skroutz.Types
       Web.Skroutz.Types.Base
       Web.Skroutz.Types.Base.Category
       Web.Skroutz.Types.Base.FilterGroup
