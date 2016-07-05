@@ -1,5 +1,4 @@
 {-# LANGUAGE DataKinds         #-}
-{-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TypeOperators     #-}
 ----------------------------------------------------------------------------
@@ -16,32 +15,20 @@
 module Web.Skroutz.Endpoints.Types.Category
 where
 
-import           Data.Proxy                         (Proxy (..))
-import           GHC.Generics                       (Generic)
+import           Data.Proxy                               (Proxy (..))
+import           GHC.Generics                             (Generic)
 import           Servant.API
 import           Servant.Client
 import           Web.Skroutz.Endpoints.Types.Common
+import           Web.Skroutz.Endpoints.Types.Manufacturer (ManufacturerOrderBy,
+                                                           ManufacturerOrderDir)
 import           Web.Skroutz.Types
-
-data ManufacturerOrderBy = ManufacturerOrderByName | ManufacturerOrderByPopularity
- deriving (Generic, Show)
-
-instance ToHttpApiData ManufacturerOrderBy where
-  toQueryParam ManufacturerOrderByName = "name"
-  toQueryParam ManufacturerOrderByPopularity = "popularity"
-
-data ManufacturerOrderDir = ManufacturerOrderDirAscending | ManufacturerOrderDirDescending
- deriving (Generic, Show)
-
-instance ToHttpApiData ManufacturerOrderDir where
-  toQueryParam ManufacturerOrderDirAscending = "asc"
-  toQueryParam ManufacturerOrderDirDescending = "desc"
 
 type CategoryAPI =
         "categories" :> DataAPIMethod MultipleCategoryResponse
-  :<|>  "categories" :> Capture "category_id" Int :> DataAPIMethod Category
-  :<|>  "categories" :> Capture "category_id" Int :> "parent" :> DataAPIMethod Category
-  :<|>  "categories" :> "root" :> DataAPIMethod Category
+  :<|>  "categories" :> Capture "category_id" Int :> DataAPIMethod SingleCategoryResponse
+  :<|>  "categories" :> Capture "category_id" Int :> "parent" :> DataAPIMethod SingleCategoryResponse
+  :<|>  "categories" :> "root" :> DataAPIMethod SingleCategoryResponse
   :<|>  "categories" :> Capture "category_id" Int :> "children" :> DataAPIMethod MultipleCategoryResponse
   :<|>  "categories" :> Capture "category_id" Int :> "manufacturers" :> QueryParam "order_by" ManufacturerOrderBy :> QueryParam "order_dir" ManufacturerOrderDir :> DataAPIMethod MultipleManufacturerResponse
 
@@ -50,11 +37,11 @@ categoryAPI = Proxy
 
 getCategories :: StandardDataParams MultipleCategoryResponse
 
-getCategory :: Int -> StandardDataParams Category
+getCategory :: Int -> StandardDataParams SingleCategoryResponse
 
-getCategoryParent :: Int -> StandardDataParams Category
+getCategoryParent :: Int -> StandardDataParams SingleCategoryResponse
 
-getCategoryRoot :: StandardDataParams Category
+getCategoryRoot :: StandardDataParams SingleCategoryResponse
 
 getCategoryChildren :: Int -> StandardDataParams MultipleCategoryResponse
 

@@ -106,6 +106,8 @@ library
       Web.Skroutz.Endpoints.Types
       Web.Skroutz.Endpoints.Types.Common
       Web.Skroutz.Endpoints.Types.Category
+      Web.Skroutz.Endpoints.Types.Manufacturer
+      Web.Skroutz.Endpoints.Types.Sku
   default-language: Haskell2010
 
 test-suite spec

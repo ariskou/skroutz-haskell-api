@@ -18,5 +18,6 @@ module Web.Skroutz.Endpoints.Types
 )
 where
 
-import           Web.Skroutz.Endpoints.Types.Common as X
-import           Web.Skroutz.Endpoints.Types.Category as X
+import           Web.Skroutz.Endpoints.Types.Category     as X
+import           Web.Skroutz.Endpoints.Types.Common       as X
+import           Web.Skroutz.Endpoints.Types.Manufacturer as X
