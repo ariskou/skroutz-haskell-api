@@ -78,6 +78,7 @@ library:
     - Web.Skroutz.Endpoints.Types.Category
     - Web.Skroutz.Endpoints.Types.Manufacturer
     - Web.Skroutz.Endpoints.Types.Sku
+    - Web.Skroutz.Endpoints.Types.Product
   exposed-modules:
     - Web.Skroutz
 

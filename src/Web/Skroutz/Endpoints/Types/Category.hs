@@ -16,7 +16,6 @@ module Web.Skroutz.Endpoints.Types.Category
 where
 
 import           Data.Proxy                               (Proxy (..))
-import           GHC.Generics                             (Generic)
 import           Servant.API
 import           Servant.Client
 import           Web.Skroutz.Endpoints.Types.Common

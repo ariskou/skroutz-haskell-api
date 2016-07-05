@@ -24,7 +24,6 @@ import           Web.Skroutz.Endpoints.Types.Common
 import           Web.Skroutz.Endpoints.Types.Sku    (SkuOrderBy, SkuOrderDir)
 import           Web.Skroutz.Types
 
-
 data ManufacturerOrderBy = ManufacturerOrderByName | ManufacturerOrderByPopularity
  deriving (Generic, Show)
 
@@ -42,8 +41,8 @@ instance ToHttpApiData ManufacturerOrderDir where
 type ManufacturerAPI =
         "manufacturers" :> DataAPIMethod MultipleManufacturerResponse
   :<|>  "manufacturers" :> Capture "manufacturer_id" Int :> DataAPIMethod SingleManufacturerResponse
-  :<|>  "manufacturers" :> Capture "category_id" Int :> "categories" :> QueryParam "order_by" ManufacturerOrderBy :> QueryParam "order_dir" ManufacturerOrderDir :> DataAPIMethod MultipleCategoryResponse
-  :<|>  "manufacturers" :> Capture "category_id" Int :> "skus" :> QueryParam "order_by" SkuOrderBy :> QueryParam "order_dir" SkuOrderDir :> DataAPIMethod MultipleSkuResponse
+  :<|>  "manufacturers" :> Capture "manufacturer_id" Int :> "categories" :> QueryParam "order_by" ManufacturerOrderBy :> QueryParam "order_dir" ManufacturerOrderDir :> DataAPIMethod MultipleCategoryResponse
+  :<|>  "manufacturers" :> Capture "manufacturer_id" Int :> "skus" :> QueryParam "order_by" SkuOrderBy :> QueryParam "order_dir" SkuOrderDir :> DataAPIMethod MultipleSkuResponse
 
 manufacturerAPI :: Proxy ManufacturerAPI
 manufacturerAPI = Proxy
