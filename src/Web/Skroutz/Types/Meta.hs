@@ -14,16 +14,18 @@
 module Web.Skroutz.Types.Meta
 where
 
-import           Data.Text                        (Text)
-import           GHC.Generics                     (Generic)
+import           Data.Text                          (Text)
+import           GHC.Generics                       (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.AppliedFilters
+import           Web.Skroutz.Types.AvailableFilters
 import           Web.Skroutz.Types.Pagination
 
 data Meta = Meta {
-    _metaPagination     :: Pagination
-  , _metaOrderedBy      :: Maybe Text
-  , _metaAppliedFilters :: Maybe AppliedFilters
+    _metaPagination       :: Pagination
+  , _metaOrderedBy        :: Maybe Text
+  , _metaAppliedFilters   :: Maybe AppliedFilters
+  , _metaAvailableFilters :: Maybe AvailableFilters
   } deriving (Generic, Show)
 
 makeLensesAndJSON ''Meta "_meta"
