@@ -1,7 +1,7 @@
 {-# LANGUAGE DataKinds         #-}
+{-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TypeOperators     #-}
-{-# LANGUAGE DeriveGeneric   #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Endoints.Data
