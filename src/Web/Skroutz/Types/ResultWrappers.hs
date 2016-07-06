@@ -35,3 +35,4 @@ import           Web.Skroutz.Types.ResultWrappers.SkuPrice            as X
 import           Web.Skroutz.Types.ResultWrappers.SkuReview           as X
 import           Web.Skroutz.Types.ResultWrappers.SkuSpecification    as X
 import           Web.Skroutz.Types.ResultWrappers.StrongMatches       as X
+import           Web.Skroutz.Types.ResultWrappers.User                as X
