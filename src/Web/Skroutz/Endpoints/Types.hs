@@ -27,7 +27,5 @@ import           Web.Skroutz.Endpoints.Types.GeneralSearchResult as X
 import           Web.Skroutz.Endpoints.Types.Manufacturer        as X
 import           Web.Skroutz.Endpoints.Types.Product             as X
 import           Web.Skroutz.Endpoints.Types.Shop                as X
-import           Web.Skroutz.Endpoints.Types.ShopLocation        as X
-import           Web.Skroutz.Endpoints.Types.ShopReview          as X
 import           Web.Skroutz.Endpoints.Types.Sku                 as X
 import           Web.Skroutz.Endpoints.Types.User                as X

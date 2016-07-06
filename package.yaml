@@ -65,8 +65,6 @@ library:
     - Web.Skroutz.Endpoints.Types.Manufacturer
     - Web.Skroutz.Endpoints.Types.Product
     - Web.Skroutz.Endpoints.Types.Shop
-    - Web.Skroutz.Endpoints.Types.ShopLocation
-    - Web.Skroutz.Endpoints.Types.ShopReview
     - Web.Skroutz.Endpoints.Types.Sku
     - Web.Skroutz.Endpoints.Types.User
     - Web.Skroutz.TH
