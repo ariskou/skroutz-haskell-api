@@ -83,35 +83,54 @@ library
   exposed-modules:
       Web.Skroutz
   other-modules:
+      Web.Skroutz.Endpoints
+      Web.Skroutz.Endpoints.Auth
+      Web.Skroutz.Endpoints.Types
+      Web.Skroutz.Endpoints.Types.Autocomplete
+      Web.Skroutz.Endpoints.Types.Category
+      Web.Skroutz.Endpoints.Types.Common
+      Web.Skroutz.Endpoints.Types.FilterGroup
+      Web.Skroutz.Endpoints.Types.Flag
+      Web.Skroutz.Endpoints.Types.GeneralSearchResult
+      Web.Skroutz.Endpoints.Types.Manufacturer
+      Web.Skroutz.Endpoints.Types.Product
+      Web.Skroutz.Endpoints.Types.Shop
+      Web.Skroutz.Endpoints.Types.ShopLocation
+      Web.Skroutz.Endpoints.Types.ShopReview
+      Web.Skroutz.Endpoints.Types.Sku
+      Web.Skroutz.Endpoints.Types.User
+      Web.Skroutz.TH
       Web.Skroutz.Types
       Web.Skroutz.Types.Base
+      Web.Skroutz.Types.Base.Autocomplete
       Web.Skroutz.Types.Base.Category
       Web.Skroutz.Types.Base.FilterGroup
+      Web.Skroutz.Types.Base.Flag
       Web.Skroutz.Types.Base.Manufacturer
       Web.Skroutz.Types.Base.Product
       Web.Skroutz.Types.Base.Shop
-      Web.Skroutz.Types.Base.ShopPaymentMethods
-      Web.Skroutz.Types.Base.ShopShipping
       Web.Skroutz.Types.Base.ShopLocation
       Web.Skroutz.Types.Base.ShopLocationAddress
+      Web.Skroutz.Types.Base.ShopPaymentMethods
       Web.Skroutz.Types.Base.ShopReview
+      Web.Skroutz.Types.Base.ShopShipping
       Web.Skroutz.Types.Base.Sku
       Web.Skroutz.Types.Base.SkuImages
+      Web.Skroutz.Types.Base.SkuPrice
       Web.Skroutz.Types.Base.SkuReview
       Web.Skroutz.Types.Base.SkuSpecification
-      Web.Skroutz.Types.Base.SkuPrice
       Web.Skroutz.Types.Base.Token
       Web.Skroutz.Types.Base.URI
       Web.Skroutz.Types.Base.User
-      Web.Skroutz.Types.Base.Flag
-      Web.Skroutz.Types.Base.Autocomplete
       Web.Skroutz.Types.ResultWrappers
       Web.Skroutz.Types.ResultWrappers.Alternative
-      Web.Skroutz.Types.ResultWrappers.GeneralSearchResult
       Web.Skroutz.Types.ResultWrappers.AppliedFilters
+      Web.Skroutz.Types.ResultWrappers.Autocomplete
       Web.Skroutz.Types.ResultWrappers.AvailableFilters
       Web.Skroutz.Types.ResultWrappers.Category
       Web.Skroutz.Types.ResultWrappers.FilterGroup
+      Web.Skroutz.Types.ResultWrappers.Flag
+      Web.Skroutz.Types.ResultWrappers.GeneralSearchResult
       Web.Skroutz.Types.ResultWrappers.Manufacturer
       Web.Skroutz.Types.ResultWrappers.Meta
       Web.Skroutz.Types.ResultWrappers.Pagination
@@ -120,30 +139,11 @@ library
       Web.Skroutz.Types.ResultWrappers.ShopLocation
       Web.Skroutz.Types.ResultWrappers.ShopReview
       Web.Skroutz.Types.ResultWrappers.Sku
+      Web.Skroutz.Types.ResultWrappers.SkuPrice
       Web.Skroutz.Types.ResultWrappers.SkuReview
       Web.Skroutz.Types.ResultWrappers.SkuSpecification
-      Web.Skroutz.Types.ResultWrappers.SkuPrice
       Web.Skroutz.Types.ResultWrappers.StrongMatches
-      Web.Skroutz.Types.ResultWrappers.Flag
       Web.Skroutz.Types.ResultWrappers.User
-      Web.Skroutz.Types.ResultWrappers.Autocomplete
-      Web.Skroutz.TH
-      Web.Skroutz.Endpoints
-      Web.Skroutz.Endpoints.Auth
-      Web.Skroutz.Endpoints.Types
-      Web.Skroutz.Endpoints.Types.Common
-      Web.Skroutz.Endpoints.Types.Category
-      Web.Skroutz.Endpoints.Types.Manufacturer
-      Web.Skroutz.Endpoints.Types.Sku
-      Web.Skroutz.Endpoints.Types.Product
-      Web.Skroutz.Endpoints.Types.Shop
-      Web.Skroutz.Endpoints.Types.ShopLocation
-      Web.Skroutz.Endpoints.Types.ShopReview
-      Web.Skroutz.Endpoints.Types.FilterGroup
-      Web.Skroutz.Endpoints.Types.Flag
-      Web.Skroutz.Endpoints.Types.User
-      Web.Skroutz.Endpoints.Types.Autocomplete
-      Web.Skroutz.Endpoints.Types.GeneralSearchResult
   default-language: Haskell2010
 
 test-suite spec
