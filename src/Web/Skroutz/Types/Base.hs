@@ -15,6 +15,7 @@ module Web.Skroutz.Types.Base
   )
 where
 
+import           Web.Skroutz.Types.Base.Autocomplete        as X
 import           Web.Skroutz.Types.Base.Category            as X
 import           Web.Skroutz.Types.Base.FilterGroup         as X
 import           Web.Skroutz.Types.Base.Flag                as X

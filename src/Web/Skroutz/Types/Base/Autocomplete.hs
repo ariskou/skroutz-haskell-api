@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.Autocomplete
+-- Module      :  Web.Skroutz.Types.Base.Autocomplete
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -11,7 +11,7 @@
 --
 -- Provides the 'Autocomplete' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.Autocomplete
+module Web.Skroutz.Types.Base.Autocomplete
 where
 
 import           Data.Text      (Text)
