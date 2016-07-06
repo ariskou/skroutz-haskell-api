@@ -22,7 +22,7 @@ import           Web.Skroutz.Endpoints.Types.Common
 import           Web.Skroutz.Types
 
 type FlagAPI =
-        "flags" :> DataAPIMethod MultipleFlagResponse
+        "api" :> "flags" :> DataAPIMethod MultipleFlagResponse
 
 flagAPI :: Proxy FlagAPI
 flagAPI = Proxy
