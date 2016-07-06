@@ -17,6 +17,7 @@ where
 
 import           Web.Skroutz.Types.Base.Category            as X
 import           Web.Skroutz.Types.Base.FilterGroup         as X
+import           Web.Skroutz.Types.Base.Flag                as X
 import           Web.Skroutz.Types.Base.Manufacturer        as X
 import           Web.Skroutz.Types.Base.Product             as X
 import           Web.Skroutz.Types.Base.Shop                as X

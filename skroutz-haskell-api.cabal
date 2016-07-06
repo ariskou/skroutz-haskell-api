@@ -103,6 +103,7 @@ library
       Web.Skroutz.Types.Base.Token
       Web.Skroutz.Types.Base.URI
       Web.Skroutz.Types.Base.User
+      Web.Skroutz.Types.Base.Flag
       Web.Skroutz.Types.ResultWrappers
       Web.Skroutz.Types.ResultWrappers.Alternative
       Web.Skroutz.Types.ResultWrappers.GeneralSearchResult
@@ -123,6 +124,7 @@ library
       Web.Skroutz.Types.ResultWrappers.SkuSpecification
       Web.Skroutz.Types.ResultWrappers.SkuPrice
       Web.Skroutz.Types.ResultWrappers.StrongMatches
+      Web.Skroutz.Types.ResultWrappers.Flag
       Web.Skroutz.TH
       Web.Skroutz.Endpoints
       Web.Skroutz.Endpoints.Auth

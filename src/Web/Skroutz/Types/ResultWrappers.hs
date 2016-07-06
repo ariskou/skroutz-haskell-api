@@ -21,6 +21,7 @@ import           Web.Skroutz.Types.ResultWrappers.Autocomplete        as X
 import           Web.Skroutz.Types.ResultWrappers.AvailableFilters    as X
 import           Web.Skroutz.Types.ResultWrappers.Category            as X
 import           Web.Skroutz.Types.ResultWrappers.FilterGroup         as X
+import           Web.Skroutz.Types.ResultWrappers.Flag                as X
 import           Web.Skroutz.Types.ResultWrappers.GeneralSearchResult as X
 import           Web.Skroutz.Types.ResultWrappers.Manufacturer        as X
 import           Web.Skroutz.Types.ResultWrappers.Meta                as X
