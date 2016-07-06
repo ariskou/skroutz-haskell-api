@@ -18,6 +18,7 @@ module Web.Skroutz.Endpoints.Types
 )
 where
 
+import           Web.Skroutz.Endpoints.Types.Autocomplete as X
 import           Web.Skroutz.Endpoints.Types.Category     as X
 import           Web.Skroutz.Endpoints.Types.Common       as X
 import           Web.Skroutz.Endpoints.Types.FilterGroup  as X

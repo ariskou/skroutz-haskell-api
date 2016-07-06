@@ -112,6 +112,7 @@ library:
     - Web.Skroutz.Endpoints.Types.FilterGroup
     - Web.Skroutz.Endpoints.Types.Flag
     - Web.Skroutz.Endpoints.Types.User
+    - Web.Skroutz.Endpoints.Types.Autocomplete
   exposed-modules:
     - Web.Skroutz
 
