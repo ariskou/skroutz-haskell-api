@@ -28,3 +28,4 @@ import           Web.Skroutz.Endpoints.Types.Shop         as X
 import           Web.Skroutz.Endpoints.Types.ShopLocation as X
 import           Web.Skroutz.Endpoints.Types.ShopReview   as X
 import           Web.Skroutz.Endpoints.Types.Sku          as X
+import           Web.Skroutz.Endpoints.Types.User         as X
