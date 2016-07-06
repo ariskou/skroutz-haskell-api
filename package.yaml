@@ -96,6 +96,7 @@ library:
     - Web.Skroutz.Types.ResultWrappers.StrongMatches
     - Web.Skroutz.Types.ResultWrappers.Flag
     - Web.Skroutz.Types.ResultWrappers.User
+    - Web.Skroutz.Types.ResultWrappers.Autocomplete
     - Web.Skroutz.TH
     - Web.Skroutz.Endpoints
     - Web.Skroutz.Endpoints.Auth
