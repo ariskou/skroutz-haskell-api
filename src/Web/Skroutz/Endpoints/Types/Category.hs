@@ -10,7 +10,7 @@
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Types.Category' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Types.Base.Category' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Types.Category
 where

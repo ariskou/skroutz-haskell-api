@@ -10,7 +10,7 @@
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Types.FilterGroup' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Types.Base.FilterGroup' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Types.FilterGroup
 where

@@ -10,7 +10,7 @@
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Types.ShopReview' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Types.Base.ShopReview' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Types.ShopReview
 where
