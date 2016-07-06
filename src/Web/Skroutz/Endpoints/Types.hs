@@ -21,6 +21,7 @@ where
 import           Web.Skroutz.Endpoints.Types.Category     as X
 import           Web.Skroutz.Endpoints.Types.Common       as X
 import           Web.Skroutz.Endpoints.Types.FilterGroup  as X
+import           Web.Skroutz.Endpoints.Types.Flag         as X
 import           Web.Skroutz.Endpoints.Types.Manufacturer as X
 import           Web.Skroutz.Endpoints.Types.Product      as X
 import           Web.Skroutz.Endpoints.Types.Shop         as X

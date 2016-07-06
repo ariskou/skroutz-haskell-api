@@ -108,6 +108,7 @@ library:
     - Web.Skroutz.Endpoints.Types.ShopLocation
     - Web.Skroutz.Endpoints.Types.ShopReview
     - Web.Skroutz.Endpoints.Types.FilterGroup
+    - Web.Skroutz.Endpoints.Types.Flag
   exposed-modules:
     - Web.Skroutz
 
