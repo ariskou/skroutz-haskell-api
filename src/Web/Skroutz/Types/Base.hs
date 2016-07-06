@@ -32,3 +32,4 @@ import           Web.Skroutz.Types.Base.SkuReview           as X
 import           Web.Skroutz.Types.Base.SkuSpecification    as X
 import           Web.Skroutz.Types.Base.Token               as X
 import           Web.Skroutz.Types.Base.URI                 as X
+import           Web.Skroutz.Types.Base.User                as X
