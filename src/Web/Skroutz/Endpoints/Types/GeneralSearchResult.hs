@@ -24,11 +24,11 @@ import           Web.Skroutz.Endpoints.Types.Common
 import           Web.Skroutz.Types
 
 type GeneralSearchResultAPI =
-        "search" :> Capture "q" Text :> DataAPIMethod MultipleGeneralSearchResultResponse
+        "search" :> Capture "q" Text :> DataAPIMethodPaged MultipleGeneralSearchResultResponse
 
 generalSearchResultAPI :: Proxy GeneralSearchResultAPI
 generalSearchResultAPI = Proxy
 
-getGeneralSearchResult :: Text -> StandardDataParams MultipleGeneralSearchResultResponse
+getGeneralSearchResult :: Text -> StandardDataParamsPaged MultipleGeneralSearchResultResponse
 
 getGeneralSearchResult = client generalSearchResultAPI

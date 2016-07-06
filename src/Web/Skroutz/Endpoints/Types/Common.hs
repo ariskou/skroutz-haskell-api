@@ -55,7 +55,14 @@ type DataAPIMethod a =
   :> AuthorizationHeader
   :> Get '[JSON] (WithHeaders a)
 
+type DataAPIMethodPaged a =
+  QueryParam "page" Int
+  :> QueryParam "per" Int
+  :> DataAPIMethod a
+
 type StandardDataParams a = Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO (WithHeaders a)
+
+type StandardDataParamsPaged a = Maybe Int -> Maybe Int -> Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO (WithHeaders a)
 
 defaultDataManagerSettings :: ManagerSettings
 defaultDataManagerSettings = defaultManagerSettings

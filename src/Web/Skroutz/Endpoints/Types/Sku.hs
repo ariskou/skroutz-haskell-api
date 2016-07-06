@@ -74,14 +74,14 @@ type SkuSearchAPI =
   :> QueryParams "manufacturer_ids[]" Int
   :> QueryParams "filter_ids[]" Int
   :> QueryParam "embed" [SkuEmbed]
-  :> DataAPIMethod MultipleSkuResponse
+  :> DataAPIMethodPaged MultipleSkuResponse
 
 type SkuAPI =
         SkuSearchAPI
   :<|>  "skus" :> Capture "sku_id" Int :> QueryParam "embed" [SkuEmbed] :> DataAPIMethod SingleSkuResponse
-  :<|>  "skus" :> Capture "sku_id" Int :> "similar" :> QueryParam "embed" [SkuEmbed] :> DataAPIMethod MultipleSkuResponse
-  :<|>  "skus" :> Capture "sku_id" Int :> "products" :> QueryParam "embed" [SkuEmbed] :> DataAPIMethod MultipleProductResponse
-  :<|>  "skus" :> Capture "sku_id" Int :> "reviews" :> QueryParam "embed" [SkuEmbed] :> DataAPIMethod MultipleSkuReviewResponse
+  :<|>  "skus" :> Capture "sku_id" Int :> "similar" :> QueryParam "embed" [SkuEmbed] :> DataAPIMethodPaged MultipleSkuResponse
+  :<|>  "skus" :> Capture "sku_id" Int :> "products" :> QueryParam "embed" [SkuEmbed] :> DataAPIMethodPaged MultipleProductResponse
+  :<|>  "skus" :> Capture "sku_id" Int :> "reviews" :> QueryParam "embed" [SkuEmbed] :> DataAPIMethodPaged MultipleSkuReviewResponse
   :<|>  "skus" :> Capture "sku_id" Int :> "specifications" :> QueryParam "include" SkuSpecificationInclude :> QueryParam "embed" [SkuEmbed] :> DataAPIMethod MultipleSkuSpecificationResponse
   :<|>  "skus" :> Capture "sku_id" Int :> "price_history" :> QueryParam "embed" [SkuEmbed] :> DataAPIMethod HistoricalSkuPriceResponse
 
@@ -97,15 +97,15 @@ getCategorySkus ::
   -> [Int]
   -> [Int]
   -> Maybe [SkuEmbed]
-  -> StandardDataParams MultipleSkuResponse
+  -> StandardDataParamsPaged MultipleSkuResponse
 
 getSku :: Int -> Maybe [SkuEmbed] -> StandardDataParams SingleSkuResponse
 
-getSimilarSkus :: Int -> Maybe [SkuEmbed] -> StandardDataParams MultipleSkuResponse
+getSimilarSkus :: Int -> Maybe [SkuEmbed] -> StandardDataParamsPaged MultipleSkuResponse
 
-getSkuProducts :: Int -> Maybe [SkuEmbed] -> StandardDataParams MultipleProductResponse
+getSkuProducts :: Int -> Maybe [SkuEmbed] -> StandardDataParamsPaged MultipleProductResponse
 
-getSkuReviews :: Int -> Maybe [SkuEmbed] -> StandardDataParams MultipleSkuReviewResponse
+getSkuReviews :: Int -> Maybe [SkuEmbed] -> StandardDataParamsPaged MultipleSkuReviewResponse
 
 getSkuSpecifications :: Int -> Maybe SkuSpecificationInclude -> Maybe [SkuEmbed] -> StandardDataParams MultipleSkuSpecificationResponse
 

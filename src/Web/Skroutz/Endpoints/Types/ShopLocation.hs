@@ -30,13 +30,13 @@ instance ToHttpApiData ShopLocationEmbed where
   toQueryParam ShopLocationEmbedAddress = "address"
 
 type ShopLocationAPI =
-        "shops" :> Capture "shops_id" Int :> "locations" :> QueryParam "embed" ShopLocationEmbed :> DataAPIMethod MultipleShopLocationResponse
+        "shops" :> Capture "shops_id" Int :> "locations" :> QueryParam "embed" ShopLocationEmbed :> DataAPIMethodPaged MultipleShopLocationResponse
   :<|>  "shops" :> Capture "shops_id" Int :> "locations" :> Capture "shoplocation_id" Int :> QueryParam "embed" ShopLocationEmbed :> DataAPIMethod SingleShopLocationResponse
 
 shopLocationAPI :: Proxy ShopLocationAPI
 shopLocationAPI = Proxy
 
-getShopLocations :: Int -> Maybe ShopLocationEmbed -> StandardDataParams MultipleShopLocationResponse
+getShopLocations :: Int -> Maybe ShopLocationEmbed -> StandardDataParamsPaged MultipleShopLocationResponse
 
 getShopLocation :: Int -> Int -> Maybe ShopLocationEmbed -> StandardDataParams SingleShopLocationResponse
 

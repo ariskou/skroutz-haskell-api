@@ -24,13 +24,13 @@ import           Web.Skroutz.Types
 
 type ShopAPI =
         "shops" :> Capture "shops_id" Int :> DataAPIMethod SingleShopResponse
-  :<|>  "shops" :> "search" :> QueryParam "q" Text :> DataAPIMethod MultipleShopResponse
+  :<|>  "shops" :> "search" :> QueryParam "q" Text :> DataAPIMethodPaged MultipleShopResponse
 
 shopAPI :: Proxy ShopAPI
 shopAPI = Proxy
 
 getShop :: Int -> StandardDataParams SingleShopResponse
 
-getShops :: Maybe Text -> StandardDataParams MultipleShopResponse
+getShops :: Maybe Text -> StandardDataParamsPaged MultipleShopResponse
 
 getShop :<|> getShops = client shopAPI

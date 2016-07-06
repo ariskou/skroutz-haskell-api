@@ -22,11 +22,11 @@ import           Web.Skroutz.Endpoints.Types.Common
 import           Web.Skroutz.Types
 
 type ShopReviewAPI =
-        "shops" :> Capture "shops_id" Int :> "reviews" :> DataAPIMethod MultipleShopReviewResponse
+        "shops" :> Capture "shops_id" Int :> "reviews" :> DataAPIMethodPaged MultipleShopReviewResponse
 
 shopReviewAPI :: Proxy ShopReviewAPI
 shopReviewAPI = Proxy
 
-getShopReviews :: Int -> StandardDataParams MultipleShopReviewResponse
+getShopReviews :: Int -> StandardDataParamsPaged MultipleShopReviewResponse
 
 getShopReviews = client shopReviewAPI

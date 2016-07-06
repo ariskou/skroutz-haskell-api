@@ -39,20 +39,20 @@ instance ToHttpApiData ManufacturerOrderDir where
   toQueryParam ManufacturerOrderDirDescending = "desc"
 
 type ManufacturerAPI =
-        "manufacturers" :> DataAPIMethod MultipleManufacturerResponse
+        "manufacturers" :> DataAPIMethodPaged MultipleManufacturerResponse
   :<|>  "manufacturers" :> Capture "manufacturer_id" Int :> DataAPIMethod SingleManufacturerResponse
-  :<|>  "manufacturers" :> Capture "manufacturer_id" Int :> "categories" :> QueryParam "order_by" ManufacturerOrderBy :> QueryParam "order_dir" ManufacturerOrderDir :> DataAPIMethod MultipleCategoryResponse
-  :<|>  "manufacturers" :> Capture "manufacturer_id" Int :> "skus" :> QueryParam "order_by" SkuOrderBy :> QueryParam "order_dir" SkuOrderDir :> DataAPIMethod MultipleSkuResponse
+  :<|>  "manufacturers" :> Capture "manufacturer_id" Int :> "categories" :> QueryParam "order_by" ManufacturerOrderBy :> QueryParam "order_dir" ManufacturerOrderDir :> DataAPIMethodPaged MultipleCategoryResponse
+  :<|>  "manufacturers" :> Capture "manufacturer_id" Int :> "skus" :> QueryParam "order_by" SkuOrderBy :> QueryParam "order_dir" SkuOrderDir :> DataAPIMethodPaged MultipleSkuResponse
 
 manufacturerAPI :: Proxy ManufacturerAPI
 manufacturerAPI = Proxy
 
-getManufacturers :: StandardDataParams MultipleManufacturerResponse
+getManufacturers :: StandardDataParamsPaged MultipleManufacturerResponse
 
 getManufacturer :: Int -> StandardDataParams SingleManufacturerResponse
 
-getManufacturerCategories :: Int -> Maybe ManufacturerOrderBy -> Maybe ManufacturerOrderDir -> StandardDataParams MultipleCategoryResponse
+getManufacturerCategories :: Int -> Maybe ManufacturerOrderBy -> Maybe ManufacturerOrderDir -> StandardDataParamsPaged MultipleCategoryResponse
 
-getManufacturerSkus :: Int -> Maybe SkuOrderBy -> Maybe SkuOrderDir -> StandardDataParams MultipleSkuResponse
+getManufacturerSkus :: Int -> Maybe SkuOrderBy -> Maybe SkuOrderDir -> StandardDataParamsPaged MultipleSkuResponse
 
 getManufacturers :<|> getManufacturer :<|> getManufacturerCategories :<|> getManufacturerSkus = client manufacturerAPI

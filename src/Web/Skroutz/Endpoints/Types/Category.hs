@@ -24,17 +24,17 @@ import           Web.Skroutz.Endpoints.Types.Manufacturer (ManufacturerOrderBy,
 import           Web.Skroutz.Types
 
 type CategoryAPI =
-        "categories" :> DataAPIMethod MultipleCategoryResponse
+        "categories" :> DataAPIMethodPaged MultipleCategoryResponse
   :<|>  "categories" :> Capture "category_id" Int :> DataAPIMethod SingleCategoryResponse
   :<|>  "categories" :> Capture "category_id" Int :> "parent" :> DataAPIMethod SingleCategoryResponse
   :<|>  "categories" :> "root" :> DataAPIMethod SingleCategoryResponse
-  :<|>  "categories" :> Capture "category_id" Int :> "children" :> DataAPIMethod MultipleCategoryResponse
-  :<|>  "categories" :> Capture "category_id" Int :> "manufacturers" :> QueryParam "order_by" ManufacturerOrderBy :> QueryParam "order_dir" ManufacturerOrderDir :> DataAPIMethod MultipleManufacturerResponse
+  :<|>  "categories" :> Capture "category_id" Int :> "children" :> DataAPIMethodPaged MultipleCategoryResponse
+  :<|>  "categories" :> Capture "category_id" Int :> "manufacturers" :> QueryParam "order_by" ManufacturerOrderBy :> QueryParam "order_dir" ManufacturerOrderDir :> DataAPIMethodPaged MultipleManufacturerResponse
 
 categoryAPI :: Proxy CategoryAPI
 categoryAPI = Proxy
 
-getCategories :: StandardDataParams MultipleCategoryResponse
+getCategories :: StandardDataParamsPaged MultipleCategoryResponse
 
 getCategory :: Int -> StandardDataParams SingleCategoryResponse
 
@@ -42,8 +42,8 @@ getCategoryParent :: Int -> StandardDataParams SingleCategoryResponse
 
 getCategoryRoot :: StandardDataParams SingleCategoryResponse
 
-getCategoryChildren :: Int -> StandardDataParams MultipleCategoryResponse
+getCategoryChildren :: Int -> StandardDataParamsPaged MultipleCategoryResponse
 
-getCategoryManufacturers :: Int -> Maybe ManufacturerOrderBy -> Maybe ManufacturerOrderDir -> StandardDataParams MultipleManufacturerResponse
+getCategoryManufacturers :: Int -> Maybe ManufacturerOrderBy -> Maybe ManufacturerOrderDir -> StandardDataParamsPaged MultipleManufacturerResponse
 
 getCategories :<|> getCategory :<|> getCategoryParent :<|> getCategoryRoot :<|> getCategoryChildren :<|> getCategoryManufacturers = client categoryAPI

@@ -22,11 +22,11 @@ import           Web.Skroutz.Endpoints.Types.Common
 import           Web.Skroutz.Types
 
 type FilterGroupAPI =
-        "categories" :> Capture "category_id" Int :> "filter_groups" :> DataAPIMethod MultipleFilterGroupResponse
+        "categories" :> Capture "category_id" Int :> "filter_groups" :> DataAPIMethodPaged MultipleFilterGroupResponse
 
 filterGroupAPI :: Proxy FilterGroupAPI
 filterGroupAPI = Proxy
 
-getFilterGroups :: Int -> StandardDataParams MultipleFilterGroupResponse
+getFilterGroups :: Int -> StandardDataParamsPaged MultipleFilterGroupResponse
 
 getFilterGroups = client filterGroupAPI
