@@ -143,6 +143,7 @@ library
       Web.Skroutz.Endpoints.Types.Flag
       Web.Skroutz.Endpoints.Types.User
       Web.Skroutz.Endpoints.Types.Autocomplete
+      Web.Skroutz.Endpoints.Types.GeneralSearchResult
   default-language: Haskell2010
 
 test-suite spec
