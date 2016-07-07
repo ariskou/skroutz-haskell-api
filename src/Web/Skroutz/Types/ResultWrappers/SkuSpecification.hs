@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.ResultWrappers.SkuSpecification
@@ -14,6 +16,8 @@
 module Web.Skroutz.Types.ResultWrappers.SkuSpecification
 where
 
+import           Control.DeepSeq                         (NFData)
+import           Data.Data                               (Data, Typeable)
 import           GHC.Generics                            (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.Base.SkuSpecification
@@ -21,6 +25,6 @@ import           Web.Skroutz.Types.Base.SkuSpecification
 data MultipleSkuSpecificationResponse = MultipleSkuSpecificationResponse {
     _multipleSkuSpecificationResponseSpecifications :: [SkuSpecification]
   , _multipleSkuSpecificationResponseGroups         :: Maybe [SkuSpecificationsGroup]
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''MultipleSkuSpecificationResponse "_multipleSkuSpecificationResponse"

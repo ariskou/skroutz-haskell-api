@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.ResultWrappers.Manufacturer
@@ -14,6 +16,8 @@
 module Web.Skroutz.Types.ResultWrappers.Manufacturer
 where
 
+import           Control.DeepSeq                       (NFData)
+import           Data.Data                             (Data, Typeable)
 import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.Base.Manufacturer
@@ -21,13 +25,13 @@ import           Web.Skroutz.Types.ResultWrappers.Meta
 
 data SingleManufacturerResponse = SingleManufacturerResponse {
     _singleManufacturerResponseManufacturer :: Manufacturer
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''SingleManufacturerResponse "_singleManufacturerResponse"
 
 data MultipleManufacturerResponse = MultipleManufacturerResponse {
     _multipleManufacturerResponseManufacturers :: [Manufacturer]
   , _multipleManufacturerResponseMeta          :: Meta
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''MultipleManufacturerResponse "_multipleManufacturerResponse"

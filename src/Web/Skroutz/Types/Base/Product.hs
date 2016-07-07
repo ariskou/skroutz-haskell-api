@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Base.Product
@@ -14,10 +16,11 @@
 module Web.Skroutz.Types.Base.Product
 where
 
+import           Control.DeepSeq            (NFData)
+import           Data.Data                  (Data, Typeable)
 import           Data.Text                  (Text)
 import           GHC.Generics               (Generic)
 import           Web.Skroutz.TH
-
 import           Web.Skroutz.Types.Base.URI
 
 data Product = Product {
@@ -32,6 +35,6 @@ data Product = Product {
   , _productExpenses     :: Maybe Text --TODO: Check for real type, only null examples offered
   , _productWebUri       :: URI
   , _productPrice        :: Double
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''Product "_product"

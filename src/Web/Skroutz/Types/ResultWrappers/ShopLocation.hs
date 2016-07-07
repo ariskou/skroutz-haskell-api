@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.ResultWrappers.ShopLocation
@@ -14,6 +16,8 @@
 module Web.Skroutz.Types.ResultWrappers.ShopLocation
 where
 
+import           Control.DeepSeq                       (NFData)
+import           Data.Data                             (Data, Typeable)
 import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.Base.ShopLocation
@@ -21,13 +25,13 @@ import           Web.Skroutz.Types.ResultWrappers.Meta
 
 data SingleShopLocationResponse = SingleShopLocationResponse {
     _singleShopLocationResponseLocation :: ShopLocation
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''SingleShopLocationResponse "_singleShopLocationResponse"
 
 data MultipleShopLocationResponse = MultipleShopLocationResponse {
     _multipleShopLocationResponseLocations :: [ShopLocation]
   , _multipleShopLocationResponseMeta      :: Meta
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''MultipleShopLocationResponse "_multipleShopLocationResponse"

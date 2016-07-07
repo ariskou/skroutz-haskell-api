@@ -1,8 +1,8 @@
-{-# LANGUAGE DeriveDataTypeable         #-}
-{-# LANGUAGE DeriveGeneric              #-}
-{-# LANGUAGE FlexibleInstances          #-}
-{-# LANGUAGE GeneralizedNewtypeDeriving #-}
-{-# LANGUAGE MultiParamTypeClasses      #-}
+{-# LANGUAGE DeriveAnyClass        #-}
+{-# LANGUAGE DeriveDataTypeable    #-}
+{-# LANGUAGE DeriveGeneric         #-}
+{-# LANGUAGE FlexibleInstances     #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Base.URI
@@ -17,7 +17,7 @@
 module Web.Skroutz.Types.Base.URI
 where
 
-import           Control.DeepSeq
+import           Control.DeepSeq (NFData)
 import           Control.Monad
 import qualified Data.Aeson      as Aeson
 import           Data.Coerce     (coerce)

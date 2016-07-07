@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Base.ShopLocation
@@ -14,6 +16,8 @@
 module Web.Skroutz.Types.Base.ShopLocation
 where
 
+import           Control.DeepSeq                            (NFData)
+import           Data.Data                                  (Data, Typeable)
 import           Data.Text                                  (Text)
 import           GHC.Generics                               (Generic)
 import           Web.Skroutz.TH
@@ -31,6 +35,6 @@ data ShopLocation = ShopLocation {
   , _shopLocationLng         :: Text
   , _shopLocationInfo        :: Text
   , _shopLocationAddress     :: Maybe ShopLocationAddress
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''ShopLocation "_shopLocation"

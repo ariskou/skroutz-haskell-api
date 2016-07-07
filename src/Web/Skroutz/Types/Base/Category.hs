@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Base.Category
@@ -14,6 +16,8 @@
 module Web.Skroutz.Types.Base.Category
 where
 
+import           Control.DeepSeq            (NFData)
+import           Data.Data                  (Data, Typeable)
 import           Data.Text                  (Text)
 import           GHC.Generics               (Generic)
 import           Web.Skroutz.TH
@@ -32,6 +36,6 @@ data Category = Category {
   , _categoryPath               :: Text
   , _categoryShowSpecifications :: Bool
   , _categoryManufacturerTitle  :: Text
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''Category "_category"

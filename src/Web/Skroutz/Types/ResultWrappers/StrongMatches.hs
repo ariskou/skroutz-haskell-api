@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.ResultWrappers.StrongMatches
@@ -14,6 +16,8 @@
 module Web.Skroutz.Types.ResultWrappers.StrongMatches
 where
 
+import           Control.DeepSeq                     (NFData)
+import           Data.Data                           (Data, Typeable)
 import           GHC.Generics                        (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.Base.Category
@@ -26,6 +30,6 @@ data StrongMatches = StrongMatches {
   , _strongMatchesManufacturer :: Maybe Manufacturer
   , _strongMatchesSku          :: Maybe Sku
   , _strongMatchesShop         :: Maybe Shop
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''StrongMatches "_strongMatches"

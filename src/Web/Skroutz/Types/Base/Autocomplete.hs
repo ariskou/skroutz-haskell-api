@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Base.Autocomplete
@@ -14,20 +16,22 @@
 module Web.Skroutz.Types.Base.Autocomplete
 where
 
-import           Data.Text      (Text)
-import           GHC.Generics   (Generic)
+import           Control.DeepSeq (NFData)
+import           Data.Data       (Data, Typeable)
+import           Data.Text       (Text)
+import           GHC.Generics    (Generic)
 import           Web.Skroutz.TH
 
 data AutocompleteD = AutocompleteD {
     _autocompleteDN  :: Text
   , _autocompleteDId :: Int
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''AutocompleteD "_autocompleteD"
 
 data Autocomplete = Autocomplete {
     _autocompleteK :: Text
   , _autocompleteD :: Maybe AutocompleteD
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''Autocomplete "_autocomplete"

@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Base.Manufacturer
@@ -14,6 +16,8 @@
 module Web.Skroutz.Types.Base.Manufacturer
 where
 
+import           Control.DeepSeq            (NFData)
+import           Data.Data                  (Data, Typeable)
 import           Data.Text                  (Text)
 import           GHC.Generics               (Generic)
 import           Web.Skroutz.TH
@@ -23,6 +27,6 @@ data Manufacturer = Manufacturer {
     _manufacturerId       :: Int
   , _manufacturerName     :: Text
   , _manufacturerImageUrl :: Maybe URI
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''Manufacturer "_manufacturer"

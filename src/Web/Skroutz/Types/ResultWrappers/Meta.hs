@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.ResultWrappers.Pagination
@@ -14,6 +16,9 @@
 module Web.Skroutz.Types.ResultWrappers.Meta
 where
 
+import           Control.DeepSeq                                   (NFData)
+import           Data.Data                                         (Data,
+                                                                    Typeable)
 import           Data.Text                                         (Text)
 import           GHC.Generics                                      (Generic)
 import           Web.Skroutz.TH
@@ -30,6 +35,6 @@ data Meta = Meta {
   , _metaQ                :: Maybe Text
   , _metaAlternatives     :: Maybe [Text]
   , _metaStrongMatches    :: Maybe StrongMatches
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''Meta "_meta"

@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.ResultWrappers.Flag
@@ -14,12 +16,14 @@
 module Web.Skroutz.Types.ResultWrappers.Flag
 where
 
+import           Control.DeepSeq             (NFData)
+import           Data.Data                   (Data, Typeable)
 import           GHC.Generics                (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.Base.Flag
 
 data MultipleFlagResponse = MultipleFlagResponse {
     _multipleFlagResponseFlags :: [Flag]
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''MultipleFlagResponse "_multipleFlagResponse"

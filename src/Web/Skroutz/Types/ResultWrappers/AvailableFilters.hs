@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.ResultWrappers.AvailableFilters
@@ -14,14 +16,16 @@
 module Web.Skroutz.Types.ResultWrappers.AvailableFilters
 where
 
-import           Data.Map       (Map)
-import           Data.Text      (Text)
-import           GHC.Generics   (Generic)
+import           Control.DeepSeq (NFData)
+import           Data.Data       (Data, Typeable)
+import           Data.Map        (Map)
+import           Data.Text       (Text)
+import           GHC.Generics    (Generic)
 import           Web.Skroutz.TH
 
 data AvailableFilters = AvailableFilters {
     _availableFiltersFilters       :: Maybe (Map Text Int)
   , _availableFiltersManufacturers :: Maybe (Map Text Int)
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''AvailableFilters "_availableFilters"

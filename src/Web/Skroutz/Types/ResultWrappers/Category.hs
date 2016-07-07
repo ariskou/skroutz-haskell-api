@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.ResultWrappers.Category
@@ -14,6 +16,8 @@
 module Web.Skroutz.Types.ResultWrappers.Category
 where
 
+import           Control.DeepSeq                       (NFData)
+import           Data.Data                             (Data, Typeable)
 import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.Base.Category
@@ -21,13 +25,13 @@ import           Web.Skroutz.Types.ResultWrappers.Meta
 
 data SingleCategoryResponse = SingleCategoryResponse {
     _singleCategoryResponseCategory :: Category
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''SingleCategoryResponse "_singleCategoryResponse"
 
 data MultipleCategoryResponse = MultipleCategoryResponse {
     _multipleCategoryResponseCategories :: [Category]
   , _multipleCategoryResponseMeta       :: Meta
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''MultipleCategoryResponse "_multipleCategoryResponse"

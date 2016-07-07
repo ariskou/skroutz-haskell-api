@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.ResultWrappers.User
@@ -14,12 +16,14 @@
 module Web.Skroutz.Types.ResultWrappers.User
 where
 
+import           Control.DeepSeq             (NFData)
+import           Data.Data                   (Data, Typeable)
 import           GHC.Generics                (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.Base.User
 
 data SingleUserResponse = SingleUserResponse {
     _singleUserResponseUser :: User
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''SingleUserResponse "_singleUserResponse"

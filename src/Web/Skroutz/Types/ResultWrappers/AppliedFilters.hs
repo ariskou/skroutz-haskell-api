@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.ResultWrappers.AppliedFilters
@@ -14,12 +16,14 @@
 module Web.Skroutz.Types.ResultWrappers.AppliedFilters
 where
 
-import           GHC.Generics   (Generic)
+import           Control.DeepSeq (NFData)
+import           Data.Data       (Data, Typeable)
+import           GHC.Generics    (Generic)
 import           Web.Skroutz.TH
 
 data AppliedFilters = AppliedFilters {
     _appliedFiltersFilters       :: Maybe [Int]
   , _appliedFiltersManufacturers :: Maybe [Int]
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''AppliedFilters "_appliedFilters"

@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.ResultWrappers.ShopReview
@@ -14,6 +16,8 @@
 module Web.Skroutz.Types.ResultWrappers.ShopReview
 where
 
+import           Control.DeepSeq                       (NFData)
+import           Data.Data                             (Data, Typeable)
 import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
 import           Web.Skroutz.Types.Base.ShopReview
@@ -22,6 +26,6 @@ import           Web.Skroutz.Types.ResultWrappers.Meta
 data MultipleShopReviewResponse = MultipleShopReviewResponse {
     _multipleShopReviewResponseReviews :: [ShopReview]
   , _multipleShopReviewResponseMeta    :: Meta
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''MultipleShopReviewResponse "_multipleShopReviewResponse"

@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.ResultWrappers.Pagination
@@ -14,7 +16,9 @@
 module Web.Skroutz.Types.ResultWrappers.Pagination
 where
 
-import           GHC.Generics   (Generic)
+import           Control.DeepSeq (NFData)
+import           Data.Data       (Data, Typeable)
+import           GHC.Generics    (Generic)
 import           Web.Skroutz.TH
 
 data Pagination = Pagination {
@@ -22,6 +26,6 @@ data Pagination = Pagination {
   , _paginationTotalPages   :: Int
   , _paginationPage         :: Int
   , _paginationPer          :: Int
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''Pagination "_pagination"

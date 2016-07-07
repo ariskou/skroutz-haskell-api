@@ -1,5 +1,7 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveAnyClass     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Types.Base.Shop
@@ -14,6 +16,8 @@
 module Web.Skroutz.Types.Base.Shop
 where
 
+import           Control.DeepSeq                           (NFData)
+import           Data.Data                                 (Data, Typeable)
 import           Data.Text                                 (Text)
 import           GHC.Generics                              (Generic)
 import           Web.Skroutz.TH
@@ -34,6 +38,6 @@ data Shop = Shop {
   , _shopPaymentMethods     :: ShopPaymentMethods
   , _shopShipping           :: ShopShipping
   , _shopWebUri             :: URI
-  } deriving (Generic, Show)
+  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''Shop "_shop"
