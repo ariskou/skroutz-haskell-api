@@ -182,6 +182,7 @@ test-suite spec
     , filepath
     , directory
     , hspec
+    , HList
   other-modules:
       Web.Skroutz.Common
       Web.Skroutz.Types.CategorySpec
