@@ -121,6 +121,7 @@ tests:
     source-dirs: test
     other-modules:
       - Web.Skroutz.Common
+      - Web.Skroutz.Endpoints.SampleCalls
       - Web.Skroutz.Types.CategorySpec
       - Web.Skroutz.Types.ManufacturerSpec
       - Web.Skroutz.Types.ProductSpec
