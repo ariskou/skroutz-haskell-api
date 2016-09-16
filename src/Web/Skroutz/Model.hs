@@ -1,13 +1,13 @@
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types
+-- Module      :  Web.Skroutz.Model
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the Skroutz API 'Types' for JSON marshalling.
+-- Provides the Skroutz API 'Model' for JSON marshalling.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model
   (

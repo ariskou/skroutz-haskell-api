@@ -4,7 +4,7 @@
 {-# LANGUAGE TypeOperators     #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Endoints.Types.Manufacturer
+-- Module      :  Web.Skroutz.Endoints.Model.Manufacturer
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,15 +13,15 @@
 --
 -- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Manufacturer' retrieval.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Endpoints.Types.Manufacturer
+module Web.Skroutz.Endpoints.Model.Manufacturer
 where
 
 import           Data.Proxy                         (Proxy (..))
 import           GHC.Generics                       (Generic)
 import           Servant.API
 import           Servant.Client
-import           Web.Skroutz.Endpoints.Types.Common
-import           Web.Skroutz.Endpoints.Types.Sku    (SkuOrderBy, SkuOrderDir)
+import           Web.Skroutz.Endpoints.Model.Common
+import           Web.Skroutz.Endpoints.Model.Sku    (SkuOrderBy, SkuOrderDir)
 import           Web.Skroutz.Model
 
 data ManufacturerOrderBy = ManufacturerOrderByName | ManufacturerOrderByPopularity

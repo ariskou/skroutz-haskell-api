@@ -3,7 +3,7 @@
 {-# LANGUAGE TypeOperators     #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Endoints.Types.Product
+-- Module      :  Web.Skroutz.Endoints.Model.Product
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -12,14 +12,14 @@
 --
 -- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Product' retrieval.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Endpoints.Types.Product
+module Web.Skroutz.Endpoints.Model.Product
 where
 
 import           Data.Proxy                         (Proxy (..))
 import           Data.Text                          (Text)
 import           Servant.API
 import           Servant.Client
-import           Web.Skroutz.Endpoints.Types.Common
+import           Web.Skroutz.Endpoints.Model.Common
 import           Web.Skroutz.Model
 
 type ProductAPI =

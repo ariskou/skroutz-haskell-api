@@ -5,7 +5,7 @@
 {-# LANGUAGE TypeOperators     #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Endoints.Types.Sku
+-- Module      :  Web.Skroutz.Endoints.Model.Sku
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -14,7 +14,7 @@
 --
 -- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Sku' retrieval.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Endpoints.Types.Sku
+module Web.Skroutz.Endpoints.Model.Sku
 where
 
 import           Data.Proxy                         (Proxy (..))
@@ -22,7 +22,7 @@ import           Data.Text                          (Text, intercalate)
 import           GHC.Generics                       (Generic)
 import           Servant.API
 import           Servant.Client
-import           Web.Skroutz.Endpoints.Types.Common
+import           Web.Skroutz.Endpoints.Model.Common
 import           Web.Skroutz.Model
 
 data SkuEmbed = SkuEmbedProducts | SkuEmbedManufacturer

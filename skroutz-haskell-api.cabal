@@ -85,18 +85,18 @@ library
   other-modules:
       Web.Skroutz.Endpoints
       Web.Skroutz.Endpoints.Auth
-      Web.Skroutz.Endpoints.Types
-      Web.Skroutz.Endpoints.Types.Autocomplete
-      Web.Skroutz.Endpoints.Types.Category
-      Web.Skroutz.Endpoints.Types.Common
-      Web.Skroutz.Endpoints.Types.FilterGroup
-      Web.Skroutz.Endpoints.Types.Flag
-      Web.Skroutz.Endpoints.Types.GeneralSearchResult
-      Web.Skroutz.Endpoints.Types.Manufacturer
-      Web.Skroutz.Endpoints.Types.Product
-      Web.Skroutz.Endpoints.Types.Shop
-      Web.Skroutz.Endpoints.Types.Sku
-      Web.Skroutz.Endpoints.Types.User
+      Web.Skroutz.Endpoints.Model
+      Web.Skroutz.Endpoints.Model.Autocomplete
+      Web.Skroutz.Endpoints.Model.Category
+      Web.Skroutz.Endpoints.Model.Common
+      Web.Skroutz.Endpoints.Model.FilterGroup
+      Web.Skroutz.Endpoints.Model.Flag
+      Web.Skroutz.Endpoints.Model.GeneralSearchResult
+      Web.Skroutz.Endpoints.Model.Manufacturer
+      Web.Skroutz.Endpoints.Model.Product
+      Web.Skroutz.Endpoints.Model.Shop
+      Web.Skroutz.Endpoints.Model.Sku
+      Web.Skroutz.Endpoints.Model.User
       Web.Skroutz.TH
       Web.Skroutz.Model
       Web.Skroutz.Model.Base

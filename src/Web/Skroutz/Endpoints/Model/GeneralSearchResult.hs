@@ -4,7 +4,7 @@
 {-# LANGUAGE TypeOperators     #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Endoints.Types.GeneralSearchResult
+-- Module      :  Web.Skroutz.Endoints.Model.GeneralSearchResult
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,14 +13,14 @@
 --
 -- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.ResultWrappers.GeneralSearchResult' retrieval.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Endpoints.Types.GeneralSearchResult
+module Web.Skroutz.Endpoints.Model.GeneralSearchResult
 where
 
 import           Data.Proxy                         (Proxy (..))
 import           Data.Text                          (Text)
 import           Servant.API
 import           Servant.Client
-import           Web.Skroutz.Endpoints.Types.Common
+import           Web.Skroutz.Endpoints.Model.Common
 import           Web.Skroutz.Model
 
 type GeneralSearchResultAPI =

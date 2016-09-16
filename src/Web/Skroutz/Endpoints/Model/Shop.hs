@@ -4,7 +4,7 @@
 {-# LANGUAGE TypeOperators     #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Endoints.Types.Shop
+-- Module      :  Web.Skroutz.Endoints.Model.Shop
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Shop' retrieval.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Endpoints.Types.Shop
+module Web.Skroutz.Endpoints.Model.Shop
 where
 
 import           Data.Proxy                         (Proxy (..))
@@ -21,7 +21,7 @@ import           Data.Text                          (Text)
 import           GHC.Generics                       (Generic)
 import           Servant.API
 import           Servant.Client
-import           Web.Skroutz.Endpoints.Types.Common
+import           Web.Skroutz.Endpoints.Model.Common
 import           Web.Skroutz.Model
 
 data ShopLocationEmbed = ShopLocationEmbedAddress

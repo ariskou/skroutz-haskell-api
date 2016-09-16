@@ -3,7 +3,7 @@
 {-# LANGUAGE TypeOperators     #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Endoints.Types.Category
+-- Module      :  Web.Skroutz.Endoints.Model.Category
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -12,14 +12,14 @@
 --
 -- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Category' retrieval.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Endpoints.Types.Category
+module Web.Skroutz.Endpoints.Model.Category
 where
 
 import           Data.Proxy                               (Proxy (..))
 import           Servant.API
 import           Servant.Client
-import           Web.Skroutz.Endpoints.Types.Common
-import           Web.Skroutz.Endpoints.Types.Manufacturer (ManufacturerOrderBy,
+import           Web.Skroutz.Endpoints.Model.Common
+import           Web.Skroutz.Endpoints.Model.Manufacturer (ManufacturerOrderBy,
                                                            ManufacturerOrderDir)
 import           Web.Skroutz.Model
 

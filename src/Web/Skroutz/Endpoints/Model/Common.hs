@@ -3,7 +3,7 @@
 {-# LANGUAGE TypeOperators     #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Endpoints.Types.Common
+-- Module      :  Web.Skroutz.Endpoints.Model.Common
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -12,7 +12,7 @@
 --
 -- Provides common definitions for the Skroutz API endpoints/methods.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Endpoints.Types.Common
+module Web.Skroutz.Endpoints.Model.Common
 where
 
 import           Control.Monad.Trans.Except (ExceptT)
