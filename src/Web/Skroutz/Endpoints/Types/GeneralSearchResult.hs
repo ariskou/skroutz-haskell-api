@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Types.ResultWrappers.GeneralSearchResult' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.ResultWrappers.GeneralSearchResult' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Types.GeneralSearchResult
 where
@@ -21,7 +21,7 @@ import           Data.Text                          (Text)
 import           Servant.API
 import           Servant.Client
 import           Web.Skroutz.Endpoints.Types.Common
-import           Web.Skroutz.Types
+import           Web.Skroutz.Model
 
 type GeneralSearchResultAPI =
         "search" :> Capture "q" Text :> DataAPIMethodPaged MultipleGeneralSearchResultResponse

@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.Autocomplete
+-- Module      :  Web.Skroutz.Model.ResultWrappers.Autocomplete
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,14 +13,14 @@
 --
 -- Provides the 'Autocomplete' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.Autocomplete
+module Web.Skroutz.Model.ResultWrappers.Autocomplete
 where
 
 import           Control.DeepSeq                     (NFData)
 import           Data.Data                           (Data, Typeable)
 import           GHC.Generics                        (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.Autocomplete
+import           Web.Skroutz.Model.Base.Autocomplete
 
 data MultipleAutocompleteResponse = MultipleAutocompleteResponse {
     _multipleAutocompleteResponseAutocomplete :: [Autocomplete]

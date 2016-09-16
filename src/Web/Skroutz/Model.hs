@@ -9,11 +9,11 @@
 --
 -- Provides the Skroutz API 'Types' for JSON marshalling.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types
+module Web.Skroutz.Model
   (
     module X
   )
 where
 
-import           Web.Skroutz.Types.Base           as X
-import           Web.Skroutz.Types.ResultWrappers as X
+import           Web.Skroutz.Model.Base           as X
+import           Web.Skroutz.Model.ResultWrappers as X

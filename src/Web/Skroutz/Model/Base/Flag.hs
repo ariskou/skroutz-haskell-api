@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.Flag
+-- Module      :  Web.Skroutz.Model.Base.Flag
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'Flag' type, used to mark user provided content as requiring attention/moderation.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.Flag
+module Web.Skroutz.Model.Base.Flag
 where
 
 import           Control.DeepSeq (NFData)

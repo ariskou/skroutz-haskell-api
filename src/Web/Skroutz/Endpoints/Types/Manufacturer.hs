@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Types.Base.Manufacturer' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Manufacturer' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Types.Manufacturer
 where
@@ -22,7 +22,7 @@ import           Servant.API
 import           Servant.Client
 import           Web.Skroutz.Endpoints.Types.Common
 import           Web.Skroutz.Endpoints.Types.Sku    (SkuOrderBy, SkuOrderDir)
-import           Web.Skroutz.Types
+import           Web.Skroutz.Model
 
 data ManufacturerOrderBy = ManufacturerOrderByName | ManufacturerOrderByPopularity
  deriving (Generic, Show)

@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.Shop
+-- Module      :  Web.Skroutz.Model.ResultWrappers.Shop
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,15 +13,15 @@
 --
 -- Provides the 'Shop' type, which is a merchant, not a physical store.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.Shop
+module Web.Skroutz.Model.ResultWrappers.Shop
 where
 
 import           Control.DeepSeq                       (NFData)
 import           Data.Data                             (Data, Typeable)
 import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.Shop
-import           Web.Skroutz.Types.ResultWrappers.Meta
+import           Web.Skroutz.Model.Base.Shop
+import           Web.Skroutz.Model.ResultWrappers.Meta
 
 data SingleShopResponse = SingleShopResponse {
     _singleShopResponseShop :: Shop

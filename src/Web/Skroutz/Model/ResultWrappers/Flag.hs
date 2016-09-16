@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.Flag
+-- Module      :  Web.Skroutz.Model.ResultWrappers.Flag
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,14 +13,14 @@
 --
 -- Provides the 'Flag' type, used to mark user provided content as requiring attention/moderation.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.Flag
+module Web.Skroutz.Model.ResultWrappers.Flag
 where
 
 import           Control.DeepSeq             (NFData)
 import           Data.Data                   (Data, Typeable)
 import           GHC.Generics                (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.Flag
+import           Web.Skroutz.Model.Base.Flag
 
 data MultipleFlagResponse = MultipleFlagResponse {
     _multipleFlagResponseFlags :: [Flag]

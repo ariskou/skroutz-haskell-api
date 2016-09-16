@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.Sku
+-- Module      :  Web.Skroutz.Model.Base.Sku
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'Sku' type, where SKU (Stock Keeping Unit) is an aggregation of products.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.Sku
+module Web.Skroutz.Model.Base.Sku
 where
 
 import           Control.DeepSeq                     (NFData)
@@ -21,10 +21,10 @@ import           Data.Data                           (Data, Typeable)
 import           Data.Text                           (Text)
 import           GHC.Generics                        (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.Manufacturer
-import           Web.Skroutz.Types.Base.Product
-import           Web.Skroutz.Types.Base.SkuImages
-import           Web.Skroutz.Types.Base.URI
+import           Web.Skroutz.Model.Base.Manufacturer
+import           Web.Skroutz.Model.Base.Product
+import           Web.Skroutz.Model.Base.SkuImages
+import           Web.Skroutz.Model.Base.URI
 
 data Sku = Sku {
     _skuId                   :: Int

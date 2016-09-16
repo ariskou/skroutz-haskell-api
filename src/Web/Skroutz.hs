@@ -15,4 +15,4 @@ module Web.Skroutz
   ) where
 
 import           Web.Skroutz.Endpoints as X
-import           Web.Skroutz.Types     as X
+import           Web.Skroutz.Model     as X

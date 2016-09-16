@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Types.Base.Shop' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Shop' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Types.Shop
 where
@@ -22,7 +22,7 @@ import           GHC.Generics                       (Generic)
 import           Servant.API
 import           Servant.Client
 import           Web.Skroutz.Endpoints.Types.Common
-import           Web.Skroutz.Types
+import           Web.Skroutz.Model
 
 data ShopLocationEmbed = ShopLocationEmbedAddress
  deriving (Generic, Show)

@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.FilterGroup
+-- Module      :  Web.Skroutz.Model.ResultWrappers.FilterGroup
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,15 +13,15 @@
 --
 -- Provides the 'FilterGroup' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.FilterGroup
+module Web.Skroutz.Model.ResultWrappers.FilterGroup
 where
 
 import           Control.DeepSeq                       (NFData)
 import           Data.Data                             (Data, Typeable)
 import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.FilterGroup
-import           Web.Skroutz.Types.ResultWrappers.Meta
+import           Web.Skroutz.Model.Base.FilterGroup
+import           Web.Skroutz.Model.ResultWrappers.Meta
 
 data MultipleFilterGroupResponse = MultipleFilterGroupResponse {
     _multipleFilterGroupResponseFilterGroups :: [FilterGroup]

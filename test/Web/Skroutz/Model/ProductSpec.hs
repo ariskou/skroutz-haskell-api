@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ProductSpec
+-- Module      :  Web.Skroutz.Model.ProductSpec
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -10,7 +10,7 @@
 --
 -- Provides the Hspec tests for the 'Product' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ProductSpec
+module Web.Skroutz.Model.ProductSpec
 (
     main
   , spec

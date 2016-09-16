@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.ShopReview
+-- Module      :  Web.Skroutz.Model.ResultWrappers.ShopReview
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,15 +13,15 @@
 --
 -- Provides the 'ShopReview' type, a user review of a shop.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.ShopReview
+module Web.Skroutz.Model.ResultWrappers.ShopReview
 where
 
 import           Control.DeepSeq                       (NFData)
 import           Data.Data                             (Data, Typeable)
 import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.ShopReview
-import           Web.Skroutz.Types.ResultWrappers.Meta
+import           Web.Skroutz.Model.Base.ShopReview
+import           Web.Skroutz.Model.ResultWrappers.Meta
 
 data MultipleShopReviewResponse = MultipleShopReviewResponse {
     _multipleShopReviewResponseReviews :: [ShopReview]

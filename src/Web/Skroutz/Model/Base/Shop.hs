@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.Shop
+-- Module      :  Web.Skroutz.Model.Base.Shop
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'Shop' type, which is a merchant, not a physical store.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.Shop
+module Web.Skroutz.Model.Base.Shop
 where
 
 import           Control.DeepSeq                           (NFData)
@@ -21,9 +21,9 @@ import           Data.Data                                 (Data, Typeable)
 import           Data.Text                                 (Text)
 import           GHC.Generics                              (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.ShopPaymentMethods
-import           Web.Skroutz.Types.Base.ShopShipping
-import           Web.Skroutz.Types.Base.URI
+import           Web.Skroutz.Model.Base.ShopPaymentMethods
+import           Web.Skroutz.Model.Base.ShopShipping
+import           Web.Skroutz.Model.Base.URI
 
 data Shop = Shop {
     _shopId                 :: Int

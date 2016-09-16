@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.Pagination
+-- Module      :  Web.Skroutz.Model.ResultWrappers.Pagination
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'Meta' type, used for metadata in results, such as 'Pagination'.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.Meta
+module Web.Skroutz.Model.ResultWrappers.Meta
 where
 
 import           Control.DeepSeq                                   (NFData)
@@ -22,10 +22,10 @@ import           Data.Data                                         (Data,
 import           Data.Text                                         (Text)
 import           GHC.Generics                                      (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.ResultWrappers.AppliedFilters
-import           Web.Skroutz.Types.ResultWrappers.AvailableFilters
-import           Web.Skroutz.Types.ResultWrappers.Pagination
-import           Web.Skroutz.Types.ResultWrappers.StrongMatches
+import           Web.Skroutz.Model.ResultWrappers.AppliedFilters
+import           Web.Skroutz.Model.ResultWrappers.AvailableFilters
+import           Web.Skroutz.Model.ResultWrappers.Pagination
+import           Web.Skroutz.Model.ResultWrappers.StrongMatches
 
 data Meta = Meta {
     _metaPagination       :: Pagination

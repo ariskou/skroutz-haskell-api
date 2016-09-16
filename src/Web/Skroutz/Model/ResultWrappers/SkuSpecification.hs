@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.SkuSpecification
+-- Module      :  Web.Skroutz.Model.ResultWrappers.SkuSpecification
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,14 +13,14 @@
 --
 -- Provides the 'SkuSpecification' type, the specification of an 'SKU'.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.SkuSpecification
+module Web.Skroutz.Model.ResultWrappers.SkuSpecification
 where
 
 import           Control.DeepSeq                         (NFData)
 import           Data.Data                               (Data, Typeable)
 import           GHC.Generics                            (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.SkuSpecification
+import           Web.Skroutz.Model.Base.SkuSpecification
 
 data MultipleSkuSpecificationResponse = MultipleSkuSpecificationResponse {
     _multipleSkuSpecificationResponseSpecifications :: [SkuSpecification]

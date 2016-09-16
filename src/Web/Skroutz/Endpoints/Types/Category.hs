@@ -10,7 +10,7 @@
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Types.Base.Category' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Category' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Types.Category
 where
@@ -21,7 +21,7 @@ import           Servant.Client
 import           Web.Skroutz.Endpoints.Types.Common
 import           Web.Skroutz.Endpoints.Types.Manufacturer (ManufacturerOrderBy,
                                                            ManufacturerOrderDir)
-import           Web.Skroutz.Types
+import           Web.Skroutz.Model
 
 type CategoryAPI =
         "categories" :> DataAPIMethodPaged MultipleCategoryResponse

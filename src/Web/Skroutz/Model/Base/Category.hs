@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.Category
+-- Module      :  Web.Skroutz.Model.Base.Category
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'Category' type, a category of products.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.Category
+module Web.Skroutz.Model.Base.Category
 where
 
 import           Control.DeepSeq            (NFData)
@@ -21,7 +21,7 @@ import           Data.Data                  (Data, Typeable)
 import           Data.Text                  (Text)
 import           GHC.Generics               (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.URI
+import           Web.Skroutz.Model.Base.URI
 
 data Category = Category {
     _categoryId                 :: Int

@@ -10,7 +10,7 @@
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Types.Base.Product' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Product' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Types.Product
 where
@@ -20,7 +20,7 @@ import           Data.Text                          (Text)
 import           Servant.API
 import           Servant.Client
 import           Web.Skroutz.Endpoints.Types.Common
-import           Web.Skroutz.Types
+import           Web.Skroutz.Model
 
 type ProductAPI =
         "products" :> Capture "product_id" Int :> DataAPIMethod SingleProductResponse

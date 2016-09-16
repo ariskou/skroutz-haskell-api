@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.ShopLocation
+-- Module      :  Web.Skroutz.Model.ResultWrappers.ShopLocation
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,15 +13,15 @@
 --
 -- Provides the 'ShopLocation' type, the location of a specific physical shop store.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.ShopLocation
+module Web.Skroutz.Model.ResultWrappers.ShopLocation
 where
 
 import           Control.DeepSeq                       (NFData)
 import           Data.Data                             (Data, Typeable)
 import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.ShopLocation
-import           Web.Skroutz.Types.ResultWrappers.Meta
+import           Web.Skroutz.Model.Base.ShopLocation
+import           Web.Skroutz.Model.ResultWrappers.Meta
 
 data SingleShopLocationResponse = SingleShopLocationResponse {
     _singleShopLocationResponseLocation :: ShopLocation

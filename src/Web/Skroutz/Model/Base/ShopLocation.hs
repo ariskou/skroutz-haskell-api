@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.ShopLocation
+-- Module      :  Web.Skroutz.Model.Base.ShopLocation
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'ShopLocation' type, the location of a specific physical shop store.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.ShopLocation
+module Web.Skroutz.Model.Base.ShopLocation
 where
 
 import           Control.DeepSeq                            (NFData)
@@ -21,7 +21,7 @@ import           Data.Data                                  (Data, Typeable)
 import           Data.Text                                  (Text)
 import           GHC.Generics                               (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.ShopLocationAddress
+import           Web.Skroutz.Model.Base.ShopLocationAddress
 
 data ShopLocation = ShopLocation {
     _shopLocationId          :: Int

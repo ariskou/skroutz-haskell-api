@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.ShopLocationAddress
+-- Module      :  Web.Skroutz.Model.Base.ShopLocationAddress
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'ShopLocationAddress' type, the structured address of a shop location.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.ShopLocationAddress
+module Web.Skroutz.Model.Base.ShopLocationAddress
 where
 
 import           Control.DeepSeq (NFData)

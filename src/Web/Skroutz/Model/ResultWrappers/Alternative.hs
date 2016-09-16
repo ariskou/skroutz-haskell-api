@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.Alternative
+-- Module      :  Web.Skroutz.Model.ResultWrappers.Alternative
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'Alternative' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.Alternative
+module Web.Skroutz.Model.ResultWrappers.Alternative
 where
 
 import           Control.DeepSeq (NFData)

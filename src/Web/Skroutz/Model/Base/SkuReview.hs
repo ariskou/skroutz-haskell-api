@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.SkuReview
+-- Module      :  Web.Skroutz.Model.Base.SkuReview
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'SkuReview' type, a user review of an 'SKU'.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.SkuReview
+module Web.Skroutz.Model.Base.SkuReview
 where
 
 import           Control.DeepSeq (NFData)

@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.AppliedFilters
+-- Module      :  Web.Skroutz.Model.ResultWrappers.AppliedFilters
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'AppliedFilters' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.AppliedFilters
+module Web.Skroutz.Model.ResultWrappers.AppliedFilters
 where
 
 import           Control.DeepSeq (NFData)

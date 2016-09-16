@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.ShopReview
+-- Module      :  Web.Skroutz.Model.Base.ShopReview
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'ShopReview' type, a user review of a shop.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.ShopReview
+module Web.Skroutz.Model.Base.ShopReview
 where
 
 import           Control.DeepSeq (NFData)

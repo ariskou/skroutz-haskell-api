@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.Manufacturer
+-- Module      :  Web.Skroutz.Model.ResultWrappers.Manufacturer
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,15 +13,15 @@
 --
 -- Provides the 'Manufacturer' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.Manufacturer
+module Web.Skroutz.Model.ResultWrappers.Manufacturer
 where
 
 import           Control.DeepSeq                       (NFData)
 import           Data.Data                             (Data, Typeable)
 import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.Manufacturer
-import           Web.Skroutz.Types.ResultWrappers.Meta
+import           Web.Skroutz.Model.Base.Manufacturer
+import           Web.Skroutz.Model.ResultWrappers.Meta
 
 data SingleManufacturerResponse = SingleManufacturerResponse {
     _singleManufacturerResponseManufacturer :: Manufacturer

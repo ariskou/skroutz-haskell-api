@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.Product
+-- Module      :  Web.Skroutz.Model.ResultWrappers.Product
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,15 +13,15 @@
 --
 -- Provides the 'Product' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.Product
+module Web.Skroutz.Model.ResultWrappers.Product
 where
 
 import           Control.DeepSeq                       (NFData)
 import           Data.Data                             (Data, Typeable)
 import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.Product
-import           Web.Skroutz.Types.ResultWrappers.Meta
+import           Web.Skroutz.Model.Base.Product
+import           Web.Skroutz.Model.ResultWrappers.Meta
 
 data SingleProductResponse = SingleProductResponse {
     _singleProductResponseProduct :: Product

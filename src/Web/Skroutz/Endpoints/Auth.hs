@@ -22,7 +22,7 @@ import           Network.HTTP.Client        (Manager, ManagerSettings)
 import           Network.HTTP.Client.TLS    (tlsManagerSettings)
 import           Servant.API
 import           Servant.Client
-import           Web.Skroutz.Types          (Token)
+import           Web.Skroutz.Model          (Token)
 
 type AuthAPI =
        "token"

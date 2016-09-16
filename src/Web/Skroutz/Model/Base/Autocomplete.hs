@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.Autocomplete
+-- Module      :  Web.Skroutz.Model.Base.Autocomplete
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'Autocomplete' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.Autocomplete
+module Web.Skroutz.Model.Base.Autocomplete
 where
 
 import           Control.DeepSeq (NFData)

@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.Category
+-- Module      :  Web.Skroutz.Model.ResultWrappers.Category
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,15 +13,15 @@
 --
 -- Provides the 'Category' type, a category of products.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.Category
+module Web.Skroutz.Model.ResultWrappers.Category
 where
 
 import           Control.DeepSeq                       (NFData)
 import           Data.Data                             (Data, Typeable)
 import           GHC.Generics                          (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.Category
-import           Web.Skroutz.Types.ResultWrappers.Meta
+import           Web.Skroutz.Model.Base.Category
+import           Web.Skroutz.Model.ResultWrappers.Meta
 
 data SingleCategoryResponse = SingleCategoryResponse {
     _singleCategoryResponseCategory :: Category

@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.Product
+-- Module      :  Web.Skroutz.Model.Base.Product
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'Product' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.Product
+module Web.Skroutz.Model.Base.Product
 where
 
 import           Control.DeepSeq            (NFData)
@@ -21,7 +21,7 @@ import           Data.Data                  (Data, Typeable)
 import           Data.Text                  (Text)
 import           GHC.Generics               (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.URI
+import           Web.Skroutz.Model.Base.URI
 
 data Product = Product {
     _productId           :: Int

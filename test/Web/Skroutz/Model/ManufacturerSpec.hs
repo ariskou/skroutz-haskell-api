@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ManufacturerSpec
+-- Module      :  Web.Skroutz.Model.ManufacturerSpec
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -10,7 +10,7 @@
 --
 -- Provides the Hspec tests for the 'Manufacturer' type.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ManufacturerSpec
+module Web.Skroutz.Model.ManufacturerSpec
 (
     main
   , spec

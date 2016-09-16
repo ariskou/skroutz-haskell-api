@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.ResultWrappers.StrongMatches
+-- Module      :  Web.Skroutz.Model.ResultWrappers.StrongMatches
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,17 +13,17 @@
 --
 -- Provides the 'StrongMatches' type, used for strong match metadata in results.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.ResultWrappers.StrongMatches
+module Web.Skroutz.Model.ResultWrappers.StrongMatches
 where
 
 import           Control.DeepSeq                     (NFData)
 import           Data.Data                           (Data, Typeable)
 import           GHC.Generics                        (Generic)
 import           Web.Skroutz.TH
-import           Web.Skroutz.Types.Base.Category
-import           Web.Skroutz.Types.Base.Manufacturer
-import           Web.Skroutz.Types.Base.Shop
-import           Web.Skroutz.Types.Base.Sku
+import           Web.Skroutz.Model.Base.Category
+import           Web.Skroutz.Model.Base.Manufacturer
+import           Web.Skroutz.Model.Base.Shop
+import           Web.Skroutz.Model.Base.Sku
 
 data StrongMatches = StrongMatches {
     _strongMatchesCategory     :: Maybe Category

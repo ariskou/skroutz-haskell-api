@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.SkuSpecification
+-- Module      :  Web.Skroutz.Model.Base.SkuSpecification
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'SkuSpecification' type, the specification of an 'SKU'.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.SkuSpecification
+module Web.Skroutz.Model.Base.SkuSpecification
 where
 
 import           Control.DeepSeq (NFData)

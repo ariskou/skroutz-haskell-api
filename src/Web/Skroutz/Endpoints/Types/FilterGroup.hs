@@ -10,7 +10,7 @@
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Types.Base.FilterGroup' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.FilterGroup' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Types.FilterGroup
 where
@@ -19,7 +19,7 @@ import           Data.Proxy                         (Proxy (..))
 import           Servant.API
 import           Servant.Client
 import           Web.Skroutz.Endpoints.Types.Common
-import           Web.Skroutz.Types
+import           Web.Skroutz.Model
 
 type FilterGroupAPI =
         "categories" :> Capture "category_id" Int :> "filter_groups" :> DataAPIMethodPaged MultipleFilterGroupResponse

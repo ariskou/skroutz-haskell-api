@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.Token
+-- Module      :  Web.Skroutz.Model.Base.Token
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'Token' type, the access token required to access the API.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.Token
+module Web.Skroutz.Model.Base.Token
 where
 
 import           Control.DeepSeq (NFData)

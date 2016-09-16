@@ -5,7 +5,7 @@
 {-# LANGUAGE MultiParamTypeClasses #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.URI
+-- Module      :  Web.Skroutz.Model.Base.URI
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -14,7 +14,7 @@
 --
 -- Provides the 'URI' type, a newtype wrapper around Network.URI.URI.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.URI
+module Web.Skroutz.Model.Base.URI
 where
 
 import           Control.DeepSeq (NFData)

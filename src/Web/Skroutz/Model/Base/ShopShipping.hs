@@ -4,7 +4,7 @@
 {-# LANGUAGE TemplateHaskell    #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Types.Base.ShopShipping
+-- Module      :  Web.Skroutz.Model.Base.ShopShipping
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
@@ -13,7 +13,7 @@
 --
 -- Provides the 'ShopShipping' type, the shipping methods supported by a shop.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Types.Base.ShopShipping
+module Web.Skroutz.Model.Base.ShopShipping
 where
 
 import           Control.DeepSeq (NFData)

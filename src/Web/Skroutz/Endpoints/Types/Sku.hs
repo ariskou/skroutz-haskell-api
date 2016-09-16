@@ -12,7 +12,7 @@
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Types.Base.Sku' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Sku' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Types.Sku
 where
@@ -23,7 +23,7 @@ import           GHC.Generics                       (Generic)
 import           Servant.API
 import           Servant.Client
 import           Web.Skroutz.Endpoints.Types.Common
-import           Web.Skroutz.Types
+import           Web.Skroutz.Model
 
 data SkuEmbed = SkuEmbedProducts | SkuEmbedManufacturer
  deriving (Generic, Show)
