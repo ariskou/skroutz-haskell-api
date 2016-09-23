@@ -23,7 +23,7 @@ import           Data.Data       (Data, Typeable)
 import           GHC.Generics    (Generic)
 import           Web.Skroutz.TH
 
-data OrderBy = OrderByPopularity | OrderByPrice | OrderByPriceVAT | OrderByRating | OrderByName
+data OrderBy = OrderByPopularity | OrderByPrice | OrderByPricevat | OrderByRating | OrderByName
   deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSONSumType ''OrderBy "" "OrderBy"
