@@ -105,6 +105,7 @@ library
       Web.Skroutz.Model.Base.FilterGroup
       Web.Skroutz.Model.Base.Flag
       Web.Skroutz.Model.Base.Gender
+      Web.Skroutz.Model.Base.LayoutMode
       Web.Skroutz.Model.Base.Manufacturer
       Web.Skroutz.Model.Base.Product
       Web.Skroutz.Model.Base.Shop
