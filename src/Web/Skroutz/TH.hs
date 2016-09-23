@@ -12,23 +12,35 @@
 module Web.Skroutz.TH
   (
     makeLensesAndJSON
+  , makeLensesAndJSONSumType
   ) where
 
-import           Control.Lens        (makeLenses)
+import           Control.Lens        (makeLenses, makePrisms)
 import           Data.Aeson.TH
 import           Data.Aeson.Types    (camelTo2)
+import           Data.Char           (toLower)
 import           Data.List           (stripPrefix)
 import           Data.Maybe          (fromMaybe)
 import           Language.Haskell.TH (Dec, Name, Q)
 
-customDefaultOptions :: String -> Options
-customDefaultOptions prefix = defaultOptions {
+customDefaultOptions :: String -> String -> Options
+customDefaultOptions fieldPrefix constructorPrefix = defaultOptions {
     -- drop the prefix and then convert came case into underscore-separated naming convention.
-    fieldLabelModifier = \fieldName -> camelTo2 '_' $ fromMaybe fieldName (stripPrefix prefix fieldName)
+    fieldLabelModifier = \fieldName -> camelTo2 '_' $ fromMaybe fieldName (stripPrefix fieldPrefix fieldName)
+    -- we really only need support for sum types with nullary constructors in this library.
+  , constructorTagModifier = \constructorName -> map toLower $ fromMaybe constructorName (stripPrefix constructorPrefix constructorName)
   }
 
 makeLensesAndJSON :: Name -> String -> Q [Dec]
 makeLensesAndJSON typeName prefix = do
   lenses <- makeLenses typeName
-  jsonInstances <- deriveJSON (customDefaultOptions prefix) typeName
-  return $ lenses ++ jsonInstances
+  prisms <- makePrisms typeName
+  jsonInstances <- deriveJSON (customDefaultOptions prefix "") typeName
+  return $ lenses ++ prisms ++ jsonInstances
+
+makeLensesAndJSONSumType :: Name -> String -> String -> Q [Dec]
+makeLensesAndJSONSumType typeName fieldPrefix constructorPrefix = do
+  lenses <- makeLenses typeName
+  prisms <- makePrisms typeName
+  jsonInstances <- deriveJSON (customDefaultOptions fieldPrefix constructorPrefix) typeName
+  return $ lenses ++ prisms ++ jsonInstances
