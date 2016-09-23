@@ -101,6 +101,7 @@ library:
     - Web.Skroutz.Model.ResultWrappers.GeneralSearchResult
     - Web.Skroutz.Model.ResultWrappers.Manufacturer
     - Web.Skroutz.Model.ResultWrappers.Meta
+    - Web.Skroutz.Model.ResultWrappers.OrderBy
     - Web.Skroutz.Model.ResultWrappers.Pagination
     - Web.Skroutz.Model.ResultWrappers.Product
     - Web.Skroutz.Model.ResultWrappers.Shop

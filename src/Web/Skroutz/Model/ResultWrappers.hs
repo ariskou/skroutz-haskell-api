@@ -25,6 +25,7 @@ import           Web.Skroutz.Model.ResultWrappers.Flag                as X
 import           Web.Skroutz.Model.ResultWrappers.GeneralSearchResult as X
 import           Web.Skroutz.Model.ResultWrappers.Manufacturer        as X
 import           Web.Skroutz.Model.ResultWrappers.Meta                as X
+import           Web.Skroutz.Model.ResultWrappers.OrderBy             as X
 import           Web.Skroutz.Model.ResultWrappers.Pagination          as X
 import           Web.Skroutz.Model.ResultWrappers.Product             as X
 import           Web.Skroutz.Model.ResultWrappers.Shop                as X
