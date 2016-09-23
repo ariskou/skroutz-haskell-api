@@ -18,7 +18,6 @@ module Web.Skroutz.TH
 import           Control.Lens        (makeLenses, makePrisms)
 import           Data.Aeson.TH
 import           Data.Aeson.Types    (camelTo2)
-import           Data.Char           (toLower)
 import           Data.List           (stripPrefix)
 import           Data.Maybe          (fromMaybe)
 import           Language.Haskell.TH (Dec, Name, Q)
@@ -28,7 +27,7 @@ customDefaultOptions fieldPrefix constructorPrefix = defaultOptions {
     -- drop the prefix and then convert came case into underscore-separated naming convention.
     fieldLabelModifier = \fieldName -> camelTo2 '_' $ fromMaybe fieldName (stripPrefix fieldPrefix fieldName)
     -- we really only need support for sum types with nullary constructors in this library.
-  , constructorTagModifier = \constructorName -> map toLower $ fromMaybe constructorName (stripPrefix constructorPrefix constructorName)
+  , constructorTagModifier = \constructorName -> camelTo2 '_'$ fromMaybe constructorName (stripPrefix constructorPrefix constructorName)
   }
 
 makeLensesAndJSON :: Name -> String -> Q [Dec]
