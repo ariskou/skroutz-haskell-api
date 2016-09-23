@@ -19,6 +19,7 @@ import           Web.Skroutz.Model.Base.Autocomplete        as X
 import           Web.Skroutz.Model.Base.Category            as X
 import           Web.Skroutz.Model.Base.FilterGroup         as X
 import           Web.Skroutz.Model.Base.Flag                as X
+import           Web.Skroutz.Model.Base.Gender              as X
 import           Web.Skroutz.Model.Base.Manufacturer        as X
 import           Web.Skroutz.Model.Base.Product             as X
 import           Web.Skroutz.Model.Base.Shop                as X
