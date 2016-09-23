@@ -13,19 +13,14 @@
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the 'OrderBy' type, a type represinting the possible types of ordering in rearches.
+-- Provides the 'OrderBy' type, a type representing the possible types of ordering in searches.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.OrderBy
 where
 
 import           Control.DeepSeq (NFData)
-import           Control.Monad
-import qualified Data.Aeson      as Aeson
-import           Data.Coerce     (coerce)
 import           Data.Data       (Data, Typeable)
-import           Data.Text       (pack, unpack)
 import           GHC.Generics    (Generic)
-import qualified Network.URI     (URI, parseURI)
 import           Web.Skroutz.TH
 
 data OrderBy = OrderByPopularity | OrderByPrice | OrderByPriceVAT | OrderByRating | OrderByName
