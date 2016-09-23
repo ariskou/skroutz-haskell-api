@@ -24,13 +24,14 @@ import           GHC.Generics                                      (Generic)
 import           Web.Skroutz.Model.ResultWrappers.Alternative
 import           Web.Skroutz.Model.ResultWrappers.AppliedFilters
 import           Web.Skroutz.Model.ResultWrappers.AvailableFilters
+import           Web.Skroutz.Model.ResultWrappers.OrderBy
 import           Web.Skroutz.Model.ResultWrappers.Pagination
 import           Web.Skroutz.Model.ResultWrappers.StrongMatches
 import           Web.Skroutz.TH
 
 data Meta = Meta {
     _metaPagination       :: Pagination
-  , _metaOrderedBy        :: Maybe Text -- "popularity", "price", "pricevat", "rating"
+  , _metaOrderedBy        :: Maybe OrderBy
   , _metaAppliedFilters   :: Maybe AppliedFilters
   , _metaAvailableFilters :: Maybe AvailableFilters
   , _metaQ                :: Maybe Text
