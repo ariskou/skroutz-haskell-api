@@ -19,11 +19,12 @@ where
 import           Control.DeepSeq (NFData)
 import           Data.Data       (Data, Typeable)
 import           Data.Text       (Text)
+import           Data.Time       (Day)
 import           GHC.Generics    (Generic)
 import           Web.Skroutz.TH
 
 data SkuPrice = SkuPrice {
-    _skuPriceDate     :: Text
+    _skuPriceDate     :: Day
   , _skuPricePrice    :: Double
   , _skuPriceShopName :: Maybe Text
   } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
