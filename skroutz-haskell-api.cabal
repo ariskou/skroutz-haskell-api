@@ -102,6 +102,7 @@ library
       Web.Skroutz.Model.Base
       Web.Skroutz.Model.Base.Autocomplete
       Web.Skroutz.Model.Base.Category
+      Web.Skroutz.Model.Base.CategoryPath
       Web.Skroutz.Model.Base.FilterGroup
       Web.Skroutz.Model.Base.Flag
       Web.Skroutz.Model.Base.Gender

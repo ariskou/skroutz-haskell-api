@@ -17,6 +17,7 @@ where
 
 import           Web.Skroutz.Model.Base.Autocomplete        as X
 import           Web.Skroutz.Model.Base.Category            as X
+import           Web.Skroutz.Model.Base.CategoryPath        as X
 import           Web.Skroutz.Model.Base.FilterGroup         as X
 import           Web.Skroutz.Model.Base.Flag                as X
 import           Web.Skroutz.Model.Base.Gender              as X
