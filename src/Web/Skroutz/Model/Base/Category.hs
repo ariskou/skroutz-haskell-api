@@ -16,12 +16,14 @@
 module Web.Skroutz.Model.Base.Category
 where
 
-import           Control.DeepSeq            (NFData)
-import           Data.Data                  (Data, Typeable)
-import           Data.Text                  (Text)
-import           GHC.Generics               (Generic)
-import           Web.Skroutz.TH
+import           Control.DeepSeq                     (NFData)
+import           Data.Data                           (Data, Typeable)
+import           Data.Text                           (Text)
+import           GHC.Generics                        (Generic)
+import           Web.Skroutz.Model.Base.CategoryPath
+import           Web.Skroutz.Model.Base.LayoutMode
 import           Web.Skroutz.Model.Base.URI
+import           Web.Skroutz.TH
 
 data Category = Category {
     _categoryId                 :: Int
@@ -30,10 +32,10 @@ data Category = Category {
   , _categoryImageUrl           :: URI
   , _categoryParentId           :: Int
   , _categoryFashion            :: Bool
-  , _categoryLayoutMode         :: Text
+  , _categoryLayoutMode         :: LayoutMode
   , _categoryWebUri             :: URI
   , _categoryCode               :: Text
-  , _categoryPath               :: Text
+  , _categoryPath               :: CategoryPath
   , _categoryShowSpecifications :: Bool
   , _categoryManufacturerTitle  :: Text
   } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
