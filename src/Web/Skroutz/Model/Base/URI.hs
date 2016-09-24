@@ -17,25 +17,25 @@
 module Web.Skroutz.Model.Base.URI
 where
 
-import           Control.DeepSeq (NFData)
-import           Control.Monad
-import qualified Data.Aeson      as Aeson
-import           Data.Coerce     (coerce)
-import           Data.Data       (Data, Typeable)
-import           Data.Text       (pack, unpack)
-import           GHC.Generics    (Generic)
-import qualified Network.URI     (URI, parseURI)
+import           Control.DeepSeq  (NFData)
+import qualified Data.Aeson       as Aeson
+import           Data.Aeson.Types (typeMismatch)
+import           Data.Coerce      (coerce)
+import           Data.Data        (Data, Typeable)
+import           Data.Text        (pack, unpack)
+import           GHC.Generics     (Generic)
+import qualified Network.URI      (URI, parseURI)
 
 newtype URI = URI {
     unUri :: Network.URI.URI
   } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 instance Aeson.FromJSON URI where
-  parseJSON (Aeson.String uri) =
+  parseJSON value@(Aeson.String uri) =
     case Network.URI.parseURI (unpack uri) of
       Just x -> return $ coerce x
-      Nothing -> mzero
-  parseJSON _            = mzero
+      Nothing -> typeMismatch "URI" value
+  parseJSON invalid = typeMismatch "URI" invalid
 
 instance Aeson.ToJSON URI where
   toJSON = Aeson.String . pack . show
