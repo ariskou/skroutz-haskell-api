@@ -16,10 +16,11 @@
 module Web.Skroutz.Model.Base.ShopReview
 where
 
-import           Control.DeepSeq (NFData)
-import           Data.Data       (Data, Typeable)
-import           Data.Text       (Text)
-import           GHC.Generics    (Generic)
+import           Control.DeepSeq                    (NFData)
+import           Data.Data                          (Data, Typeable)
+import           Data.Text                          (Text)
+import           GHC.Generics                       (Generic)
+import           Web.Skroutz.Model.Base.ISO8601Time
 import           Web.Skroutz.TH
 
 data ShopReview = ShopReview {
@@ -28,7 +29,7 @@ data ShopReview = ShopReview {
   , _shopReviewReview    :: Text
   , _shopReviewRating    :: Int
   , _shopReviewShopReply :: Maybe Text
-  , _shopReviewCreatedAt :: Text
+  , _shopReviewCreatedAt :: ISO8601Time
   } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''ShopReview "_shopReview"

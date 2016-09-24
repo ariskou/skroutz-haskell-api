@@ -16,10 +16,11 @@
 module Web.Skroutz.Model.Base.FilterGroup
 where
 
-import           Control.DeepSeq (NFData)
-import           Data.Data       (Data, Typeable)
-import           Data.Text       (Text)
-import           GHC.Generics    (Generic)
+import           Control.DeepSeq                    (NFData)
+import           Data.Data                          (Data, Typeable)
+import           Data.Text                          (Text)
+import           GHC.Generics                       (Generic)
+import           Web.Skroutz.Model.Base.ISO8601Time
 import           Web.Skroutz.TH
 
 data FilterGroup = FilterGroup {
@@ -27,8 +28,8 @@ data FilterGroup = FilterGroup {
   , _filterGroupName       :: Text
   , _filterGroupActive     :: Bool
   , _filterGroupCategoryId :: Int
-  , _filterGroupCreatedAt  :: Maybe Text
-  , _filterGroupUpdatedAt  :: Text
+  , _filterGroupCreatedAt  :: Maybe ISO8601Time
+  , _filterGroupUpdatedAt  :: ISO8601Time
   , _filterGroupHint       :: Text
   , _filterGroupCombined   :: Bool
   , _filterGroupFilterType :: Int
