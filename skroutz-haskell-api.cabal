@@ -80,6 +80,7 @@ library
     , http-conduit
     , http-types
     , containers
+    , time
   exposed-modules:
       Web.Skroutz
   other-modules:
