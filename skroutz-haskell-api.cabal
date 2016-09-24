@@ -107,6 +107,7 @@ library
       Web.Skroutz.Model.Base.FilterGroup
       Web.Skroutz.Model.Base.Flag
       Web.Skroutz.Model.Base.Gender
+      Web.Skroutz.Model.Base.ISO8601Time
       Web.Skroutz.Model.Base.LayoutMode
       Web.Skroutz.Model.Base.Manufacturer
       Web.Skroutz.Model.Base.Product
@@ -182,6 +183,7 @@ test-suite spec
     , http-conduit
     , http-types
     , containers
+    , time
     , skroutz-haskell-api
     , bytestring
     , filepath
