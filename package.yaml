@@ -84,6 +84,7 @@ library:
     - Web.Skroutz.Model.Base.Shop
     - Web.Skroutz.Model.Base.ShopLocation
     - Web.Skroutz.Model.Base.ShopLocationAddress
+    - Web.Skroutz.Model.Base.ShopLocationFormat
     - Web.Skroutz.Model.Base.ShopPaymentMethods
     - Web.Skroutz.Model.Base.ShopReview
     - Web.Skroutz.Model.Base.ShopShipping

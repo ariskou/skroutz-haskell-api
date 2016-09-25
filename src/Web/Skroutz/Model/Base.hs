@@ -28,6 +28,7 @@ import           Web.Skroutz.Model.Base.Product             as X
 import           Web.Skroutz.Model.Base.Shop                as X
 import           Web.Skroutz.Model.Base.ShopLocation        as X
 import           Web.Skroutz.Model.Base.ShopLocationAddress as X
+import           Web.Skroutz.Model.Base.ShopLocationFormat  as X
 import           Web.Skroutz.Model.Base.ShopPaymentMethods  as X
 import           Web.Skroutz.Model.Base.ShopReview          as X
 import           Web.Skroutz.Model.Base.ShopShipping        as X
