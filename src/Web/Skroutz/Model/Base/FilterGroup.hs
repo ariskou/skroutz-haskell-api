@@ -20,6 +20,7 @@ import           Control.DeepSeq                    (NFData)
 import           Data.Data                          (Data, Typeable)
 import           Data.Text                          (Text)
 import           GHC.Generics                       (Generic)
+import           Web.Skroutz.Model.Base.FilterType
 import           Web.Skroutz.Model.Base.ISO8601Time
 import           Web.Skroutz.TH
 
@@ -32,7 +33,7 @@ data FilterGroup = FilterGroup {
   , _filterGroupUpdatedAt  :: ISO8601Time
   , _filterGroupHint       :: Text
   , _filterGroupCombined   :: Bool
-  , _filterGroupFilterType :: Int
+  , _filterGroupFilterType :: FilterType
   } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''FilterGroup "_filterGroup"
