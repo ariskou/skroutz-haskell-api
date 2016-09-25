@@ -32,7 +32,7 @@ data Product = Product {
   , _productAvailability :: Text
   , _productClickUrl     :: URI
   , _productShopUid      :: Text
-  , _productExpenses     :: Maybe Text --TODO: Check for real type, only null examples offered
+  , _productExpenses     :: Maybe Text
   , _productWebUri       :: URI
   , _productPrice        :: Double
   } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
