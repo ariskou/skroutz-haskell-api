@@ -21,7 +21,6 @@ import           Web.Skroutz.Model.Base.CategoryPath        as X
 import           Web.Skroutz.Model.Base.FilterGroup         as X
 import           Web.Skroutz.Model.Base.FilterGroupType     as X
 import           Web.Skroutz.Model.Base.Flag                as X
-import           Web.Skroutz.Model.Base.Gender              as X
 import           Web.Skroutz.Model.Base.ISO8601Time         as X
 import           Web.Skroutz.Model.Base.LayoutMode          as X
 import           Web.Skroutz.Model.Base.Manufacturer        as X
@@ -40,3 +39,4 @@ import           Web.Skroutz.Model.Base.SkuSpecification    as X
 import           Web.Skroutz.Model.Base.Token               as X
 import           Web.Skroutz.Model.Base.URI                 as X
 import           Web.Skroutz.Model.Base.User                as X
+import           Web.Skroutz.Model.Base.UserSex             as X

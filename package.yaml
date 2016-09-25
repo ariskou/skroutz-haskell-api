@@ -77,7 +77,6 @@ library:
     - Web.Skroutz.Model.Base.FilterGroup
     - Web.Skroutz.Model.Base.FilterGroupType
     - Web.Skroutz.Model.Base.Flag
-    - Web.Skroutz.Model.Base.Gender
     - Web.Skroutz.Model.Base.ISO8601Time
     - Web.Skroutz.Model.Base.LayoutMode
     - Web.Skroutz.Model.Base.Manufacturer
@@ -96,6 +95,7 @@ library:
     - Web.Skroutz.Model.Base.Token
     - Web.Skroutz.Model.Base.URI
     - Web.Skroutz.Model.Base.User
+    - Web.Skroutz.Model.Base.UserSex
     - Web.Skroutz.Model.ResultWrappers
     - Web.Skroutz.Model.ResultWrappers.Alternative
     - Web.Skroutz.Model.ResultWrappers.AppliedFilters

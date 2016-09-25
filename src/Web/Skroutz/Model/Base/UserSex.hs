@@ -6,16 +6,16 @@
 {-# LANGUAGE TemplateHaskell       #-}
 ----------------------------------------------------------------------------
 -- |
--- Module      :  Web.Skroutz.Model.Base.Gender
+-- Module      :  Web.Skroutz.Model.Base.UserSex
 -- Copyright   :  (c) 2016 Remous-Aris Koutsiamanis
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the 'Gender' type, a type representing the supported possible genders for users.
+-- Provides the 'UserSex' type, a type representing the supported possible genders for users.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Model.Base.Gender
+module Web.Skroutz.Model.Base.UserSex
 where
 
 import           Control.DeepSeq (NFData)
@@ -23,7 +23,7 @@ import           Data.Data       (Data, Typeable)
 import           GHC.Generics    (Generic)
 import           Web.Skroutz.TH
 
-data Gender = GenderMale | GenderFemale
+data UserSex = UserSexMale | UserSexFemale
   deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
-makeLensesAndJSONSumType ''Gender "" "Gender"
+makeLensesAndJSONSumType ''UserSex "" "UserSex"

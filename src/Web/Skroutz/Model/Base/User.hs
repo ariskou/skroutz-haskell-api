@@ -16,19 +16,19 @@
 module Web.Skroutz.Model.Base.User
 where
 
-import           Control.DeepSeq               (NFData)
-import           Data.Data                     (Data, Typeable)
-import           Data.Text                     (Text)
-import           GHC.Generics                  (Generic)
-import           Web.Skroutz.Model.Base.Gender
+import           Control.DeepSeq                (NFData)
+import           Data.Data                      (Data, Typeable)
+import           Data.Text                      (Text)
+import           GHC.Generics                   (Generic)
 import           Web.Skroutz.Model.Base.URI
+import           Web.Skroutz.Model.Base.UserSex
 import           Web.Skroutz.TH
 
 data User = User {
     _userId       :: Int
   , _userUsername :: Text
   , _userName     :: Text
-  , _userSex      :: Gender
+  , _userSex      :: UserSex
   , _userAvatar   :: URI
   } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
