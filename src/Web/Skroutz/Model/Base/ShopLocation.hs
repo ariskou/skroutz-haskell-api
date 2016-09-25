@@ -20,8 +20,9 @@ import           Control.DeepSeq                            (NFData)
 import           Data.Data                                  (Data, Typeable)
 import           Data.Text                                  (Text)
 import           GHC.Generics                               (Generic)
-import           Web.Skroutz.TH
 import           Web.Skroutz.Model.Base.ShopLocationAddress
+import           Web.Skroutz.Model.Base.ShopLocationFormat
+import           Web.Skroutz.TH
 
 data ShopLocation = ShopLocation {
     _shopLocationId          :: Int
@@ -30,7 +31,7 @@ data ShopLocation = ShopLocation {
   , _shopLocationPickupPoint :: Bool
   , _shopLocationStore       :: Bool
   , _shopLocationFullAddress :: Text
-  , _shopLocationFormat      :: Text
+  , _shopLocationFormat      :: ShopLocationFormat
   , _shopLocationLat         :: Text
   , _shopLocationLng         :: Text
   , _shopLocationInfo        :: Text
