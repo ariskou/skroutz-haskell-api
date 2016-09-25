@@ -13,6 +13,7 @@ module Web.Skroutz.TH
   (
     makeLensesAndJSON
   , makeLensesAndJSONSumType
+  , makeLensesAndPrisms
   ) where
 
 import           Control.Lens        (makeLenses, makePrisms)
@@ -43,3 +44,9 @@ makeLensesAndJSONSumType typeName fieldPrefix constructorPrefix = do
   prisms <- makePrisms typeName
   jsonInstances <- deriveJSON (customDefaultOptions fieldPrefix constructorPrefix) typeName
   return $ lenses ++ prisms ++ jsonInstances
+
+makeLensesAndPrisms :: Name -> Q [Dec]
+makeLensesAndPrisms typeName = do
+  lenses <- makeLenses typeName
+  prisms <- makePrisms typeName
+  return $ lenses ++ prisms
