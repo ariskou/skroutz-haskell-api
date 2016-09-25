@@ -32,7 +32,7 @@ data Product = Product {
   , _productAvailability :: Text
   , _productClickUrl     :: URI
   , _productShopUid      :: Text
-  , _productExpenses     :: Maybe Text
+  , _productExpenses     :: Maybe Text -- This could be Maybe Double, but no non-null examples have been found
   , _productWebUri       :: URI
   , _productPrice        :: Double
   } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)

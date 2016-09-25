@@ -24,9 +24,9 @@ import           Web.Skroutz.TH
 
 data ShopShipping = ShopShipping {
     _shopShippingFree         :: Bool
-  , _shopShippingFreeFrom     :: Int
+  , _shopShippingFreeFrom     :: Int -- This could also be Double since it represents a price, but only integer examples have been seen until now.
   , _shopShippingFreeFromInfo :: Text
-  , _shopShippingMinPrice     :: Text
+  , _shopShippingMinPrice     :: Text -- Returns double in quotes, e.g. "3.99"
   } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''ShopShipping "_shopShipping"
