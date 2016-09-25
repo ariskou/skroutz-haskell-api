@@ -13,9 +13,9 @@
 -- Stability   :  alpha
 -- Portability :
 --
--- Provides the 'LayoutMode' type, a type representing the supported layout modes for 'Category'.
+-- Provides the 'CategoryLayoutMode' type, a type representing the supported layout modes for 'Category'.
 ----------------------------------------------------------------------------
-module Web.Skroutz.Model.Base.LayoutMode
+module Web.Skroutz.Model.Base.CategoryLayoutMode
 where
 
 import           Control.DeepSeq (NFData)
@@ -23,7 +23,7 @@ import           Data.Data       (Data, Typeable)
 import           GHC.Generics    (Generic)
 import           Web.Skroutz.TH
 
-data LayoutMode = LayoutModeList | LayoutModeTiles | LayoutModeWideTiles
+data CategoryLayoutMode = CategoryLayoutModeList | CategoryLayoutModeTiles | CategoryLayoutModeWideTiles
   deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
-makeLensesAndJSONSumType ''LayoutMode "" "LayoutMode"
+makeLensesAndJSONSumType ''CategoryLayoutMode "" "CategoryLayoutMode"

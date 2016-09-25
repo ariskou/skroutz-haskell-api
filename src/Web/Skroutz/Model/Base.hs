@@ -17,12 +17,12 @@ where
 
 import           Web.Skroutz.Model.Base.Autocomplete        as X
 import           Web.Skroutz.Model.Base.Category            as X
+import           Web.Skroutz.Model.Base.CategoryLayoutMode  as X
 import           Web.Skroutz.Model.Base.CategoryPath        as X
 import           Web.Skroutz.Model.Base.FilterGroup         as X
 import           Web.Skroutz.Model.Base.FilterGroupType     as X
 import           Web.Skroutz.Model.Base.Flag                as X
 import           Web.Skroutz.Model.Base.ISO8601Time         as X
-import           Web.Skroutz.Model.Base.LayoutMode          as X
 import           Web.Skroutz.Model.Base.Manufacturer        as X
 import           Web.Skroutz.Model.Base.Product             as X
 import           Web.Skroutz.Model.Base.Shop                as X
