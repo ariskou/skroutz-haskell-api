@@ -16,11 +16,11 @@
 module Web.Skroutz.Model.Base.FilterGroup
 where
 
-import           Control.DeepSeq                    (NFData)
-import           Data.Data                          (Data, Typeable)
-import           Data.Text                          (Text)
-import           GHC.Generics                       (Generic)
-import           Web.Skroutz.Model.Base.FilterType
+import           Control.DeepSeq                        (NFData)
+import           Data.Data                              (Data, Typeable)
+import           Data.Text                              (Text)
+import           GHC.Generics                           (Generic)
+import           Web.Skroutz.Model.Base.FilterGroupType
 import           Web.Skroutz.Model.Base.ISO8601Time
 import           Web.Skroutz.TH
 
@@ -33,7 +33,7 @@ data FilterGroup = FilterGroup {
   , _filterGroupUpdatedAt  :: ISO8601Time
   , _filterGroupHint       :: Text
   , _filterGroupCombined   :: Bool
-  , _filterGroupFilterType :: FilterType
+  , _filterGroupFilterType :: FilterGroupType
   } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''FilterGroup "_filterGroup"

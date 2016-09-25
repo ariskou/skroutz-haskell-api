@@ -75,7 +75,7 @@ library:
     - Web.Skroutz.Model.Base.Category
     - Web.Skroutz.Model.Base.CategoryPath
     - Web.Skroutz.Model.Base.FilterGroup
-    - Web.Skroutz.Model.Base.FilterType
+    - Web.Skroutz.Model.Base.FilterGroupType
     - Web.Skroutz.Model.Base.Flag
     - Web.Skroutz.Model.Base.Gender
     - Web.Skroutz.Model.Base.ISO8601Time
