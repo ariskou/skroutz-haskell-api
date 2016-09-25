@@ -32,8 +32,8 @@ data ShopLocation = ShopLocation {
   , _shopLocationStore       :: Bool
   , _shopLocationFullAddress :: Text
   , _shopLocationFormat      :: ShopLocationFormat
-  , _shopLocationLat         :: Text
-  , _shopLocationLng         :: Text
+  , _shopLocationLat         :: Text -- Returns double in quotes, e.g. "38.062297"
+  , _shopLocationLng         :: Text -- Returns double in quotes, e.g. "23.75991"
   , _shopLocationInfo        :: Text
   , _shopLocationAddress     :: Maybe ShopLocationAddress
   } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
