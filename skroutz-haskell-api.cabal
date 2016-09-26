@@ -201,6 +201,7 @@ test-suite spec
   other-modules:
       Web.Skroutz.Common
       Web.Skroutz.Endpoints.SampleCalls
+      Web.Skroutz.ModelSpec
       Web.Skroutz.Model.CategorySpec
       Web.Skroutz.Model.ManufacturerSpec
       Web.Skroutz.Model.ProductSpec
