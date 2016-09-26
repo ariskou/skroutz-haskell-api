@@ -16,15 +16,16 @@
 module Web.Skroutz.Model.Base.Token
 where
 
-import           Control.DeepSeq (NFData)
-import           Data.Data       (Data, Typeable)
-import           Data.Text       (Text)
-import           GHC.Generics    (Generic)
+import           Control.DeepSeq                  (NFData)
+import           Data.Data                        (Data, Typeable)
+import           Data.Text                        (Text)
+import           GHC.Generics                     (Generic)
+import           Web.Skroutz.Model.Base.TokenType
 import           Web.Skroutz.TH
 
 data Token = Token {
     _tokenAccessToken :: Text
-  , _tokenTokenType   :: Text
+  , _tokenTokenType   :: TokenType
   , _tokenExpiresIn   :: Int
   } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
