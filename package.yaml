@@ -97,6 +97,7 @@ library:
     - Web.Skroutz.Model.Base.SkuReview
     - Web.Skroutz.Model.Base.SkuSpecification
     - Web.Skroutz.Model.Base.Token
+    - Web.Skroutz.Model.Base.TokenType
     - Web.Skroutz.Model.Base.URI
     - Web.Skroutz.Model.Base.User
     - Web.Skroutz.Model.Base.UserSex
