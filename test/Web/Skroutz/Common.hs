@@ -18,10 +18,14 @@ module Web.Skroutz.Common
   , ix
   , _JSON
   , Spec
+  , SpecWith
+  , Arg
+  , Example
   , describe
   , hspec
   , it
   , shouldBe
+  , shouldSatisfy
   )
 where
 
@@ -33,7 +37,7 @@ import           Data.Maybe           (fromJust)
 import           Network.URI          (parseURI)
 import           System.Directory     (getCurrentDirectory)
 import           System.FilePath      ((</>))
-import           Test.Hspec           (Spec, describe, hspec, it, shouldBe)
+import           Test.Hspec           (Spec, describe, hspec, it, shouldBe, shouldSatisfy, SpecWith, Arg, Example)
 import qualified Web.Skroutz          as Skroutz
 
 readJSON :: FilePath -> FilePath -> IO ByteString
