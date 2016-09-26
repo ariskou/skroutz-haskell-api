@@ -50,6 +50,8 @@ dependencies:
   - http-types
   - containers
   - time
+  - regex-tdfa
+  - regex-tdfa-text
 
 library:
   source-dirs: src
