@@ -199,7 +199,6 @@ test-suite spec
     , hspec
     , HList
   other-modules:
-      Web.Skroutz.Common
       Web.Skroutz.Endpoints.SampleCalls
       Web.Skroutz.ModelSpec
   default-language: Haskell2010
