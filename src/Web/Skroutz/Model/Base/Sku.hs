@@ -20,11 +20,12 @@ import           Control.DeepSeq                     (NFData)
 import           Data.Data                           (Data, Typeable)
 import           Data.Text                           (Text)
 import           GHC.Generics                        (Generic)
-import           Web.Skroutz.TH
 import           Web.Skroutz.Model.Base.Manufacturer
 import           Web.Skroutz.Model.Base.Product
 import           Web.Skroutz.Model.Base.SkuImages
+import           Web.Skroutz.Model.Base.SkuShopInfo
 import           Web.Skroutz.Model.Base.URI
+import           Web.Skroutz.TH
 
 data Sku = Sku {
     _skuId                   :: Int
@@ -32,7 +33,7 @@ data Sku = Sku {
   , _skuPn                   :: Text
   , _skuName                 :: Text
   , _skuCategoryId           :: Int
-  , _skuFirstProductShopInfo :: Maybe Text
+  , _skuFirstProductShopInfo :: Maybe SkuShopInfo
   , _skuClickUrl             :: Maybe URI
   , _skuPriceMax             :: Double
   , _skuPriceMin             :: Double
