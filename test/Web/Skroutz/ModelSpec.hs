@@ -44,7 +44,17 @@ spec :: Spec
 spec =
   describe "JSON Parsing" $ do
     genericSpec (Proxy :: Proxy Skroutz.SingleCategoryResponse) "parses a single Category" "category" "successful_one_response_body.json.formatted"
-    genericSpec (Proxy :: Proxy Skroutz.MultipleCategoryResponse) "parses a list of Categories" "category" "successful_all_response_body.json.formatted"
+    genericSpec (Proxy :: Proxy Skroutz.MultipleCategoryResponse) "parses a list of Category" "category" "successful_all_response_body.json.formatted"
+
+    genericSpec (Proxy :: Proxy Skroutz.SingleManufacturerResponse) "parses a single Manufacturer" "manufacturer" "successful_one_response_body.json.formatted"
+    genericSpec (Proxy :: Proxy Skroutz.MultipleManufacturerResponse) "parses a list of Manufacturer" "manufacturer" "successful_all_response_body.json.formatted"
+
+    genericSpec (Proxy :: Proxy Skroutz.SingleProductResponse) "parses a single Product" "product" "successful_one_response_body.json.formatted"
+    genericSpec (Proxy :: Proxy Skroutz.MultipleProductResponse) "parses a list of Product" "product" "successful_search_response_body.json.formatted"
+    genericSpec (Proxy :: Proxy Skroutz.MultipleProductResponse) "parses an empty list of Product" "product" "no_results_response_body.json.formatted"
+
+    genericSpec (Proxy :: Proxy Skroutz.SingleShopResponse) "parses a single Shop" "shop" "successful_one_response_body.json.formatted"
+    genericSpec (Proxy :: Proxy Skroutz.MultipleShopResponse) "parses an empty list of Shop" "shop" "no_results_response_body.json.formatted"
 
 main :: IO ()
 main = hspec spec

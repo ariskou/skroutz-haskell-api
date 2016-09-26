@@ -202,8 +202,4 @@ test-suite spec
       Web.Skroutz.Common
       Web.Skroutz.Endpoints.SampleCalls
       Web.Skroutz.ModelSpec
-      Web.Skroutz.Model.CategorySpec
-      Web.Skroutz.Model.ManufacturerSpec
-      Web.Skroutz.Model.ProductSpec
-      Web.Skroutz.Model.ShopSpec
   default-language: Haskell2010
