@@ -119,6 +119,7 @@ library
       Web.Skroutz.Model.Base.ShopLocationFormat
       Web.Skroutz.Model.Base.ShopPaymentMethods
       Web.Skroutz.Model.Base.ShopReview
+      Web.Skroutz.Model.Base.SkuShopInfo
       Web.Skroutz.Model.Base.ShopShipping
       Web.Skroutz.Model.Base.Sku
       Web.Skroutz.Model.Base.SkuImages

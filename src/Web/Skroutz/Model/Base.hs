@@ -36,6 +36,7 @@ import           Web.Skroutz.Model.Base.Sku                 as X
 import           Web.Skroutz.Model.Base.SkuImages           as X
 import           Web.Skroutz.Model.Base.SkuPrice            as X
 import           Web.Skroutz.Model.Base.SkuReview           as X
+import           Web.Skroutz.Model.Base.SkuShopInfo         as X
 import           Web.Skroutz.Model.Base.SkuSpecification    as X
 import           Web.Skroutz.Model.Base.Token               as X
 import           Web.Skroutz.Model.Base.URI                 as X
