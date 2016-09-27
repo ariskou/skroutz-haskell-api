@@ -26,10 +26,16 @@ import           GHC.Generics    (Generic)
 
 newtype ISO8601Time = ISO8601Time {
     unZonedTime :: ZonedTime
-  } deriving (Typeable, Data, Generic, Show, NFData, Aeson.FromJSON, Aeson.ToJSON)
+  } deriving (Typeable, Data, Generic, Show, NFData)
 
 instance Eq ISO8601Time where
   ISO8601Time { unZonedTime = t1 } == ISO8601Time { unZonedTime = t2} = zonedTimeToUTC t1 == zonedTimeToUTC t2
 
 instance Ord ISO8601Time where
   compare ISO8601Time { unZonedTime = t1 } ISO8601Time { unZonedTime = t2} = compare (zonedTimeToUTC t1) (zonedTimeToUTC t2)
+
+instance Aeson.FromJSON ISO8601Time where
+  parseJSON value = fmap ISO8601Time (Aeson.parseJSON value)
+
+instance Aeson.ToJSON ISO8601Time where
+  toJSON = Aeson.toJSON . unZonedTime
