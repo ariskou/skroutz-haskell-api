@@ -3,6 +3,7 @@
 {-# LANGUAGE DeriveGeneric         #-}
 {-# LANGUAGE FlexibleInstances     #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE TemplateHaskell       #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Model.Base.URI
@@ -20,20 +21,21 @@ where
 import           Control.DeepSeq  (NFData)
 import qualified Data.Aeson       as Aeson
 import           Data.Aeson.Types (typeMismatch)
-import           Data.Coerce      (coerce)
 import           Data.Data        (Data, Typeable)
 import           Data.Text        (pack, unpack)
 import           GHC.Generics     (Generic)
 import qualified Network.URI      (URI, parseURI)
+import           Web.Skroutz.TH
 
-newtype URI = URI {
-    unUri :: Network.URI.URI
-  } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
+newtype URI = URI Network.URI.URI
+  deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
+
+makeLensesAndPrisms ''URI
 
 instance Aeson.FromJSON URI where
   parseJSON value@(Aeson.String uri) =
     case Network.URI.parseURI (unpack uri) of
-      Just x -> return $ coerce x
+      Just x -> return $ URI x
       Nothing -> typeMismatch "URI" value
   parseJSON invalid = typeMismatch "URI" invalid
 
