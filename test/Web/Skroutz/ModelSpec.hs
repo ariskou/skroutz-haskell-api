@@ -72,6 +72,9 @@ spec =
     genericSpec (Proxy :: Proxy Skroutz.MultipleProductResponse) "parses a list of Product related to a Sku" "sku" "successful_one_products_response_body.json.formatted"
     -- SkuReview
     genericSpec (Proxy :: Proxy Skroutz.MultipleSkuReviewResponse) "parses a list of SkuReview" "sku" "successful_one_reviews_response_body.json.formatted"
+    -- search
+    genericSpec (Proxy :: Proxy Skroutz.MultipleGeneralSearchResultResponse) "parses a general search result" "search" "successful_response_body.json.formatted"
+    genericSpec (Proxy :: Proxy Skroutz.MultipleGeneralSearchResultResponse) "parses an empty general search result" "search" "no_results_response_body.json.formatted"
 
 main :: IO ()
 main = hspec spec
