@@ -54,7 +54,14 @@ spec =
     genericSpec (Proxy :: Proxy Skroutz.MultipleProductResponse) "parses an empty list of Product" "product" "no_results_response_body.json.formatted"
 
     genericSpec (Proxy :: Proxy Skroutz.SingleShopResponse) "parses a single Shop" "shop" "successful_one_response_body.json.formatted"
+    genericSpec (Proxy :: Proxy Skroutz.MultipleShopResponse) "parses a list of Shop" "shop" "successful_search_response_body.json.formatted"
     genericSpec (Proxy :: Proxy Skroutz.MultipleShopResponse) "parses an empty list of Shop" "shop" "no_results_response_body.json.formatted"
+
+    genericSpec (Proxy :: Proxy Skroutz.SingleShopLocationResponse) "parses a single ShopLocation" "shop" "successful_one_location_one_response_body.json.formatted"
+    genericSpec (Proxy :: Proxy Skroutz.MultipleShopLocationResponse) "parses a list of ShopLocation" "shop" "successful_one_locations_response_body.json.formatted"
+    genericSpec (Proxy :: Proxy Skroutz.MultipleShopLocationResponse) "parses a list of ShopLocation" "shop" "successful_one_locations_embed_address_response_body.json.formatted"
+
+    genericSpec (Proxy :: Proxy Skroutz.MultipleShopReviewResponse) "parses a list of ShopReview" "shop" "successful_one_reviews_response_body.json.formatted"
 
 main :: IO ()
 main = hspec spec
