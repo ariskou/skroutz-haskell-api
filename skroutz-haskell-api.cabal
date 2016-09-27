@@ -196,5 +196,6 @@ test-suite spec
     , HList
   other-modules:
       Web.Skroutz.Endpoints.SampleCalls
+      Web.Skroutz.FixtureGenerator
       Web.Skroutz.ModelSpec
   default-language: Haskell2010

@@ -129,6 +129,7 @@ tests:
     source-dirs: test
     other-modules:
       - Web.Skroutz.Endpoints.SampleCalls
+      - Web.Skroutz.FixtureGenerator
       - Web.Skroutz.ModelSpec
     ghc-options: -threaded -rtsopts -with-rtsopts=-N
     dependencies:
