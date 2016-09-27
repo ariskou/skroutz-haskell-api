@@ -28,4 +28,3 @@ import           Web.Skroutz.Endpoints.Model.Manufacturer        as X
 import           Web.Skroutz.Endpoints.Model.Product             as X
 import           Web.Skroutz.Endpoints.Model.Shop                as X
 import           Web.Skroutz.Endpoints.Model.Sku                 as X
-import           Web.Skroutz.Endpoints.Model.User                as X

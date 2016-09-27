@@ -41,5 +41,3 @@ import           Web.Skroutz.Model.Base.SkuSpecification    as X
 import           Web.Skroutz.Model.Base.Token               as X
 import           Web.Skroutz.Model.Base.TokenType           as X
 import           Web.Skroutz.Model.Base.URI                 as X
-import           Web.Skroutz.Model.Base.User                as X
-import           Web.Skroutz.Model.Base.UserSex             as X

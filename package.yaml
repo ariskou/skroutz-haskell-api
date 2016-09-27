@@ -69,7 +69,6 @@ library:
     - Web.Skroutz.Endpoints.Model.Product
     - Web.Skroutz.Endpoints.Model.Shop
     - Web.Skroutz.Endpoints.Model.Sku
-    - Web.Skroutz.Endpoints.Model.User
     - Web.Skroutz.TH
     - Web.Skroutz.Model
     - Web.Skroutz.Model.Base
@@ -99,8 +98,6 @@ library:
     - Web.Skroutz.Model.Base.Token
     - Web.Skroutz.Model.Base.TokenType
     - Web.Skroutz.Model.Base.URI
-    - Web.Skroutz.Model.Base.User
-    - Web.Skroutz.Model.Base.UserSex
     - Web.Skroutz.Model.ResultWrappers
     - Web.Skroutz.Model.ResultWrappers.Alternative
     - Web.Skroutz.Model.ResultWrappers.AppliedFilters
@@ -123,7 +120,6 @@ library:
     - Web.Skroutz.Model.ResultWrappers.SkuReview
     - Web.Skroutz.Model.ResultWrappers.SkuSpecification
     - Web.Skroutz.Model.ResultWrappers.StrongMatches
-    - Web.Skroutz.Model.ResultWrappers.User
   exposed-modules:
     - Web.Skroutz
 
