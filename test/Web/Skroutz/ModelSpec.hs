@@ -43,6 +43,8 @@ genericSpec _ description fixtureDir fixtureFilename =
 spec :: Spec
 spec =
   describe "JSON Parsing" $ do
+    -- Token
+    genericSpec (Proxy :: Proxy Skroutz.Token) "parses a single Token" "get_application_token" "successful_response_body.json.formatted"
     -- Category
     genericSpec (Proxy :: Proxy Skroutz.SingleCategoryResponse) "parses a single Category" "category" "successful_one_response_body.json.formatted"
     genericSpec (Proxy :: Proxy Skroutz.MultipleCategoryResponse) "parses a list of Category" "category" "successful_all_response_body.json.formatted"
