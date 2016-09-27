@@ -3,6 +3,7 @@
 {-# LANGUAGE DeriveGeneric         #-}
 {-# LANGUAGE FlexibleInstances     #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE OverloadedStrings     #-}
 {-# LANGUAGE TemplateHaskell       #-}
 ----------------------------------------------------------------------------
 -- |
@@ -18,12 +19,24 @@
 module Web.Skroutz.Model.Base.TokenType
 where
 
-import           Control.DeepSeq (NFData)
-import           Data.Data       (Data, Typeable)
-import           GHC.Generics    (Generic)
+import           Control.DeepSeq  (NFData)
+import qualified Data.Aeson       as Aeson
+import           Data.Aeson.Types (typeMismatch)
+import           Data.Data        (Data, Typeable)
+import           GHC.Generics     (Generic)
 import           Web.Skroutz.TH
 
 data TokenType = TokenTypeBearer
   deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
-makeLensesAndJSONSumType ''TokenType "" "TokenType"
+makeLensesAndPrisms ''TokenType
+
+instance Aeson.FromJSON TokenType where
+  parseJSON value@(Aeson.String uri) =
+    case uri of
+      "bearer" -> return TokenTypeBearer
+      _ -> typeMismatch "TokenType" value
+  parseJSON invalid = typeMismatch "TokenType" invalid
+
+instance Aeson.ToJSON TokenType where
+  toJSON TokenTypeBearer = Aeson.String "bearer"
