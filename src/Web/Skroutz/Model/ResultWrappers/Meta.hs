@@ -30,7 +30,7 @@ import           Web.Skroutz.Model.ResultWrappers.StrongMatches
 import           Web.Skroutz.TH
 
 data Meta = Meta {
-    _metaPagination       :: Pagination
+    _metaPagination       :: Maybe Pagination
   , _metaOrderedBy        :: Maybe OrderBy
   , _metaAppliedFilters   :: Maybe AppliedFilters
   , _metaAvailableFilters :: Maybe AvailableFilters
