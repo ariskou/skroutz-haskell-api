@@ -1,6 +1,10 @@
-{-# LANGUAGE ExplicitForAll      #-}
-{-# LANGUAGE OverloadedStrings   #-}
-{-# LANGUAGE ScopedTypeVariables #-}
+{-# LANGUAGE ExplicitForAll        #-}
+{-# LANGUAGE FlexibleInstances     #-}
+{-# LANGUAGE GADTs                 #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE OverloadedStrings     #-}
+{-# LANGUAGE ScopedTypeVariables   #-}
+{-# LANGUAGE UndecidableInstances  #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.ModelSpec
@@ -19,32 +23,44 @@ module Web.Skroutz.ModelSpec
 )
 where
 
-import qualified Data.Aeson           as Aeson
-import           Data.ByteString.Lazy (ByteString, readFile)
-import           Data.Either          (isRight)
-import           Data.Proxy           (Proxy (..))
-import           System.Directory     (getCurrentDirectory)
-import           System.FilePath      ((</>))
-import           Test.Hspec           (Spec, SpecWith, describe, hspec, it,
-                                       shouldSatisfy)
-import qualified Web.Skroutz          as Skroutz
+import qualified Data.Aeson             as Aeson
+import           Data.ByteString.Lazy   (ByteString, readFile)
+import           Data.Either            (isRight)
+import           Data.HList             (ApplyAB, applyAB, hMapM_)
+import           Data.Proxy             (Proxy (..))
+import           System.Directory       (getCurrentDirectory)
+import           System.FilePath        ((</>))
+import           Test.Hspec             (Spec, SpecWith, describe, hspec, it,
+                                         shouldSatisfy)
+import qualified Web.Skroutz            as Skroutz
+import           Web.Skroutz.ApiEntries (apiEntries)
 
 readJSON :: FilePath -> FilePath -> IO ByteString
-readJSON category result = do
+readJSON fixtureDir fixtureName = do
   dir <- getCurrentDirectory
-  Data.ByteString.Lazy.readFile (dir </> "test" </> "fixtures" </> category </> (result ++ ".json"))
+  Data.ByteString.Lazy.readFile (dir </> "test" </> "fixtures" </> fixtureDir </> (fixtureName ++ ".json"))
 
-genericSpec :: forall a . (Show a, Aeson.FromJSON a) => Proxy a -> String -> FilePath -> FilePath -> SpecWith ()
-genericSpec _ description fixtureDir fixtureFilename =
+tokenSpec :: SpecWith ()
+tokenSpec =
+  it "parses a single Token" $ do
+    resp <- readJSON "get_application_token" "successful_response_body.json.formatted"
+    (Aeson.eitherDecode resp :: Either String Skroutz.Token) `shouldSatisfy` isRight
+
+generatedFixtureSpec :: forall a . (Show a, Aeson.FromJSON a) => Proxy a -> String -> FilePath -> SpecWith ()
+generatedFixtureSpec _ description fixtureFilename =
   it description $ do
-    resp <- readJSON fixtureDir fixtureFilename
+    resp <- readJSON "generated" fixtureFilename
     (Aeson.eitherDecode resp :: Either String a) `shouldSatisfy` isRight
 
+data HTestFixtureT = HTestFixtureT
+
+instance (from ~ (String, String, _a, Proxy b), to ~ SpecWith (), Show b, Aeson.FromJSON b) => ApplyAB HTestFixtureT from to where
+  applyAB HTestFixtureT (fixtureName, _, _, proxy) = generatedFixtureSpec proxy fixtureName fixtureName
+
 spec :: Spec
-spec =
-  describe "JSON Parsing" $ do
-    -- Token
-    genericSpec (Proxy :: Proxy Skroutz.Token) "parses a single Token" "get_application_token" "successful_response_body.json.formatted"
+spec = do
+  describe "JSON Parsing of fake data" tokenSpec
+  describe "JSON Parsing of real data" $ hMapM_ HTestFixtureT apiEntries
 
 main :: IO ()
 main = hspec spec
