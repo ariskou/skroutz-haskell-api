@@ -20,50 +20,17 @@ module Web.Skroutz.FixtureGenerator
 )
 where
 
-import           Control.Monad.Trans.Except (runExceptT)
-import qualified Data.ByteString            as B
-import qualified Data.ByteString.Lazy       as BL
-import           Data.Either.Combinators    (fromRight')
-import           Data.HList                 (ApplyAB, applyAB, hMapM_)
-import           Data.Text                  (pack)
-import           Data.Text.Encoding         (encodeUtf8)
-import           Network.HTTP.Client        (httpLbs, method, newManager,
-                                             parseRequest, requestHeaders,
-                                             responseBody, responseStatus)
-import           Network.HTTP.Types.Status  (statusCode)
-import           System.Directory           (getCurrentDirectory)
-import           System.Environment         (getEnv)
-import           System.FilePath            ((</>))
-import qualified Web.Skroutz                as Skroutz
-import           Web.Skroutz.ApiEntries     (apiEntries)
-
-apiIdentifierEnvKey :: String
-apiIdentifierEnvKey = "API_IDENTIFIER"
-
-apiSecretEnvKey :: String
-apiSecretEnvKey = "API_SECRET"
-
-getAuthToken :: IO B.ByteString
-getAuthToken = do
-  apiIdentifier <- getEnv apiIdentifierEnvKey
-  apiSecret <- getEnv apiSecretEnvKey
-  manager <- newManager Skroutz.defaultAuthManagerSettings
-
-  result <- runExceptT $ Skroutz.getToken
-    (Just $ pack apiIdentifier)
-    (Just $ pack apiSecret)
-    (Just Skroutz.defaultAuthPublicGrantType)
-    (Just Skroutz.defaultAuthPublicRedirectUri)
-    (Just Skroutz.defaultAuthPublicScope)
-    manager
-    Skroutz.defaultAuthBaseUrl
-
-  return $ encodeUtf8 $ Skroutz._tokenAccessToken $ fromRight' result
-
-getFixtureDir :: IO FilePath
-getFixtureDir = do
-  dir <- getCurrentDirectory
-  return $ dir </> "test" </> "fixtures" </> "generated"
+import qualified Data.ByteString                as B
+import qualified Data.ByteString.Lazy           as BL
+import           Data.HList                     (ApplyAB, applyAB, hMapM_)
+import           Network.HTTP.Client            (httpLbs, method, newManager,
+                                                 parseRequest, requestHeaders,
+                                                 responseBody, responseStatus)
+import           Network.HTTP.Types.Status      (statusCode)
+import           System.FilePath                ((</>))
+import qualified Web.Skroutz                    as Skroutz
+import           Web.Skroutz.ApiEntries         (apiEntries)
+import           Web.Skroutz.TestingEnvironment
 
 saveFixture :: B.ByteString -> String -> String -> IO ()
 saveFixture authToken fixtureName fixtureApiPath = do
@@ -74,7 +41,7 @@ saveFixture authToken fixtureName fixtureApiPath = do
   response <- httpLbs request manager
   putStrLn $ fixtureName ++ ": The status code was: " ++ show (statusCode $ responseStatus response)
   fixtureDir <- getFixtureDir
-  BL.writeFile (fixtureDir </> fixtureName ++ ".json") (responseBody response)
+  BL.writeFile (fixtureDir </> "generated" </> fixtureName ++ ".json") (responseBody response)
 
 data HSaveFixtureT = HSaveFixtureT B.ByteString
 
