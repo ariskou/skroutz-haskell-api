@@ -6,6 +6,7 @@
 {-# LANGUAGE PartialTypeSignatures #-}
 {-# LANGUAGE ScopedTypeVariables   #-}
 {-# LANGUAGE UndecidableInstances  #-}
+{-# OPTIONS_GHC -fno-warn-orphans #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.EndpointsSpec
@@ -28,12 +29,18 @@ import           Data.HList                     (ApplyAB, applyAB, hMapM_)
 import           Data.Text                      (Text)
 import           Data.Text.Encoding             (decodeUtf8)
 import           Network.HTTP.Client            (Manager, newManager)
+import           Servant.API.ResponseHeaders    (Headers)
 import           Servant.Client
 import           Test.Hspec                     (Spec, SpecWith, beforeAll,
-                                                 describe, hspec, it, shouldBe)
+                                                 describe, hspec, it,
+                                                 shouldSatisfy)
 import qualified Web.Skroutz                    as Skroutz
 import           Web.Skroutz.ApiEntries         (apiEntries)
 import           Web.Skroutz.TestingEnvironment
+
+-- So that we can print an error if the test fails
+instance Show (Headers a b) where
+  show _ = ""
 
 liveApiSpec :: forall a . (Show a, Aeson.FromJSON a, Aeson.ToJSON a) => Proxy a -> String -> (Text -> Manager -> ExceptT ServantError IO (Skroutz.WithHeaders a)) -> SpecWith Text
 liveApiSpec _ testName testApiCall =
@@ -41,10 +48,7 @@ liveApiSpec _ testName testApiCall =
     manager <- newManager Skroutz.defaultDataManagerSettings
     let exceptT = testApiCall authToken manager
     (eitherResponse :: Either ServantError (Skroutz.WithHeaders a)) <- runExceptT exceptT
-    isRight eitherResponse `shouldBe` True
-    -- let Right response = eitherResponse
-    --     json = getResponse response
-    -- print $ (testName, BL.length $ Aeson.encode json)
+    eitherResponse `shouldSatisfy` isRight
 
 data HLiveApiT = HLiveApiT
 
