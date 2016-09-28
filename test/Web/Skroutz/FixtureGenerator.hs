@@ -24,10 +24,12 @@ import           Control.Monad.Trans.Except (runExceptT)
 import qualified Data.ByteString            as B
 import qualified Data.ByteString.Lazy       as BL
 import           Data.Either.Combinators    (fromRight')
-import           Data.HList
+import           Data.HList                 (ApplyAB, applyAB, hMapM_)
 import           Data.Text                  (pack)
 import           Data.Text.Encoding         (encodeUtf8)
-import           Network.HTTP.Client
+import           Network.HTTP.Client        (httpLbs, method, newManager,
+                                             parseRequest, requestHeaders,
+                                             responseBody, responseStatus)
 import           Network.HTTP.Types.Status  (statusCode)
 import           System.Directory           (getCurrentDirectory)
 import           System.Environment         (getEnv)
