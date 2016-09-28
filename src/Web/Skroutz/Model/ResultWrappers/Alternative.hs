@@ -31,9 +31,9 @@ makeLensesAndJSON ''AlternativeDrop "_alternativeDrop"
 
 data Alternative = Alternative {
     _alternativeTerm      :: Text
-  , _alternativeCount     :: Int
+  , _alternativeCount     :: Maybe Int
   , _alternativeImportant :: Bool
-  , _alternativeDrop      :: [AlternativeDrop]
+  , _alternativeDrop      :: Maybe [AlternativeDrop]
   } deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
 
 makeLensesAndJSON ''Alternative "_alternative"
