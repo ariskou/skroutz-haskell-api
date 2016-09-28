@@ -23,11 +23,11 @@ import           Web.Skroutz.Endpoints.Model.Common
 import           Web.Skroutz.Model
 
 type AutocompleteAPI =
-        "autocomplete" :> Capture "q" Text :> DataAPIMethod MultipleAutocompleteResponse
+        "autocomplete" :> QueryParam "q" Text :> DataAPIMethod MultipleAutocompleteResponse
 
 autocompleteAPI :: Proxy AutocompleteAPI
 autocompleteAPI = Proxy
 
-getAutocompletes :: Text -> StandardDataParams MultipleAutocompleteResponse
+getAutocompletes :: Maybe Text -> StandardDataParams MultipleAutocompleteResponse
 
 getAutocompletes = client autocompleteAPI
