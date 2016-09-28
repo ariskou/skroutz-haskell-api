@@ -20,10 +20,10 @@ import           Control.DeepSeq                           (NFData)
 import           Data.Data                                 (Data, Typeable)
 import           Data.Text                                 (Text)
 import           GHC.Generics                              (Generic)
-import           Web.Skroutz.TH
 import           Web.Skroutz.Model.Base.ShopPaymentMethods
 import           Web.Skroutz.Model.Base.ShopShipping
 import           Web.Skroutz.Model.Base.URI
+import           Web.Skroutz.TH
 
 data Shop = Shop {
     _shopId                 :: Int

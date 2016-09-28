@@ -19,8 +19,8 @@ where
 import           Control.DeepSeq                 (NFData)
 import           Data.Data                       (Data, Typeable)
 import           GHC.Generics                    (Generic)
-import           Web.Skroutz.TH
 import           Web.Skroutz.Model.Base.SkuPrice
+import           Web.Skroutz.TH
 
 data MultipleSkuPriceResponse = MultipleSkuPriceResponse {
     _multipleSkuPriceResponseAverage :: [SkuPrice]

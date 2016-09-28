@@ -19,9 +19,9 @@ where
 import           Control.DeepSeq                       (NFData)
 import           Data.Data                             (Data, Typeable)
 import           GHC.Generics                          (Generic)
-import           Web.Skroutz.TH
 import           Web.Skroutz.Model.Base.Sku
 import           Web.Skroutz.Model.ResultWrappers.Meta
+import           Web.Skroutz.TH
 
 data SingleSkuResponse = SingleSkuResponse {
     _singleSkuResponseSku :: Sku

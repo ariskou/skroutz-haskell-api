@@ -19,8 +19,8 @@ where
 import           Control.DeepSeq             (NFData)
 import           Data.Data                   (Data, Typeable)
 import           GHC.Generics                (Generic)
-import           Web.Skroutz.TH
 import           Web.Skroutz.Model.Base.Flag
+import           Web.Skroutz.TH
 
 data MultipleFlagResponse = MultipleFlagResponse {
     _multipleFlagResponseFlags :: [Flag]

@@ -16,11 +16,11 @@
 module Web.Skroutz.Model.Base.SkuReview
 where
 
-import           Control.DeepSeq (NFData)
-import           Data.Data       (Data, Typeable)
-import           Data.Text       (Text)
+import           Control.DeepSeq                    (NFData)
+import           Data.Data                          (Data, Typeable)
+import           Data.Text                          (Text)
+import           GHC.Generics                       (Generic)
 import           Web.Skroutz.Model.Base.ISO8601Time
-import           GHC.Generics    (Generic)
 import           Web.Skroutz.TH
 
 data SkuReview = SkuReview {

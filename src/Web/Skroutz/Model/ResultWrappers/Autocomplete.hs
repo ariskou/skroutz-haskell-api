@@ -19,8 +19,8 @@ where
 import           Control.DeepSeq                     (NFData)
 import           Data.Data                           (Data, Typeable)
 import           GHC.Generics                        (Generic)
-import           Web.Skroutz.TH
 import           Web.Skroutz.Model.Base.Autocomplete
+import           Web.Skroutz.TH
 
 data MultipleAutocompleteResponse = MultipleAutocompleteResponse {
     _multipleAutocompleteResponseAutocomplete :: [Autocomplete]

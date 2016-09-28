@@ -19,11 +19,11 @@ where
 import           Control.DeepSeq                     (NFData)
 import           Data.Data                           (Data, Typeable)
 import           GHC.Generics                        (Generic)
-import           Web.Skroutz.TH
 import           Web.Skroutz.Model.Base.Category
 import           Web.Skroutz.Model.Base.Manufacturer
 import           Web.Skroutz.Model.Base.Shop
 import           Web.Skroutz.Model.Base.Sku
+import           Web.Skroutz.TH
 
 data StrongMatches = StrongMatches {
     _strongMatchesCategory     :: Maybe Category
