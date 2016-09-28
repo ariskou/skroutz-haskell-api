@@ -129,7 +129,6 @@ tests:
     source-dirs: test
     other-modules:
       - Web.Skroutz.ApiEntries
-      - Web.Skroutz.Endpoints.SampleCalls
       - Web.Skroutz.EndpointsSpec
       - Web.Skroutz.FixtureGenerator
       - Web.Skroutz.ModelSpec

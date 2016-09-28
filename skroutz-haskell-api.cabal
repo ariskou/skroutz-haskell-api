@@ -219,7 +219,6 @@ test-suite spec
     , HList
   other-modules:
       Web.Skroutz.ApiEntries
-      Web.Skroutz.Endpoints.SampleCalls
       Web.Skroutz.EndpointsSpec
       Web.Skroutz.FixtureGenerator
       Web.Skroutz.ModelSpec
