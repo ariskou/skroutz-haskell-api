@@ -47,7 +47,6 @@ apiEntries =
   .*. ("manufacturer_categories" :: String, "/manufacturers/356/categories" :: String, withStdParamsPagedDefaults $ Skroutz.getManufacturerCategories 356 Nothing Nothing)
   .*. ("manufacturer_skus" :: String, "/manufacturers/356/skus" :: String, withStdParamsPagedDefaults $ Skroutz.getManufacturerSkus 356 Nothing Nothing)
   .*. ("autocomplete" :: String, "/autocomplete?q=iph" :: String, withStdParams $ Skroutz.getAutocompletes "iph")
-  .*. ("search_invalid" :: String, "/search?q=a" :: String, withStdParamsPagedDefaults $ Skroutz.getGeneralSearchResult "a")
   .*. ("search_category_match" :: String, "/search?q=Tablets" :: String, withStdParamsPagedDefaults $ Skroutz.getGeneralSearchResult "Tablets")
   .*. ("search_manufacturer_match" :: String, "/search?q=apple" :: String, withStdParamsPagedDefaults $ Skroutz.getGeneralSearchResult "apple")
   .*. ("search_latin_mapping" :: String, "/search?q=ιπηονε" :: String, withStdParamsPagedDefaults $ Skroutz.getGeneralSearchResult "ιπηονε")
