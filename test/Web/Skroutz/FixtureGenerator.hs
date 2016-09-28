@@ -43,9 +43,6 @@ apiIdentifierEnvKey = "API_IDENTIFIER"
 apiSecretEnvKey :: String
 apiSecretEnvKey = "API_SECRET"
 
-apiEntrypoint :: String
-apiEntrypoint = "http://api.skroutz.gr"
-
 getAuthToken :: IO B.ByteString
 getAuthToken = do
   apiIdentifier <- getEnv apiIdentifierEnvKey
@@ -71,7 +68,7 @@ getFixtureDir = do
 saveFixture :: B.ByteString -> String -> String -> IO ()
 saveFixture authToken fixtureName fixtureApiPath = do
   manager <- newManager Skroutz.defaultDataManagerSettings
-  initialRequest <- parseRequest (apiEntrypoint ++ fixtureApiPath)
+  initialRequest <- parseRequest fixtureApiPath
   let request = initialRequest { method = "GET", requestHeaders = [("accept", "application/vnd.skroutz+json; version=3"), ("authorization", "Bearer " `B.append` authToken)]}
 
   response <- httpLbs request manager
