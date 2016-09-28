@@ -17,8 +17,7 @@ module Web.Skroutz.Model.ResultWrappers.Meta
 where
 
 import           Control.DeepSeq                                   (NFData)
-import           Data.Data                                         (Data,
-                                                                    Typeable)
+import           Data.Data                                         (Data, Typeable)
 import           Data.Text                                         (Text)
 import           GHC.Generics                                      (Generic)
 import           Web.Skroutz.Model.ResultWrappers.Alternative

@@ -30,8 +30,7 @@ import           Data.HList             (ApplyAB, applyAB, hMapM_)
 import           Data.Proxy             (Proxy (..))
 import           System.Directory       (getCurrentDirectory)
 import           System.FilePath        ((</>))
-import           Test.Hspec             (Spec, SpecWith, describe, hspec, it,
-                                         shouldSatisfy)
+import           Test.Hspec             (Spec, SpecWith, describe, hspec, it, shouldSatisfy)
 import qualified Web.Skroutz            as Skroutz
 import           Web.Skroutz.ApiEntries (apiEntries)
 

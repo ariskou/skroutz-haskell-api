@@ -18,8 +18,7 @@ where
 import           Control.Monad.Trans.Except (ExceptT)
 import           Data.Monoid                ((<>))
 import           Data.Text                  (Text)
-import           Network.HTTP.Client        (Manager, ManagerSettings,
-                                             defaultManagerSettings)
+import           Network.HTTP.Client        (Manager, ManagerSettings, defaultManagerSettings)
 import           Servant.API
 import           Servant.Client
 

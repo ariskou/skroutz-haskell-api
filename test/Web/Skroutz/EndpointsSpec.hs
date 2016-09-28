@@ -31,9 +31,7 @@ import           Data.Text.Encoding             (decodeUtf8)
 import           Network.HTTP.Client            (Manager, newManager)
 import           Servant.API.ResponseHeaders    (Headers)
 import           Servant.Client
-import           Test.Hspec                     (Spec, SpecWith, beforeAll,
-                                                 describe, hspec, it,
-                                                 shouldSatisfy)
+import           Test.Hspec                     (Spec, SpecWith, beforeAll, describe, hspec, it, shouldSatisfy)
 import qualified Web.Skroutz                    as Skroutz
 import           Web.Skroutz.ApiEntries         (apiEntries)
 import           Web.Skroutz.TestingEnvironment

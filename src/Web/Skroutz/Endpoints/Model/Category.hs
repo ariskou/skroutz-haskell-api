@@ -19,8 +19,7 @@ import           Data.Proxy                               (Proxy (..))
 import           Servant.API
 import           Servant.Client
 import           Web.Skroutz.Endpoints.Model.Common
-import           Web.Skroutz.Endpoints.Model.Manufacturer (ManufacturerOrderBy,
-                                                           ManufacturerOrderDir)
+import           Web.Skroutz.Endpoints.Model.Manufacturer (ManufacturerOrderBy, ManufacturerOrderDir)
 import           Web.Skroutz.Model
 
 type CategoryAPI =

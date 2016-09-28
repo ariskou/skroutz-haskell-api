@@ -23,9 +23,7 @@ where
 import qualified Data.ByteString                as B
 import qualified Data.ByteString.Lazy           as BL
 import           Data.HList                     (ApplyAB, applyAB, hMapM_)
-import           Network.HTTP.Client            (httpLbs, method, newManager,
-                                                 parseRequest, requestHeaders,
-                                                 responseBody, responseStatus)
+import           Network.HTTP.Client            (httpLbs, method, newManager, parseRequest, requestHeaders, responseBody, responseStatus)
 import           Network.HTTP.Types.Status      (statusCode)
 import           System.FilePath                ((</>))
 import qualified Web.Skroutz                    as Skroutz
