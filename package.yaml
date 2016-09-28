@@ -132,6 +132,7 @@ tests:
       - Web.Skroutz.Endpoints.SampleCalls
       - Web.Skroutz.FixtureGenerator
       - Web.Skroutz.ModelSpec
+      - Web.Skroutz.TestingEnvironment
     ghc-options: -threaded -rtsopts -with-rtsopts=-N
     dependencies:
       - skroutz-haskell-api
