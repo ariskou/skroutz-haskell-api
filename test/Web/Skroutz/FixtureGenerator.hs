@@ -81,8 +81,8 @@ saveFixture authToken fixtureName fixtureApiPath = do
 
 data HSaveFixtureT = HSaveFixtureT B.ByteString
 
-instance (from ~ (String, String, _a), to ~ IO () ) => ApplyAB HSaveFixtureT from to where
-  applyAB (HSaveFixtureT authToken) (fixtureName, fixtureApiPath, _) = saveFixture authToken fixtureName fixtureApiPath
+instance (from ~ (String, String, _a, _b), to ~ IO () ) => ApplyAB HSaveFixtureT from to where
+  applyAB (HSaveFixtureT authToken) (fixtureName, fixtureApiPath, _, _) = saveFixture authToken fixtureName fixtureApiPath
 
 generateFixtures :: IO ()
 generateFixtures = do
