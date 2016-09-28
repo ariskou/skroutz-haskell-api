@@ -40,7 +40,7 @@ data Sku = Sku {
   , _skuReviewscore          :: Double
   , _skuShopCount            :: Int
   , _skuPlainSpecSummary     :: Text
-  , _skuManufacturerId       :: Int
+  , _skuManufacturerId       :: Maybe Int
   , _skuFuture               :: Bool
   , _skuReviewsCount         :: Int
   , _skuVirtual              :: Bool
