@@ -23,6 +23,51 @@ extra-source-files:
     README.md
     test/fixtures/category/successful_all_response_body.json.formatted.json
     test/fixtures/category/successful_one_response_body.json.formatted.json
+    test/fixtures/generated/autocomplete.json
+    test/fixtures/generated/categories_index.json
+    test/fixtures/generated/categories_root.json
+    test/fixtures/generated/categories_show.json
+    test/fixtures/generated/category_manufacturers.json
+    test/fixtures/generated/category_parent.json
+    test/fixtures/generated/category_skus.json
+    test/fixtures/generated/category_skus_filters.json
+    test/fixtures/generated/category_skus_manufacturers.json
+    test/fixtures/generated/category_skus_search.json
+    test/fixtures/generated/category_skus_with_applied_filters.json
+    test/fixtures/generated/category_skus_with_available_filters.json
+    test/fixtures/generated/children_api_category.json
+    test/fixtures/generated/filter_groups_index.json
+    test/fixtures/generated/flags_index.json
+    test/fixtures/generated/manufacturer_categories.json
+    test/fixtures/generated/manufacturer_skus.json
+    test/fixtures/generated/manufacturers_index.json
+    test/fixtures/generated/manufacturers_show.json
+    test/fixtures/generated/products_search.json
+    test/fixtures/generated/products_show.json
+    test/fixtures/generated/search_category_facade.json
+    test/fixtures/generated/search_category_match.json
+    test/fixtures/generated/search_drop.json
+    test/fixtures/generated/search_latin_mapping.json
+    test/fixtures/generated/search_manufacturer_match.json
+    test/fixtures/generated/search_no_results.json
+    test/fixtures/generated/search_sku_match.json
+    test/fixtures/generated/search_skus_match.json
+    test/fixtures/generated/search_spelling.json
+    test/fixtures/generated/shop_locations_index.json
+    test/fixtures/generated/shop_locations_index_embed_address.json
+    test/fixtures/generated/shop_locations_show.json
+    test/fixtures/generated/shop_locations_show_embed_address.json
+    test/fixtures/generated/shop_reviews.json
+    test/fixtures/generated/shop_search.json
+    test/fixtures/generated/shops_show.json
+    test/fixtures/generated/sku_reviews.json
+    test/fixtures/generated/sku_specifications.json
+    test/fixtures/generated/sku_specifications_include_group.json
+    test/fixtures/generated/skus_price_history.json
+    test/fixtures/generated/skus_products.json
+    test/fixtures/generated/skus_reviews.json
+    test/fixtures/generated/skus_show.json
+    test/fixtures/generated/skus_similar.json
     test/fixtures/get_application_token/successful_response_body.json.formatted.json
     test/fixtures/manufacturer/successful_all_response_body.json.formatted.json
     test/fixtures/manufacturer/successful_one_response_body.json.formatted.json
