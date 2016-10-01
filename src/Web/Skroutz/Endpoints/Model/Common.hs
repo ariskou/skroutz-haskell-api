@@ -72,5 +72,20 @@ defaultDataBaseUrl = BaseUrl Http "api.skroutz.gr" 80 ""
 defaultDataAcceptHeader :: Text
 defaultDataAcceptHeader = "application/vnd.skroutz+json; version=3"
 
+defaultDataPage :: Int
+defaultDataPage = 1
+
+defaultDataPerPageResultCount :: Int
+defaultDataPerPageResultCount = 25
+
 makeAuthToken :: Text -> Text
 makeAuthToken token = "Bearer " <> token
+
+withStdParams :: (Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO t) -> Text -> Manager -> ExceptT ServantError IO t
+withStdParams f authToken manager = f (Just defaultDataAcceptHeader) (Just $ makeAuthToken authToken) manager defaultDataBaseUrl
+
+withStdParamsPaged :: Maybe Int -> Maybe Int -> (Maybe Int -> Maybe Int -> Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO t) -> Text -> Manager -> ExceptT ServantError IO t
+withStdParamsPaged page per f authToken manager = f page per (Just defaultDataAcceptHeader) (Just $ makeAuthToken authToken) manager defaultDataBaseUrl
+
+withStdParamsPagedDefaults :: (Maybe Int -> Maybe Int -> Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO t) -> Text -> Manager -> ExceptT ServantError IO t
+withStdParamsPagedDefaults = withStdParamsPaged (Just defaultDataPage) (Just defaultDataPerPageResultCount)

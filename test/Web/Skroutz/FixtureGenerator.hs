@@ -22,16 +22,18 @@ where
 
 import qualified Data.ByteString                as B
 import qualified Data.ByteString.Lazy           as BL
-import           Data.HList                     (ApplyAB, applyAB, hMapM_)
-import           Network.HTTP.Client            (httpLbs, method, newManager, parseRequest, requestHeaders, responseBody, responseStatus)
+import           Data.Foldable                  (traverse_)
+import           Data.Text                      (pack)
+import           Data.Text.Encoding             (encodeUtf8)
+import           Network.HTTP.Client            (httpLbs, method, newManager, parseRequest, requestHeaders, responseBody, responseHeaders, responseStatus)
 import           Network.HTTP.Types.Status      (statusCode)
 import           System.FilePath                ((</>))
 import qualified Web.Skroutz                    as Skroutz
-import           Web.Skroutz.ApiEntries         (apiEntries)
-import           Web.Skroutz.TestingEnvironment
+import           Web.Skroutz.ApiEntries         (ApiEntry, apiEntries)
+import           Web.Skroutz.TestingEnvironment (getAuthToken, getFixtureDir)
 
-saveFixture :: B.ByteString -> String -> String -> IO ()
-saveFixture authToken fixtureName fixtureApiPath = do
+saveFixture :: B.ByteString -> ApiEntry -> IO ()
+saveFixture authToken (fixtureName, fixtureApiPath, _, _) = do
   manager <- newManager Skroutz.defaultDataManagerSettings
   initialRequest <- parseRequest fixtureApiPath
   let request = initialRequest { method = "GET", requestHeaders = [("accept", "application/vnd.skroutz+json; version=3"), ("authorization", "Bearer " `B.append` authToken)]}
@@ -40,13 +42,9 @@ saveFixture authToken fixtureName fixtureApiPath = do
   putStrLn $ fixtureName ++ ": The status code was: " ++ show (statusCode $ responseStatus response)
   fixtureDir <- getFixtureDir
   BL.writeFile (fixtureDir </> "generated" </> fixtureName ++ ".json") (responseBody response)
-
-data HSaveFixtureT = HSaveFixtureT B.ByteString
-
-instance (from ~ (String, String, _a, _b), to ~ IO () ) => ApplyAB HSaveFixtureT from to where
-  applyAB (HSaveFixtureT authToken) (fixtureName, fixtureApiPath, _, _) = saveFixture authToken fixtureName fixtureApiPath
+  B.writeFile (fixtureDir </> "generated" </> fixtureName ++ ".headers") $ encodeUtf8 $ pack $ show (responseHeaders response)
 
 generateFixtures :: IO ()
 generateFixtures = do
   authToken <- getAuthToken
-  hMapM_ (HSaveFixtureT authToken) apiEntries
+  traverse_ (saveFixture authToken) apiEntries
