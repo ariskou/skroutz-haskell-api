@@ -23,26 +23,30 @@ import           Servant.API
 import           Servant.Client
 
 type WithHeaders a = Headers '[
-    Header "X-RateLimit-Limit" Int
+    Header "Accept-Ranges" Text
+  , Header "Access-Control-Allow-Methods" Text
+  , Header "Access-Control-Allow-Origin" Text
+  , Header "Age" Text
+  , Header "Cache-Control" Text
+  , Header "Cache-Control" Text
+  , Header "Content-Encoding" Text
+  , Header "Content-Length" Text
+  , Header "Content-Type" Text
+  , Header "Date" Text
+  , Header "ETag" Text
+  , Header "Link" Text
+  , Header "Transfer-Encoding" Text
+  , Header "Vary" Text
+  , Header "X-Cache" Text
+  , Header "X-Cached" Text
+  , Header "X-Content-Type-Options" Text
+  , Header "X-DNS-Prefetch-Control" Text
+  , Header "X-Frame-Options" Text
+  , Header "X-RateLimit-Limit" Int
   , Header "X-RateLimit-Remaining" Int
   , Header "X-RateLimit-Reset" Int
-  , Header "Content-Type" Text
-  , Header "Vary" Text
-  , Header "X-Frame-Options" Text
-  , Header "X-XSS-Protection" Text
-  , Header "X-Content-Type-Options" Text
-  , Header "Link" Text
-  , Header "Cache-Control" Text
-  , Header "ETag" Text
   , Header "X-Request-Id" Text
-  , Header "X-DNS-Prefetch-Control" Text
-  , Header "Access-Control-Allow-Origin" Text
-  , Header "Access-Control-Allow-Methods" Text
-  , Header "Content-Length" Text
-  , Header "Accept-Ranges" Text
-  , Header "Date" Text
-  , Header "Age" Text
-  , Header "X-Cache" Text
+  , Header "X-XSS-Protection" Text
   ] a
 
 type AcceptHeader = Header "Accept" Text
