@@ -29,7 +29,7 @@ data SkuEmbed = SkuEmbedProducts | SkuEmbedManufacturer
  deriving (Generic, Show)
 
 instance ToHttpApiData SkuEmbed where
-  toQueryParam SkuEmbedProducts = "products"
+  toQueryParam SkuEmbedProducts     = "products"
   toQueryParam SkuEmbedManufacturer = "manufacturer"
 
 instance ToHttpApiData [SkuEmbed] where
@@ -39,15 +39,15 @@ data SkuOrderBy = SkuOrderByPriceVAT | SkuOrderByPopularity | SkuOrderByRating
  deriving (Generic, Show)
 
 instance ToHttpApiData SkuOrderBy where
-  toQueryParam SkuOrderByPriceVAT = "pricevat"
+  toQueryParam SkuOrderByPriceVAT   = "pricevat"
   toQueryParam SkuOrderByPopularity = "popularity"
-  toQueryParam SkuOrderByRating = "rating"
+  toQueryParam SkuOrderByRating     = "rating"
 
 data SkuOrderDir = SkuOrderDirAscending | SkuOrderDirDescending
  deriving (Generic, Show)
 
 instance ToHttpApiData SkuOrderDir where
-  toQueryParam SkuOrderDirAscending = "asc"
+  toQueryParam SkuOrderDirAscending  = "asc"
   toQueryParam SkuOrderDirDescending = "desc"
 
 data SkuSpecificationInclude = SkuSpecificationIncludeGroup
@@ -61,7 +61,7 @@ data SkuIncludeMeta = SkuIncludeMetaAvailableFilters | SkuIncludeMetaAppliedFilt
 
 instance ToHttpApiData SkuIncludeMeta where
   toQueryParam SkuIncludeMetaAvailableFilters = "available_filters"
-  toQueryParam SkuIncludeMetaAppliedFilters = "applied_filters"
+  toQueryParam SkuIncludeMetaAppliedFilters   = "applied_filters"
 
 type SkuSearchAPI =
     "categories"

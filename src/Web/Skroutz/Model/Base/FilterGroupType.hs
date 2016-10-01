@@ -38,12 +38,12 @@ instance Aeson.FromJSON FilterGroupType where
   parseJSON (Aeson.Number 3) = return FilterGroupTypeSyncedSpec
   parseJSON (Aeson.Number 4) = return FilterGroupTypeCustomRange
   parseJSON (Aeson.Number 5) = return FilterGroupTypeSizes
-  parseJSON invalid = typeMismatch "FilterGroupType" invalid
+  parseJSON invalid          = typeMismatch "FilterGroupType" invalid
 
 instance Aeson.ToJSON FilterGroupType where
-  toJSON FilterGroupTypePrice = Aeson.Number 0
-  toJSON FilterGroupTypeKeyword = Aeson.Number 1
-  toJSON FilterGroupTypeSpec = Aeson.Number 2
-  toJSON FilterGroupTypeSyncedSpec = Aeson.Number 3
+  toJSON FilterGroupTypePrice       = Aeson.Number 0
+  toJSON FilterGroupTypeKeyword     = Aeson.Number 1
+  toJSON FilterGroupTypeSpec        = Aeson.Number 2
+  toJSON FilterGroupTypeSyncedSpec  = Aeson.Number 3
   toJSON FilterGroupTypeCustomRange = Aeson.Number 4
-  toJSON FilterGroupTypeSizes = Aeson.Number 5
+  toJSON FilterGroupTypeSizes       = Aeson.Number 5

@@ -28,14 +28,14 @@ data ManufacturerOrderBy = ManufacturerOrderByName | ManufacturerOrderByPopulari
  deriving (Generic, Show)
 
 instance ToHttpApiData ManufacturerOrderBy where
-  toQueryParam ManufacturerOrderByName = "name"
+  toQueryParam ManufacturerOrderByName       = "name"
   toQueryParam ManufacturerOrderByPopularity = "popularity"
 
 data ManufacturerOrderDir = ManufacturerOrderDirAscending | ManufacturerOrderDirDescending
  deriving (Generic, Show)
 
 instance ToHttpApiData ManufacturerOrderDir where
-  toQueryParam ManufacturerOrderDirAscending = "asc"
+  toQueryParam ManufacturerOrderDirAscending  = "asc"
   toQueryParam ManufacturerOrderDirDescending = "desc"
 
 type ManufacturerAPI =

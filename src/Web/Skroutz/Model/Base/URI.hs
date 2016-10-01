@@ -35,7 +35,7 @@ makeLensesAndPrisms ''URI
 instance Aeson.FromJSON URI where
   parseJSON value@(Aeson.String uri) =
     case Network.URI.parseURI (unpack uri) of
-      Just x -> return $ URI x
+      Just x  -> return $ URI x
       Nothing -> typeMismatch "URI" value
   parseJSON invalid = typeMismatch "URI" invalid
 

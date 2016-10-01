@@ -35,7 +35,7 @@ instance Aeson.FromJSON TokenType where
   parseJSON value@(Aeson.String uri) =
     case uri of
       "bearer" -> return TokenTypeBearer
-      _ -> typeMismatch "TokenType" value
+      _        -> typeMismatch "TokenType" value
   parseJSON invalid = typeMismatch "TokenType" invalid
 
 instance Aeson.ToJSON TokenType where
