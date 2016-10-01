@@ -216,7 +216,6 @@ test-suite spec
     , filepath
     , directory
     , hspec
-    , HList
   other-modules:
       Web.Skroutz.ApiEntries
       Web.Skroutz.EndpointsSpec
