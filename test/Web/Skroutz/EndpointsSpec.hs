@@ -44,12 +44,12 @@ liveApiSpec (testName, _, checkApiCaller, _) =
 
 spec :: Spec
 spec = do
-  describe "JSON Parsing of the real, live API" $
+  describe "Requesting data via the API endpoints from the live, remote webservice and parsing the JSON results" $
     it "retrieves an authorization token" $ do
       _ <- getAuthToken
       return ()
   beforeAll (fmap decodeUtf8 getAuthToken) $
-    describe "retrieves and parses JSON API responses" $ traverse_ liveApiSpec apiEntries
+    describe "Requesting data via the API endpoints from the live, remote webservice and parsing the JSON results" $ traverse_ liveApiSpec apiEntries
 
 main :: IO ()
 main = hspec spec

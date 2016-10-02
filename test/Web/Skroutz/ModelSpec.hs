@@ -51,8 +51,8 @@ generatedFixtureSpec (description, _, _, checkDecoder)  =
 
 spec :: Spec
 spec = do
-  describe "JSON Parsing of fake data" tokenSpec
-  describe "JSON Parsing of real data" $ traverse_ generatedFixtureSpec apiEntries
+  describe "Loading and parsing stored copies of previously retrieved (via the API) JSON data, slightly falsified for security purposes" tokenSpec
+  describe "Loading and parsing stored copies of real, previously retrieved (via the API) JSON data" $ traverse_ generatedFixtureSpec apiEntries
 
 main :: IO ()
 main = hspec spec
