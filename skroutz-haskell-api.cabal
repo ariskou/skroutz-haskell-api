@@ -79,34 +79,22 @@ library
   ghc-options: -Wall
   build-depends:
       base >= 4.7 && < 5
-    , text
     , aeson
-    , lens
-    , lens-aeson
-    , network-uri
-    , template-haskell
     , bytestring
-    , deepseq
-    , transformers
-    , either
+    , http-client
     , servant
     , servant-client
-    , http-client
-    , http-client-tls
-    , wreq
-    , rest-core
-    , rest-gen
-    , rest-types
-    , rest-client
-    , rest-stringmap
-    , resourcet
-    , http-api-data
-    , http-conduit
-    , http-types
+    , text
+    , transformers
     , containers
-    , time
+    , deepseq
+    , http-client-tls
+    , lens
+    , network-uri
     , regex-tdfa
     , regex-tdfa-text
+    , template-haskell
+    , time
   exposed-modules:
       Web.Skroutz.Endpoints
       Web.Skroutz.Endpoints.Auth
@@ -185,39 +173,19 @@ test-suite spec
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >= 4.7 && < 5
-    , text
     , aeson
-    , lens
-    , lens-aeson
-    , network-uri
-    , template-haskell
     , bytestring
-    , deepseq
-    , transformers
-    , either
+    , http-client
     , servant
     , servant-client
-    , http-client
-    , http-client-tls
-    , wreq
-    , rest-core
-    , rest-gen
-    , rest-types
-    , rest-client
-    , rest-stringmap
-    , resourcet
-    , http-api-data
-    , http-conduit
-    , http-types
-    , containers
-    , time
-    , regex-tdfa
-    , regex-tdfa-text
-    , skroutz-haskell-api
-    , bytestring
-    , filepath
+    , text
+    , transformers
     , directory
+    , either
+    , filepath
     , hspec
+    , http-types
+    , skroutz-haskell-api
   other-modules:
       Web.Skroutz.ApiEntries
       Web.Skroutz.EndpointsSpec

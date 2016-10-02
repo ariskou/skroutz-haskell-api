@@ -24,34 +24,13 @@ ghc-options:
 
 dependencies:
   - base >= 4.7 && < 5
-  - text
   - aeson
-  - lens
-  - lens-aeson
-  - network-uri
-  - template-haskell
   - bytestring
-  - deepseq
-  - transformers
-  - either
+  - http-client
   - servant
   - servant-client
-  - http-client
-  - http-client-tls
-  - wreq
-  - rest-core
-  - rest-gen
-  - rest-types
-  - rest-client
-  - rest-stringmap
-  - resourcet
-  - http-api-data
-  - http-conduit
-  - http-types
-  - containers
-  - time
-  - regex-tdfa
-  - regex-tdfa-text
+  - text
+  - transformers
 
 library:
   source-dirs: src
@@ -121,6 +100,16 @@ library:
     - Web.Skroutz.Model.ResultWrappers.SkuSpecification
     - Web.Skroutz.Model.ResultWrappers.StrongMatches
     - Web.Skroutz
+  dependencies:
+    - containers
+    - deepseq
+    - http-client-tls
+    - lens
+    - network-uri
+    - regex-tdfa
+    - regex-tdfa-text
+    - template-haskell
+    - time
 
 tests:
   spec:
@@ -134,8 +123,9 @@ tests:
       - Web.Skroutz.TestingEnvironment
     ghc-options: -threaded -rtsopts -with-rtsopts=-N
     dependencies:
-      - skroutz-haskell-api
-      - bytestring
-      - filepath
       - directory
+      - either
+      - filepath
       - hspec
+      - http-types
+      - skroutz-haskell-api
