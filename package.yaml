@@ -19,7 +19,6 @@ extra-source-files:
   - changelog.md
   - test/fixtures/*/*.json
 
-
 ghc-options:
   - -Wall
 
