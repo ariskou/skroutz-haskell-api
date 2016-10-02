@@ -4,6 +4,7 @@
 {-# LANGUAGE FlexibleInstances     #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE OverloadedStrings     #-}
+{-# LANGUAGE TemplateHaskell       #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.Model.Base.CategoryPath
@@ -27,9 +28,12 @@ import           Data.List            (intersperse)
 import           Data.Text            (concat, pack)
 import           Data.Text.Encoding   (encodeUtf8)
 import           GHC.Generics         (Generic)
+import           Web.Skroutz.TH
 
 newtype CategoryPath = CategoryPath [Int]
   deriving (Eq, Ord, Typeable, Data, Generic, Show, NFData)
+
+makeLensesAndPrisms ''CategoryPath
 
 instance Aeson.FromJSON CategoryPath where
   parseJSON value@(Aeson.String pathText) = do
