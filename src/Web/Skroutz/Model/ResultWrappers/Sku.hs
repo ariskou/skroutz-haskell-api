@@ -9,7 +9,7 @@
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
--- Portability :
+-- Portability : non-portable
 --
 -- Provides the 'Sku' type, where SKU (Stock Keeping Unit) is an aggregation of products.
 ----------------------------------------------------------------------------

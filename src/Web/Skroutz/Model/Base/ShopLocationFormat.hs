@@ -11,7 +11,7 @@
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
--- Portability :
+-- Portability : non-portable
 --
 -- Provides the 'ShopLocationFormat' type, a type representing the possible types of formats for shop location addresses.
 ----------------------------------------------------------------------------

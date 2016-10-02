@@ -12,7 +12,7 @@
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
--- Portability :
+-- Portability : non-portable
 --
 -- Provides the 'TokenType' type, a type representing the supported types of 'Token'.
 ----------------------------------------------------------------------------

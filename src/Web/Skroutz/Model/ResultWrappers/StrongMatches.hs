@@ -9,7 +9,7 @@
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
--- Portability :
+-- Portability : non-portable
 --
 -- Provides the 'StrongMatches' type, used for strong match metadata in results.
 ----------------------------------------------------------------------------

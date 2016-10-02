@@ -12,7 +12,7 @@
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
--- Portability :
+-- Portability : non-portable
 --
 -- Provides the 'CategoryPath' type, a newtype wrapper around [Int] representing the path of 'Category' IDs leading to a 'Category'.
 ----------------------------------------------------------------------------
