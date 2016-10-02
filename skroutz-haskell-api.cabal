@@ -108,8 +108,6 @@ library
     , regex-tdfa
     , regex-tdfa-text
   exposed-modules:
-      Web.Skroutz
-  other-modules:
       Web.Skroutz.Endpoints
       Web.Skroutz.Endpoints.Auth
       Web.Skroutz.Endpoints.Model
@@ -174,6 +172,9 @@ library
       Web.Skroutz.Model.ResultWrappers.SkuReview
       Web.Skroutz.Model.ResultWrappers.SkuSpecification
       Web.Skroutz.Model.ResultWrappers.StrongMatches
+      Web.Skroutz
+  other-modules:
+      Paths_skroutz_haskell_api
   default-language: Haskell2010
 
 test-suite spec

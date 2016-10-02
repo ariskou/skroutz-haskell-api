@@ -55,7 +55,7 @@ dependencies:
 
 library:
   source-dirs: src
-  other-modules:
+  exposed-modules:
     - Web.Skroutz.Endpoints
     - Web.Skroutz.Endpoints.Auth
     - Web.Skroutz.Endpoints.Model
@@ -120,7 +120,6 @@ library:
     - Web.Skroutz.Model.ResultWrappers.SkuReview
     - Web.Skroutz.Model.ResultWrappers.SkuSpecification
     - Web.Skroutz.Model.ResultWrappers.StrongMatches
-  exposed-modules:
     - Web.Skroutz
 
 tests:
