@@ -1,0 +1,195 @@
+-- This file has been generated from package.yaml by hpack version 0.15.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           skroutz-haskell-api
+version:        0.1.0.0
+synopsis:       Skroutz.gr HTTP API bindings.
+description:    See README.md
+category:       Web
+stability:      alpha
+homepage:       http://github.com/ariskou/skroutz-haskell-api#readme
+bug-reports:    https://github.com/ariskou/skroutz-haskell-api/issues
+author:         Remous-Aris Koutsiamanis
+maintainer:     Remous-Aris Koutsiamanis <ariskou@gmail.com>
+copyright:      Copyright 2016 Remous-Aris Koutsiamanis
+license:        Apache-2.0
+license-file:   LICENSE
+tested-with:    GHC == 7.10.3, GHC == 8.0.1
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    changelog.md
+    README.md
+    test/fixtures/generated/autocomplete.json
+    test/fixtures/generated/categories_index.json
+    test/fixtures/generated/categories_root.json
+    test/fixtures/generated/categories_show.json
+    test/fixtures/generated/category_manufacturers.json
+    test/fixtures/generated/category_parent.json
+    test/fixtures/generated/category_skus.json
+    test/fixtures/generated/category_skus_filters.json
+    test/fixtures/generated/category_skus_manufacturers.json
+    test/fixtures/generated/category_skus_search.json
+    test/fixtures/generated/category_skus_with_applied_filters.json
+    test/fixtures/generated/category_skus_with_available_filters.json
+    test/fixtures/generated/children_api_category.json
+    test/fixtures/generated/filter_groups_index.json
+    test/fixtures/generated/flags_index.json
+    test/fixtures/generated/manufacturer_categories.json
+    test/fixtures/generated/manufacturer_skus.json
+    test/fixtures/generated/manufacturers_index.json
+    test/fixtures/generated/manufacturers_show.json
+    test/fixtures/generated/products_search.json
+    test/fixtures/generated/products_show.json
+    test/fixtures/generated/search_category_facade.json
+    test/fixtures/generated/search_category_match.json
+    test/fixtures/generated/search_drop.json
+    test/fixtures/generated/search_latin_mapping.json
+    test/fixtures/generated/search_manufacturer_match.json
+    test/fixtures/generated/search_no_results.json
+    test/fixtures/generated/search_sku_match.json
+    test/fixtures/generated/search_skus_match.json
+    test/fixtures/generated/search_spelling.json
+    test/fixtures/generated/shop_locations_index.json
+    test/fixtures/generated/shop_locations_index_embed_address.json
+    test/fixtures/generated/shop_locations_show.json
+    test/fixtures/generated/shop_locations_show_embed_address.json
+    test/fixtures/generated/shop_reviews.json
+    test/fixtures/generated/shop_search.json
+    test/fixtures/generated/shops_show.json
+    test/fixtures/generated/sku_reviews.json
+    test/fixtures/generated/sku_specifications.json
+    test/fixtures/generated/sku_specifications_include_group.json
+    test/fixtures/generated/skus_price_history.json
+    test/fixtures/generated/skus_products.json
+    test/fixtures/generated/skus_reviews.json
+    test/fixtures/generated/skus_show.json
+    test/fixtures/generated/skus_similar.json
+    test/fixtures/get_application_token/successful_response_body.json.formatted.json
+
+source-repository head
+  type: git
+  location: https://github.com/ariskou/skroutz-haskell-api
+
+library
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      base >= 4.7 && < 5
+    , aeson
+    , bytestring
+    , http-client
+    , servant
+    , servant-client
+    , text
+    , transformers
+    , containers
+    , deepseq
+    , http-client-tls
+    , lens
+    , network-uri
+    , regex-tdfa
+    , regex-tdfa-text
+    , template-haskell
+    , time
+  exposed-modules:
+      Web.Skroutz.Endpoints
+      Web.Skroutz.Endpoints.Auth
+      Web.Skroutz.Endpoints.Model
+      Web.Skroutz.Endpoints.Model.Autocomplete
+      Web.Skroutz.Endpoints.Model.Category
+      Web.Skroutz.Endpoints.Model.Common
+      Web.Skroutz.Endpoints.Model.FilterGroup
+      Web.Skroutz.Endpoints.Model.Flag
+      Web.Skroutz.Endpoints.Model.GeneralSearchResult
+      Web.Skroutz.Endpoints.Model.Manufacturer
+      Web.Skroutz.Endpoints.Model.Product
+      Web.Skroutz.Endpoints.Model.Shop
+      Web.Skroutz.Endpoints.Model.Sku
+      Web.Skroutz.TH
+      Web.Skroutz.Model
+      Web.Skroutz.Model.Base
+      Web.Skroutz.Model.Base.Autocomplete
+      Web.Skroutz.Model.Base.Category
+      Web.Skroutz.Model.Base.CategoryLayoutMode
+      Web.Skroutz.Model.Base.CategoryPath
+      Web.Skroutz.Model.Base.FilterGroup
+      Web.Skroutz.Model.Base.FilterGroupType
+      Web.Skroutz.Model.Base.Flag
+      Web.Skroutz.Model.Base.ISO8601Time
+      Web.Skroutz.Model.Base.Manufacturer
+      Web.Skroutz.Model.Base.Product
+      Web.Skroutz.Model.Base.Shop
+      Web.Skroutz.Model.Base.ShopLocation
+      Web.Skroutz.Model.Base.ShopLocationAddress
+      Web.Skroutz.Model.Base.ShopLocationFormat
+      Web.Skroutz.Model.Base.ShopPaymentMethods
+      Web.Skroutz.Model.Base.ShopReview
+      Web.Skroutz.Model.Base.SkuShopInfo
+      Web.Skroutz.Model.Base.ShopShipping
+      Web.Skroutz.Model.Base.Sku
+      Web.Skroutz.Model.Base.SkuImages
+      Web.Skroutz.Model.Base.SkuPrice
+      Web.Skroutz.Model.Base.SkuReview
+      Web.Skroutz.Model.Base.SkuSpecification
+      Web.Skroutz.Model.Base.Token
+      Web.Skroutz.Model.Base.TokenType
+      Web.Skroutz.Model.Base.URI
+      Web.Skroutz.Model.ResultWrappers
+      Web.Skroutz.Model.ResultWrappers.Alternative
+      Web.Skroutz.Model.ResultWrappers.AppliedFilters
+      Web.Skroutz.Model.ResultWrappers.Autocomplete
+      Web.Skroutz.Model.ResultWrappers.AvailableFilters
+      Web.Skroutz.Model.ResultWrappers.Category
+      Web.Skroutz.Model.ResultWrappers.FilterGroup
+      Web.Skroutz.Model.ResultWrappers.Flag
+      Web.Skroutz.Model.ResultWrappers.GeneralSearchResult
+      Web.Skroutz.Model.ResultWrappers.Manufacturer
+      Web.Skroutz.Model.ResultWrappers.Meta
+      Web.Skroutz.Model.ResultWrappers.OrderBy
+      Web.Skroutz.Model.ResultWrappers.Pagination
+      Web.Skroutz.Model.ResultWrappers.Product
+      Web.Skroutz.Model.ResultWrappers.Shop
+      Web.Skroutz.Model.ResultWrappers.ShopLocation
+      Web.Skroutz.Model.ResultWrappers.ShopReview
+      Web.Skroutz.Model.ResultWrappers.Sku
+      Web.Skroutz.Model.ResultWrappers.SkuPrice
+      Web.Skroutz.Model.ResultWrappers.SkuReview
+      Web.Skroutz.Model.ResultWrappers.SkuSpecification
+      Web.Skroutz.Model.ResultWrappers.StrongMatches
+      Web.Skroutz
+  other-modules:
+      Paths_skroutz_haskell_api
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >= 4.7 && < 5
+    , aeson
+    , bytestring
+    , http-client
+    , servant
+    , servant-client
+    , text
+    , transformers
+    , directory
+    , either
+    , filepath
+    , hspec
+    , http-types
+    , skroutz-haskell-api
+  other-modules:
+      Web.Skroutz.ApiEntries
+      Web.Skroutz.EndpointsSpec
+      Web.Skroutz.FixtureGenerator
+      Web.Skroutz.ModelSpec
+      Web.Skroutz.TestingEnvironment
+  default-language: Haskell2010

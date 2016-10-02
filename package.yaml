@@ -1,0 +1,131 @@
+name: skroutz-haskell-api
+version: 0.1.0.0
+synopsis: Skroutz.gr HTTP API bindings.
+description: See README.md
+github: ariskou/skroutz-haskell-api
+homepage: http://github.com/ariskou/skroutz-haskell-api#readme
+bug-reports: https://github.com/ariskou/skroutz-haskell-api/issues
+license: Apache-2.0
+license-file: LICENSE
+author: Remous-Aris Koutsiamanis
+maintainer: Remous-Aris Koutsiamanis <ariskou@gmail.com>
+copyright: Copyright 2016 Remous-Aris Koutsiamanis
+stability: alpha
+category: Web
+tested-with: GHC == 7.10.3, GHC == 8.0.1
+
+extra-source-files:
+  - README.md
+  - changelog.md
+  - test/fixtures/*/*.json
+
+ghc-options:
+  - -Wall
+
+dependencies:
+  - base >= 4.7 && < 5
+  - aeson
+  - bytestring
+  - http-client
+  - servant
+  - servant-client
+  - text
+  - transformers
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - Web.Skroutz.Endpoints
+    - Web.Skroutz.Endpoints.Auth
+    - Web.Skroutz.Endpoints.Model
+    - Web.Skroutz.Endpoints.Model.Autocomplete
+    - Web.Skroutz.Endpoints.Model.Category
+    - Web.Skroutz.Endpoints.Model.Common
+    - Web.Skroutz.Endpoints.Model.FilterGroup
+    - Web.Skroutz.Endpoints.Model.Flag
+    - Web.Skroutz.Endpoints.Model.GeneralSearchResult
+    - Web.Skroutz.Endpoints.Model.Manufacturer
+    - Web.Skroutz.Endpoints.Model.Product
+    - Web.Skroutz.Endpoints.Model.Shop
+    - Web.Skroutz.Endpoints.Model.Sku
+    - Web.Skroutz.TH
+    - Web.Skroutz.Model
+    - Web.Skroutz.Model.Base
+    - Web.Skroutz.Model.Base.Autocomplete
+    - Web.Skroutz.Model.Base.Category
+    - Web.Skroutz.Model.Base.CategoryLayoutMode
+    - Web.Skroutz.Model.Base.CategoryPath
+    - Web.Skroutz.Model.Base.FilterGroup
+    - Web.Skroutz.Model.Base.FilterGroupType
+    - Web.Skroutz.Model.Base.Flag
+    - Web.Skroutz.Model.Base.ISO8601Time
+    - Web.Skroutz.Model.Base.Manufacturer
+    - Web.Skroutz.Model.Base.Product
+    - Web.Skroutz.Model.Base.Shop
+    - Web.Skroutz.Model.Base.ShopLocation
+    - Web.Skroutz.Model.Base.ShopLocationAddress
+    - Web.Skroutz.Model.Base.ShopLocationFormat
+    - Web.Skroutz.Model.Base.ShopPaymentMethods
+    - Web.Skroutz.Model.Base.ShopReview
+    - Web.Skroutz.Model.Base.SkuShopInfo
+    - Web.Skroutz.Model.Base.ShopShipping
+    - Web.Skroutz.Model.Base.Sku
+    - Web.Skroutz.Model.Base.SkuImages
+    - Web.Skroutz.Model.Base.SkuPrice
+    - Web.Skroutz.Model.Base.SkuReview
+    - Web.Skroutz.Model.Base.SkuSpecification
+    - Web.Skroutz.Model.Base.Token
+    - Web.Skroutz.Model.Base.TokenType
+    - Web.Skroutz.Model.Base.URI
+    - Web.Skroutz.Model.ResultWrappers
+    - Web.Skroutz.Model.ResultWrappers.Alternative
+    - Web.Skroutz.Model.ResultWrappers.AppliedFilters
+    - Web.Skroutz.Model.ResultWrappers.Autocomplete
+    - Web.Skroutz.Model.ResultWrappers.AvailableFilters
+    - Web.Skroutz.Model.ResultWrappers.Category
+    - Web.Skroutz.Model.ResultWrappers.FilterGroup
+    - Web.Skroutz.Model.ResultWrappers.Flag
+    - Web.Skroutz.Model.ResultWrappers.GeneralSearchResult
+    - Web.Skroutz.Model.ResultWrappers.Manufacturer
+    - Web.Skroutz.Model.ResultWrappers.Meta
+    - Web.Skroutz.Model.ResultWrappers.OrderBy
+    - Web.Skroutz.Model.ResultWrappers.Pagination
+    - Web.Skroutz.Model.ResultWrappers.Product
+    - Web.Skroutz.Model.ResultWrappers.Shop
+    - Web.Skroutz.Model.ResultWrappers.ShopLocation
+    - Web.Skroutz.Model.ResultWrappers.ShopReview
+    - Web.Skroutz.Model.ResultWrappers.Sku
+    - Web.Skroutz.Model.ResultWrappers.SkuPrice
+    - Web.Skroutz.Model.ResultWrappers.SkuReview
+    - Web.Skroutz.Model.ResultWrappers.SkuSpecification
+    - Web.Skroutz.Model.ResultWrappers.StrongMatches
+    - Web.Skroutz
+  dependencies:
+    - containers
+    - deepseq
+    - http-client-tls
+    - lens
+    - network-uri
+    - regex-tdfa
+    - regex-tdfa-text
+    - template-haskell
+    - time
+
+tests:
+  spec:
+    main: Spec.hs
+    source-dirs: test
+    other-modules:
+      - Web.Skroutz.ApiEntries
+      - Web.Skroutz.EndpointsSpec
+      - Web.Skroutz.FixtureGenerator
+      - Web.Skroutz.ModelSpec
+      - Web.Skroutz.TestingEnvironment
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N
+    dependencies:
+      - directory
+      - either
+      - filepath
+      - hspec
+      - http-types
+      - skroutz-haskell-api
