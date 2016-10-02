@@ -10,7 +10,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Flag' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Flag' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Model.Flag
 where

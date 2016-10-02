@@ -7,7 +7,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the Skroutz API 'Web.Skroutz.Model.ResultWrappers' for JSON marshalling.
+-- Provides the Skroutz API 'ResultWrappers' for JSON (un)marshalling.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers
   (

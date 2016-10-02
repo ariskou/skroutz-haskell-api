@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'Manufacturer' type.
+-- Provides the 'SingleManufacturerResponse' and 'MultipleManufacturerResponse' types, to collect results of 'Manufacturer' type.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.Manufacturer
 where

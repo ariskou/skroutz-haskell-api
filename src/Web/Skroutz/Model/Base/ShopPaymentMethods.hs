@@ -11,7 +11,8 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'ShopPaymentMethods' type, the payment methods supported by a shop.
+-- Provides the 'ShopPaymentMethods' type, the payment methods supported by a
+-- 'Web.Skroutz.Model.Base.Shop.Shop'.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.ShopPaymentMethods
 where

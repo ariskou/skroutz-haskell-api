@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'GeneralSearchResult' type, representing multiple types of search results.
+-- Provides Provides the 'MultipleGeneralSearchResultResponse' type, to collect search results.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.GeneralSearchResult
 where

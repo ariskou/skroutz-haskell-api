@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Manufacturer' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Manufacturer' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Model.Manufacturer
 where

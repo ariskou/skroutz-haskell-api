@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'AppliedFilters' type.
+-- Provides the 'AppliedFilters' type, used in search results.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.AppliedFilters
 where

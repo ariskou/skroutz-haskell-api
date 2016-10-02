@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'Autocomplete' type.
+-- Provides the 'MultipleAutocompleteResponse' type to collect results of 'Autocomplete' type.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.Autocomplete
 where

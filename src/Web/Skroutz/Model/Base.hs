@@ -7,7 +7,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the Skroutz API 'Web.Skroutz.Model.Base' for JSON marshalling.
+-- Provides the Skroutz API 'Base' for JSON (un)marshalling.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base
   (

@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Shop' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Shop' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Model.Shop
 where

@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'SkuReview' type, a user review of an 'SKU'.
+-- Provides the 'SkuReview' type, a user review of an 'Web.Skroutz.Model.Base.Sku.Sku'.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.SkuReview
 where

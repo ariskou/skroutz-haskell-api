@@ -10,7 +10,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Autocomplete' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Autocomplete' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Model.Autocomplete
 where

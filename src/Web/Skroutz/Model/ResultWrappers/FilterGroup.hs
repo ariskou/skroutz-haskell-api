@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'FilterGroup' type.
+-- Provides the 'MultipleFilterGroupResponse' type, to collect results of 'FilterGroup' type.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.FilterGroup
 where

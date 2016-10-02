@@ -11,7 +11,8 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'ShopShipping' type, the shipping methods supported by a shop.
+-- Provides the 'ShopShipping' type, the shipping methods supported by a
+-- 'Web.Skroutz.Model.Base.Shop.Shop'.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.ShopShipping
 where

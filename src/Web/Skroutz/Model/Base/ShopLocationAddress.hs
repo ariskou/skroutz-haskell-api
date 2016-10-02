@@ -11,7 +11,8 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'ShopLocationAddress' type, the structured address of a shop location.
+-- Provides the 'ShopLocationAddress' type, the structured address of a
+-- 'Web.Skroutz.Model.Base.ShopLocation.ShopLocation'.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.ShopLocationAddress
 where

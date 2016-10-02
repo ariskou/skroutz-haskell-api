@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'Autocomplete' type.
+-- Provides the 'Autocomplete' type, the result of suggested auto-completions.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.Autocomplete
 where

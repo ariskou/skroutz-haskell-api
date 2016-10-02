@@ -11,7 +11,8 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'ShopLocation' type, the location of a specific physical shop store.
+-- Provides the 'ShopLocation' type, the location of a specific physical
+-- 'Web.Skroutz.Model.Base.Shop.Shop' store.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.ShopLocation
 where

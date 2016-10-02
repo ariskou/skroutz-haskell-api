@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'Alternative' type.
+-- Provides the 'Alternative' and 'AlternativeDrop' types, used in search results.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.Alternative
 where

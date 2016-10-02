@@ -14,7 +14,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'TokenType' type, a type representing the supported types of 'Token'.
+-- Provides the 'TokenType' type, a type representing the supported types of 'Web.Skroutz.Model.Base.Token.Token'.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.TokenType
 where

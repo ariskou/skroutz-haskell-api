@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'AvailableFilters' type.
+-- Provides the 'AvailableFilters' type, used in search results.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.AvailableFilters
 where

@@ -13,7 +13,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'URI' type, a newtype wrapper around Network.URI.URI.
+-- Provides the 'URI' type, a newtype wrapper around 'Network.URI.URI' in "Network.URI".
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.URI
 where

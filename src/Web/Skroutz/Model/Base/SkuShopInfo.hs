@@ -14,7 +14,8 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'SkuShopInfo' type, which contains the basic information of a 'Shop' related to an 'SKU'.
+-- Provides the 'SkuShopInfo' type, which contains the basic information of a
+-- 'Web.Skroutz.Model.Base.Shop.Shop' related to an 'Web.Skroutz.Model.Base.Sku.Sku'.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.SkuShopInfo
 where

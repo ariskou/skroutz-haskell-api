@@ -11,7 +11,8 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'Sku' type, where SKU (Stock Keeping Unit) is an aggregation of products.
+-- Provides the 'Sku' type, where SKU (Stock Keeping Unit) is an aggregation of
+-- 'Product's.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.Sku
 where

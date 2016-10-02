@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'ShopReview' type, a user review of a shop.
+-- Provides the 'MultipleShopReviewResponse' type, to collect results of 'ShopReview' type.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.ShopReview
 where

@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'Flag' type, used to mark user provided content as requiring attention/moderation.
+-- Provides Provides the 'MultipleFlagResponse' type, to collect results of 'Flag' type.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.Flag
 where

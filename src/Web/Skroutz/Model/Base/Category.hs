@@ -11,7 +11,8 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'Category' type, a category of products.
+-- Provides the 'Category' type, a category of
+-- 'Web.Skroutz.Model.Base.Product.Product's.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.Category
 where

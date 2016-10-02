@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.ResultWrappers.GeneralSearchResult' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'MultipleGeneralSearchResultResponse' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Model.GeneralSearchResult
 where

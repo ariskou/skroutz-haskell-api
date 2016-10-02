@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'SkuPrice' type, the price of an 'SKU'.
+-- Provides the 'SkuPrice' type, the price of an 'Web.Skroutz.Model.Base.Sku.Sku'.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.SkuPrice
 where

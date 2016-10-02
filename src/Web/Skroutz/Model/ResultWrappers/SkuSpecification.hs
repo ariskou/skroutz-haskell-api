@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'SkuSpecification' type, the specification of an 'SKU'.
+-- Provides the 'MultipleSkuSpecificationResponse' type, to collect results of 'SkuSpecification' type and potentially their grouping into 'SkuSpecificationsGroup's.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.SkuSpecification
 where

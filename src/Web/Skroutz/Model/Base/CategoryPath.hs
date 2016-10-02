@@ -14,7 +14,9 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'CategoryPath' type, a newtype wrapper around [Int] representing the path of 'Category' IDs leading to a 'Category'.
+-- Provides the 'CategoryPath' type, a newtype wrapper around [Int] representing
+-- the path of 'Web.Skroutz.Model.Base.Category.Category' IDs leading to a
+-- 'Web.Skroutz.Model.Base.Category.Category'.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.CategoryPath
 where

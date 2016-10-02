@@ -14,7 +14,8 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'ISO8601Time' type, a newtype wrapper around 'Data.Time.ZonedTime' in ISO 8601 format.
+-- Provides the 'ISO8601Time' type, a newtype wrapper around
+-- 'Data.Time.ZonedTime' in ISO 8601 format.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.ISO8601Time
 where

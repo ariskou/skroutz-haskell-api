@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'Category' type, a category of products.
+-- Provides the 'SingleCategoryResponse' and 'MultipleCategoryResponse' types, used to collect results of 'Category' type.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.Category
 where

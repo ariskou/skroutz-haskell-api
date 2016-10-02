@@ -13,7 +13,9 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'ShopLocationFormat' type, a type representing the possible types of formats for shop location addresses.
+-- Provides the 'ShopLocationFormat' type, a type representing the possible types
+-- of formats for 'Web.Skroutz.Model.Base.ShopLocationAddress.ShopLocationAddress'
+-- in 'Web.Skroutz.Model.Base.ShopLocation.ShopLocation's.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.ShopLocationFormat
 where

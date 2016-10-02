@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'Shop' type, which is a merchant, not a physical store.
+-- Provides the 'SingleShopResponse' and 'MultipleShopResponse' types, to collect results of 'Shop' type.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.Shop
 where

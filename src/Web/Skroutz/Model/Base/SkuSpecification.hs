@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'SkuSpecification' type, the specification of an 'SKU'.
+-- Provides the 'SkuSpecification' type, the specification of an 'Web.Skroutz.Model.Base.Sku.Sku'.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.SkuSpecification
 where

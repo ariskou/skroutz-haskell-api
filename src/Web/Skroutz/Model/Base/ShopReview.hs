@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'ShopReview' type, a user review of a shop.
+-- Provides the 'ShopReview' type, a user review of a 'Web.Skroutz.Model.Base.Shop.Shop'.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.ShopReview
 where

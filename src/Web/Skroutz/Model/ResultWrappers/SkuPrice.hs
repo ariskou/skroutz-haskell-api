@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'SkuPrice' type, the price of an 'SKU'.
+-- Provides the 'MultipleSkuPriceResponse' and 'HistoricalSkuPriceResponse' types, to collect results of 'SkuPrice' type.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.SkuPrice
 where

@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'Sku' type, where SKU (Stock Keeping Unit) is an aggregation of products.
+-- Provides the 'SingleSkuResponse' and 'MultipleSkuResponse' types, to collect results of 'Sku' type.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.Sku
 where

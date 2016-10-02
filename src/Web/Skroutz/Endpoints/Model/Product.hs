@@ -10,7 +10,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Product' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Product' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Model.Product
 where

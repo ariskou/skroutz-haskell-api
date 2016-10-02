@@ -13,7 +13,8 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'FilterGroupType' type, a type representing the possible types of filters in 'FilterGroup'.
+-- Provides the 'FilterGroupType' type, a type representing the possible types
+-- of filters in 'Web.Skroutz.Model.Base.FilterGroup.FilterGroup'.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.FilterGroupType
 where

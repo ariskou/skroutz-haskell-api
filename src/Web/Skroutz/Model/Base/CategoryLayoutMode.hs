@@ -13,7 +13,8 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'CategoryLayoutMode' type, a type representing the supported layout modes for 'Category'.
+-- Provides the 'CategoryLayoutMode' type, a type representing the supported
+-- layout modes for 'Web.Skroutz.Model.Base.Category.Category'.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.CategoryLayoutMode
 where

@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'SkuReview' type, a user review of an 'SKU'.
+-- Provides the 'MultipleSkuReviewResponse' type, to collect results of 'SkuReview' type.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.SkuReview
 where

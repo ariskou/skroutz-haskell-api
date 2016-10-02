@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'Product' type.
+-- Provides the 'SingleProductResponse' and 'MultipleProductResponse' types, to collect results of 'Product' type.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.Product
 where

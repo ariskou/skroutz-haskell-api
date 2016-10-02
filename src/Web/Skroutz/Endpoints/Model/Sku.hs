@@ -12,7 +12,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the Skroutz API endpoints/methods for 'Web.Skroutz.Model.Base.Sku' retrieval.
+-- Provides the Skroutz API endpoints/methods for 'Sku' retrieval.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Endpoints.Model.Sku
 where

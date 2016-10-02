@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'Pagination' type.
+-- Provides the 'Pagination' type, used in results which are paginated.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.Pagination
 where

@@ -11,7 +11,7 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'ShopLocation' type, the location of a specific physical shop store.
+-- Provides the 'SingleShopLocationResponse' and 'MultipleShopLocationResponse' types, to collect results of 'ShopLocation' type.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.ResultWrappers.ShopLocation
 where

@@ -11,7 +11,8 @@
 -- Stability   :  alpha
 -- Portability : non-portable
 --
--- Provides the 'SkuImages' type, the structured images of a 'Sku'.
+-- Provides the 'SkuImages' type, the structured images of a
+-- 'Web.Skroutz.Model.Base.Sku.Sku'.
 ----------------------------------------------------------------------------
 module Web.Skroutz.Model.Base.SkuImages
 where
