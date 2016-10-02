@@ -12,6 +12,7 @@ maintainer: Remous-Aris Koutsiamanis <ariskou@gmail.com>
 copyright: Copyright 2016 Remous-Aris Koutsiamanis
 stability: alpha
 category: Web
+tested-with: GHC == 7.10.3, GHC == 8.0.1
 
 extra-source-files:
   - README.md
