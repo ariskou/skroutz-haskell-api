@@ -12,7 +12,7 @@
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
--- Portability : non-portable
+-- Portability :  non-portable
 --
 -- Provides the 'SkuShopInfo' type, which contains the basic information of a
 -- 'Web.Skroutz.Model.Base.Shop.Shop' related to an 'Web.Skroutz.Model.Base.Sku.Sku'.

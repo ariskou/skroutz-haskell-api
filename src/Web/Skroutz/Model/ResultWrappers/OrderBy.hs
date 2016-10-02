@@ -11,7 +11,7 @@
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
--- Portability : non-portable
+-- Portability :  non-portable
 --
 -- Provides the 'OrderBy' type, a type representing the possible types of ordering in searches.
 ----------------------------------------------------------------------------

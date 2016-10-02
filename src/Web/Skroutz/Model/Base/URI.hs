@@ -11,7 +11,7 @@
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
--- Portability : non-portable
+-- Portability :  non-portable
 --
 -- Provides the 'URI' type, a newtype wrapper around 'Network.URI.URI' in "Network.URI".
 ----------------------------------------------------------------------------

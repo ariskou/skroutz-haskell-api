@@ -9,7 +9,7 @@
 -- License     :  Apache License 2.0
 -- Maintainer  :  Remous-Aris Koutsiamanis <ariskou@gmail.com>
 -- Stability   :  alpha
--- Portability : non-portable
+-- Portability :  non-portable
 --
 -- Provides Provides the 'MultipleFlagResponse' type, to collect results of 'Flag' type.
 ----------------------------------------------------------------------------
