@@ -38,19 +38,11 @@ getApiSecret = pack <$> getEnv apiSecretEnvKey
 
 getAuthToken :: IO B.ByteString
 getAuthToken = do
-  apiIdentifier <- getEnv apiIdentifierEnvKey
-  apiSecret <- getEnv apiSecretEnvKey
+  apiIdentifier <- getApiIdentifier
+  apiSecret <- getApiSecret
   manager <- newManager Skroutz.defaultAuthManagerSettings
 
-  result <- runExceptT $ Skroutz.getToken
-    (Just $ pack apiIdentifier)
-    (Just $ pack apiSecret)
-    (Just Skroutz.defaultAuthPublicGrantType)
-    (Just Skroutz.defaultAuthPublicRedirectUri)
-    (Just Skroutz.defaultAuthPublicScope)
-    manager
-    Skroutz.defaultAuthBaseUrl
-
+  result <- runExceptT $ Skroutz.getTokenWithDefaultParams apiIdentifier apiSecret manager
   return $ encodeUtf8 $ Skroutz._tokenAccessToken $ fromRight' result
 
 getFixtureDir :: IO FilePath

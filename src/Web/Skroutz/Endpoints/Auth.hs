@@ -53,3 +53,13 @@ defaultAuthPublicRedirectUri = "http://example.com/auth/skroutz"
 
 defaultAuthPublicScope :: Text
 defaultAuthPublicScope = "public"
+
+getTokenWithDefaultParams :: Text -> Text -> Manager -> ExceptT ServantError IO Token
+getTokenWithDefaultParams apiIdentifier apiSecret manager = getToken
+  (Just apiIdentifier)
+  (Just apiSecret)
+  (Just defaultAuthPublicGrantType)
+  (Just defaultAuthPublicRedirectUri)
+  (Just defaultAuthPublicScope)
+  manager
+  defaultAuthBaseUrl
