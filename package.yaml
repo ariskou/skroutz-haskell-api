@@ -111,6 +111,17 @@ library:
     - template-haskell
     - time
 
+executables:
+  example1:
+    main: Main.hs
+    source-dirs: examples/example1
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N
+    dependencies:
+      - containers
+      - either
+      - lens
+      - skroutz-haskell-api
+
 tests:
   spec:
     main: Spec.hs

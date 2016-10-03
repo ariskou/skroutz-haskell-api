@@ -165,6 +165,26 @@ library
       Paths_skroutz_haskell_api
   default-language: Haskell2010
 
+executable example1
+  main-is: Main.hs
+  hs-source-dirs:
+      examples/example1
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >= 4.7 && < 5
+    , aeson
+    , bytestring
+    , http-client
+    , servant
+    , servant-client
+    , text
+    , transformers
+    , containers
+    , either
+    , lens
+    , skroutz-haskell-api
+  default-language: Haskell2010
+
 test-suite spec
   type: exitcode-stdio-1.0
   main-is: Spec.hs
