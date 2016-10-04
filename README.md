@@ -1,4 +1,9 @@
 # skroutz-haskell-api
+
+![Version v0.1.0.0](https://img.shields.io/badge/version-v0.1.0.0-brightgreen.svg)
+![License Apache-2.0](https://img.shields.io/badge/license-Apache_2.0-blue.svg)
+[![Build Status](https://travis-ci.org/ariskou/skroutz-haskell-api.svg?branch=travisci-integration)](https://travis-ci.org/commercialhaskell/stack)
+
 Haskell bindings for the [Skroutz.gr](https://www.skroutz.gr) product search and comparison service [API v3](http://developer.skroutz.gr/api/v3).
 
 ## Version support
