@@ -13,16 +13,15 @@
 module Web.Skroutz.TestingEnvironment
 where
 
-import           Control.Monad.Trans.Except (runExceptT)
-import qualified Data.ByteString            as B
-import           Data.Either.Combinators    (fromRight')
-import           Data.Text                  (Text, pack)
-import           Data.Text.Encoding         (encodeUtf8)
-import           Network.HTTP.Client        (newManager)
-import           System.Directory           (getCurrentDirectory)
-import           System.Environment         (getEnv)
-import           System.FilePath            ((</>))
-import qualified Web.Skroutz                as Skroutz
+import qualified Data.ByteString         as B
+import           Data.Either.Combinators (fromRight')
+import           Data.Text               (Text, pack)
+import           Data.Text.Encoding      (encodeUtf8)
+import           Network.HTTP.Client     (newManager)
+import           System.Directory        (getCurrentDirectory)
+import           System.Environment      (getEnv)
+import           System.FilePath         ((</>))
+import qualified Web.Skroutz             as Skroutz
 
 apiIdentifierEnvKey :: String
 apiIdentifierEnvKey = "API_IDENTIFIER"
@@ -42,7 +41,7 @@ getAuthToken = do
   apiSecret <- getApiSecret
   manager <- newManager Skroutz.defaultAuthManagerSettings
 
-  result <- runExceptT $ Skroutz.getTokenWithDefaultParams apiIdentifier apiSecret manager
+  result <- Skroutz.runAPIMethod manager Skroutz.defaultDataBaseUrl (Skroutz.getTokenWithDefaultParams apiIdentifier apiSecret)
   return $ encodeUtf8 $ Skroutz._tokenAccessToken $ fromRight' result
 
 getFixtureDir :: IO FilePath

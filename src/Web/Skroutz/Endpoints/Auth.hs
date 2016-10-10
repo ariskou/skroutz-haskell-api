@@ -15,14 +15,14 @@
 module Web.Skroutz.Endpoints.Auth
 where
 
-import           Control.Monad.Trans.Except (ExceptT)
-import           Data.Proxy                 (Proxy (..))
-import           Data.Text                  (Text)
-import           Network.HTTP.Client        (Manager, ManagerSettings)
-import           Network.HTTP.Client.TLS    (tlsManagerSettings)
+import           Data.Proxy                   (Proxy (..))
+import           Data.Text                    (Text)
+import           Network.HTTP.Client          (ManagerSettings)
+import           Network.HTTP.Client.TLS      (tlsManagerSettings)
 import           Servant.API
 import           Servant.Client
-import           Web.Skroutz.Model          (Token)
+import           Web.Skroutz.Endpoints.Compat (APIWrapper)
+import           Web.Skroutz.Model            (Token)
 
 type AuthAPI =
        "token"
@@ -36,7 +36,7 @@ type AuthAPI =
 authAPI :: Proxy AuthAPI
 authAPI = Proxy
 
-getToken :: Maybe Text -> Maybe Text -> Maybe Text -> Maybe Text  -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO Token
+getToken :: Maybe Text -> Maybe Text -> Maybe Text -> Maybe Text  -> Maybe Text -> APIWrapper Token
 getToken = client authAPI
 
 defaultAuthManagerSettings :: ManagerSettings
@@ -54,12 +54,10 @@ defaultAuthPublicRedirectUri = "http://example.com/auth/skroutz"
 defaultAuthPublicScope :: Text
 defaultAuthPublicScope = "public"
 
-getTokenWithDefaultParams :: Text -> Text -> Manager -> ExceptT ServantError IO Token
-getTokenWithDefaultParams apiIdentifier apiSecret manager = getToken
+getTokenWithDefaultParams :: Text -> Text -> APIWrapper Token
+getTokenWithDefaultParams apiIdentifier apiSecret = getToken
   (Just apiIdentifier)
   (Just apiSecret)
   (Just defaultAuthPublicGrantType)
   (Just defaultAuthPublicRedirectUri)
   (Just defaultAuthPublicScope)
-  manager
-  defaultAuthBaseUrl

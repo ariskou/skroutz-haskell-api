@@ -82,8 +82,8 @@ library
     , aeson
     , bytestring
     , http-client
-    , servant
-    , servant-client
+    , servant >= 0.7.1 && < 1.0
+    , servant-client >= 0.7.1 && < 1.0
     , text
     , transformers
     , containers
@@ -98,6 +98,7 @@ library
   exposed-modules:
       Web.Skroutz.Endpoints
       Web.Skroutz.Endpoints.Auth
+      Web.Skroutz.Endpoints.Compat
       Web.Skroutz.Endpoints.Model
       Web.Skroutz.Endpoints.Model.Autocomplete
       Web.Skroutz.Endpoints.Model.Category
@@ -175,8 +176,8 @@ executable example1
     , aeson
     , bytestring
     , http-client
-    , servant
-    , servant-client
+    , servant >= 0.7.1 && < 1.0
+    , servant-client >= 0.7.1 && < 1.0
     , text
     , transformers
     , containers
@@ -196,8 +197,8 @@ test-suite spec
     , aeson
     , bytestring
     , http-client
-    , servant
-    , servant-client
+    , servant >= 0.7.1 && < 1.0
+    , servant-client >= 0.7.1 && < 1.0
     , text
     , transformers
     , directory

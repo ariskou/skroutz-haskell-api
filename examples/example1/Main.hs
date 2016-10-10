@@ -15,14 +15,13 @@
 module Main
 where
 
-import           Control.Lens               ((^..), (^?), _Just)
-import           Control.Monad.Trans.Except (runExceptT)
-import           Data.Either.Combinators    (mapBoth)
-import           Data.Map                   as Map
-import           Data.Text                  (Text, pack, unpack)
-import           Network.HTTP.Client        (newManager)
-import           Servant.API                (getHeaders, getResponse)
-import qualified Web.Skroutz                as Skroutz
+import           Control.Lens            ((^..), (^?), _Just)
+import           Data.Either.Combinators (mapBoth)
+import           Data.Map                as Map
+import           Data.Text               (Text, pack, unpack)
+import           Network.HTTP.Client     (newManager)
+import           Servant.API             (getHeaders, getResponse)
+import qualified Web.Skroutz             as Skroutz
 
 getApiIdentifier :: IO Text
 getApiIdentifier = do
@@ -42,7 +41,7 @@ getAuthToken = do
   putStrLn ""
   manager <- newManager Skroutz.defaultAuthManagerSettings
 
-  result <- runExceptT $ Skroutz.getTokenWithDefaultParams apiIdentifier apiSecret manager
+  result <- Skroutz.runAPIMethod manager Skroutz.defaultAuthBaseUrl (Skroutz.getTokenWithDefaultParams apiIdentifier apiSecret)
   return $ mapBoth show Skroutz._tokenAccessToken result
 
 showResult :: Skroutz.WithHeaders Skroutz.MultipleCategoryResponse -> String
@@ -64,7 +63,7 @@ showResult multipleCategoriesWithHeaders =
 exampleApiCall :: Text -> IO ()
 exampleApiCall authToken = do
   manager <- newManager Skroutz.defaultDataManagerSettings
-  eitherResult <- runExceptT $ Skroutz.withStdParamsPagedDefaults Skroutz.getCategories authToken manager
+  eitherResult <- Skroutz.runAPIMethod manager Skroutz.defaultDataBaseUrl (Skroutz.withStdParamsPagedDefaults Skroutz.getCategories authToken)
   putStrLn $ either show showResult eitherResult
 
 main :: IO ()

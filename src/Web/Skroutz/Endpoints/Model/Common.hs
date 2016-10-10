@@ -15,12 +15,12 @@
 module Web.Skroutz.Endpoints.Model.Common
 where
 
-import           Control.Monad.Trans.Except (ExceptT)
-import           Data.Monoid                ((<>))
-import           Data.Text                  (Text)
-import           Network.HTTP.Client        (Manager, ManagerSettings, defaultManagerSettings)
+import           Data.Monoid                  ((<>))
+import           Data.Text                    (Text)
+import           Network.HTTP.Client          (ManagerSettings, defaultManagerSettings)
 import           Servant.API
 import           Servant.Client
+import           Web.Skroutz.Endpoints.Compat (APIWrapper)
 
 type WithHeaders a = Headers '[
     Header "Accept-Ranges" Text
@@ -63,9 +63,11 @@ type DataAPIMethodPaged a =
   :> QueryParam "per" Int
   :> DataAPIMethod a
 
-type StandardDataParams a = Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO (WithHeaders a)
+type StandardDataAPIWrapper a = APIWrapper (WithHeaders a)
 
-type StandardDataParamsPaged a = Maybe Int -> Maybe Int -> Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO (WithHeaders a)
+type StandardDataParams a = Maybe Text -> Maybe Text -> StandardDataAPIWrapper a
+
+type StandardDataParamsPaged a = Maybe Int -> Maybe Int -> Maybe Text -> Maybe Text -> StandardDataAPIWrapper a
 
 defaultDataManagerSettings :: ManagerSettings
 defaultDataManagerSettings = defaultManagerSettings
@@ -85,11 +87,11 @@ defaultDataPerPageResultCount = 25
 makeAuthToken :: Text -> Text
 makeAuthToken token = "Bearer " <> token
 
-withStdParams :: (Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO t) -> Text -> Manager -> ExceptT ServantError IO t
-withStdParams f authToken manager = f (Just defaultDataAcceptHeader) (Just $ makeAuthToken authToken) manager defaultDataBaseUrl
+withStdParams :: StandardDataParams t -> Text -> StandardDataAPIWrapper t
+withStdParams f authToken = f (Just defaultDataAcceptHeader) (Just $ makeAuthToken authToken)
 
-withStdParamsPaged :: Maybe Int -> Maybe Int -> (Maybe Int -> Maybe Int -> Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO t) -> Text -> Manager -> ExceptT ServantError IO t
-withStdParamsPaged page per f authToken manager = f page per (Just defaultDataAcceptHeader) (Just $ makeAuthToken authToken) manager defaultDataBaseUrl
+withStdParamsPaged :: Maybe Int -> Maybe Int -> StandardDataParamsPaged t -> Text -> StandardDataAPIWrapper t
+withStdParamsPaged page per f authToken = f page per (Just defaultDataAcceptHeader) (Just $ makeAuthToken authToken)
 
-withStdParamsPagedDefaults :: (Maybe Int -> Maybe Int -> Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO t) -> Text -> Manager -> ExceptT ServantError IO t
+withStdParamsPagedDefaults :: StandardDataParamsPaged t -> Text -> StandardDataAPIWrapper t
 withStdParamsPagedDefaults = withStdParamsPaged (Just defaultDataPage) (Just defaultDataPerPageResultCount)

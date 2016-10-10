@@ -14,25 +14,23 @@
 module Web.Skroutz.ApiEntries
 where
 
-import           Control.Monad.Trans.Except (ExceptT, runExceptT)
-import qualified Data.Aeson                 as Aeson
-import           Data.ByteString.Lazy       (ByteString)
-import           Data.Either.Combinators    (mapRight)
-import           Data.Proxy                 (Proxy (..))
-import           Data.Text                  (Text)
-import           Network.HTTP.Client        (Manager)
-import           Servant.Client             (ServantError)
-import           Servant.Common.BaseUrl     (BaseUrl)
-import qualified Web.Skroutz                as Skroutz
+import qualified Data.Aeson              as Aeson
+import           Data.ByteString.Lazy    (ByteString)
+import           Data.Either.Combinators (mapRight)
+import           Data.Proxy              (Proxy (..))
+import           Data.Text               (Text)
+import           Network.HTTP.Client     (Manager)
+import           Servant.Client
+import qualified Web.Skroutz             as Skroutz
 
-checkWithStdParams :: (Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO t) -> Text -> Manager -> IO (Either ServantError ())
-checkWithStdParams f authToken manager = mapRight (const ()) <$> runExceptT (Skroutz.withStdParams f authToken manager)
+checkWithStdParams :: Skroutz.StandardDataParams t -> Text -> Manager -> IO (Either ServantError ())
+checkWithStdParams f authToken manager = mapRight (const ()) <$> Skroutz.runAPIMethod manager Skroutz.defaultDataBaseUrl (Skroutz.withStdParams f authToken)
 
-checkWithStdParamsPaged :: Maybe Int -> Maybe Int -> (Maybe Int -> Maybe Int -> Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO t) -> Text -> Manager -> IO (Either ServantError ())
-checkWithStdParamsPaged page per f authToken manager = mapRight (const ()) <$> runExceptT (Skroutz.withStdParamsPaged page per f authToken manager)
+checkWithStdParamsPaged :: Maybe Int -> Maybe Int -> Skroutz.StandardDataParamsPaged t -> Text -> Manager -> IO (Either ServantError ())
+checkWithStdParamsPaged page per f authToken manager = mapRight (const ()) <$> Skroutz.runAPIMethod manager Skroutz.defaultDataBaseUrl (Skroutz.withStdParamsPaged page per f authToken)
 
-checkWithStdParamsPagedDefaults :: (Maybe Int -> Maybe Int -> Maybe Text -> Maybe Text -> Manager -> BaseUrl -> ExceptT ServantError IO t) -> Text -> Manager -> IO (Either ServantError ())
-checkWithStdParamsPagedDefaults f authToken manager = mapRight (const ()) <$> runExceptT (Skroutz.withStdParamsPagedDefaults f authToken manager)
+checkWithStdParamsPagedDefaults :: Skroutz.StandardDataParamsPaged t -> Text -> Manager -> IO (Either ServantError ())
+checkWithStdParamsPagedDefaults f authToken manager = mapRight (const ()) <$> Skroutz.runAPIMethod manager Skroutz.defaultDataBaseUrl (Skroutz.withStdParamsPagedDefaults f authToken)
 
 checkDecode :: forall a. Aeson.FromJSON a => Proxy a -> ByteString -> Either String ()
 checkDecode _ str = mapRight (const ()) (Aeson.eitherDecode str :: Either String a)
