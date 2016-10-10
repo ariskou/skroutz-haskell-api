@@ -41,7 +41,7 @@ getAuthToken = do
   apiSecret <- getApiSecret
   manager <- newManager Skroutz.defaultAuthManagerSettings
 
-  result <- Skroutz.runAPIMethod manager Skroutz.defaultDataBaseUrl (Skroutz.getTokenWithDefaultParams apiIdentifier apiSecret)
+  result <- Skroutz.runAPIMethod manager Skroutz.defaultAuthBaseUrl (Skroutz.getTokenWithDefaultParams apiIdentifier apiSecret)
   return $ encodeUtf8 $ Skroutz._tokenAccessToken $ fromRight' result
 
 getFixtureDir :: IO FilePath
