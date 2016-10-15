@@ -14,10 +14,11 @@ module Web.Skroutz.TestingEnvironment
 where
 
 import qualified Data.ByteString         as B
-import           Data.Either.Combinators (fromRight')
+import           Data.Either.Combinators (mapRight)
 import           Data.Text               (Text, pack)
 import           Data.Text.Encoding      (encodeUtf8)
 import           Network.HTTP.Client     (newManager)
+import           Servant.Client          (ServantError)
 import           System.Directory        (getCurrentDirectory)
 import           System.Environment      (getEnv)
 import           System.FilePath         ((</>))
@@ -35,14 +36,14 @@ getApiIdentifier = pack <$> getEnv apiIdentifierEnvKey
 getApiSecret :: IO Text
 getApiSecret = pack <$> getEnv apiSecretEnvKey
 
-getAuthToken :: IO B.ByteString
+getAuthToken :: IO (Either ServantError B.ByteString)
 getAuthToken = do
   apiIdentifier <- getApiIdentifier
   apiSecret <- getApiSecret
   manager <- newManager Skroutz.defaultAuthManagerSettings
 
   result <- Skroutz.runAPIMethod manager Skroutz.defaultAuthBaseUrl (Skroutz.getTokenWithDefaultParams apiIdentifier apiSecret)
-  return $ encodeUtf8 $ Skroutz._tokenAccessToken $ fromRight' result
+  return $ mapRight (encodeUtf8 . Skroutz._tokenAccessToken) result
 
 getFixtureDir :: IO FilePath
 getFixtureDir = do

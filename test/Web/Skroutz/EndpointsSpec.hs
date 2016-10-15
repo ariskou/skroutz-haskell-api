@@ -21,12 +21,14 @@ module Web.Skroutz.EndpointsSpec
 where
 
 import           Data.Either                    (isRight)
+import           Data.Either.Combinators        (fromRight', mapRight)
 import           Data.Foldable                  (traverse_)
 import           Data.Text                      (Text)
 import           Data.Text.Encoding             (decodeUtf8)
 import           Network.HTTP.Client            (newManager)
 import           Servant.API.ResponseHeaders    (Headers)
-import           Test.Hspec                     (Spec, SpecWith, beforeAll, describe, hspec, it, shouldSatisfy)
+import           Servant.Client                 (ServantError)
+import           Test.Hspec                     (Spec, SpecWith, beforeAll, describe, hspec, it, shouldBe, shouldSatisfy)
 import qualified Web.Skroutz                    as Skroutz
 import           Web.Skroutz.ApiEntries         (ApiEntry, apiEntries)
 import           Web.Skroutz.TestingEnvironment (getAuthToken)
@@ -35,9 +37,12 @@ import           Web.Skroutz.TestingEnvironment (getAuthToken)
 instance Show (Headers a b) where
   show _ = ""
 
-liveApiSpec :: ApiEntry -> SpecWith Text
+liveApiSpec :: ApiEntry -> SpecWith (Either ServantError Text)
 liveApiSpec (testName, _, checkApiCaller, _) =
-  it testName $ \authToken -> do
+  it testName $ \eitherAuthToken -> do
+    isRight eitherAuthToken `shouldBe` True -- Do not reveal client_id and client_secret on test failure
+    let authToken = fromRight' eitherAuthToken
+
     manager <- newManager Skroutz.defaultDataManagerSettings
     eitherResponse <- checkApiCaller authToken manager
     eitherResponse `shouldSatisfy` isRight
@@ -46,9 +51,9 @@ spec :: Spec
 spec = do
   describe "Requesting data via the API endpoints from the live, remote webservice and parsing the JSON results" $
     it "retrieves an authorization token" $ do
-      _ <- getAuthToken
-      return ()
-  beforeAll (fmap decodeUtf8 getAuthToken) $
+      eitherAuthToken <- getAuthToken
+      isRight eitherAuthToken `shouldBe` True -- Do not reveal client_id and client_secret on test failure
+  beforeAll (fmap (mapRight decodeUtf8) getAuthToken) $
     describe "Requesting data via the API endpoints from the live, remote webservice and parsing the JSON results" $ traverse_ liveApiSpec apiEntries
 
 main :: IO ()

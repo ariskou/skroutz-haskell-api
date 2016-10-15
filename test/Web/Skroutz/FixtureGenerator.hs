@@ -22,6 +22,7 @@ where
 
 import qualified Data.ByteString                as B
 import qualified Data.ByteString.Lazy           as BL
+import           Data.Either.Combinators        (fromRight')
 import           Data.Foldable                  (traverse_)
 import           Data.Text                      (pack)
 import           Data.Text.Encoding             (encodeUtf8)
@@ -47,4 +48,4 @@ saveFixture authToken (fixtureName, fixtureApiPath, _, _) = do
 generateFixtures :: IO ()
 generateFixtures = do
   authToken <- getAuthToken
-  traverse_ (saveFixture authToken) apiEntries
+  traverse_ (saveFixture (fromRight' authToken)) apiEntries
