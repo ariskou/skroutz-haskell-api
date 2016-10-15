@@ -6,6 +6,7 @@
 {-# LANGUAGE ScopedTypeVariables   #-}
 {-# LANGUAGE UndecidableInstances  #-}
 {-# OPTIONS_GHC -fno-warn-orphans #-}
+{-# OPTIONS_GHC -fno-warn-unused-imports #-}
 ----------------------------------------------------------------------------
 -- |
 -- Module      :  Web.Skroutz.EndpointsSpec
@@ -31,6 +32,7 @@ import           Servant.Client                 (ServantError)
 import           Test.Hspec                     (Spec, SpecWith, beforeAll, describe, hspec, it, shouldBe, shouldSatisfy)
 import qualified Web.Skroutz                    as Skroutz
 import           Web.Skroutz.ApiEntries         (ApiEntry, apiEntries)
+import           Web.Skroutz.FixtureGenerator
 import           Web.Skroutz.TestingEnvironment (getAuthToken)
 
 -- So that we can print an error if the test fails
