@@ -8,7 +8,7 @@
 Haskell bindings for the [Skroutz.gr](https://www.skroutz.gr) product search and comparison service [API v3](http://developer.skroutz.gr/api/v3).
 
 ## Version support
-Tested with GHC 7.10.3 (via [Stackage LTS 6.20](https://www.stackage.org/lts-6.20)) and 8.0.1 (via [Stackage LTS 7.2](https://www.stackage.org/lts-7.2)).
+Tested with GHC 7.10.3 (via [Stackage LTS 6.21](https://www.stackage.org/lts-6.21)) and 8.0.1 (via [Stackage LTS 7.3](https://www.stackage.org/lts-7.3)).
 The library is based on [servant](http://haskell-servant.readthedocs.io/en/stable) to define the API endpoints and [aeson](https://github.com/bos/aeson) for the API data model serialisation to/from JSON.
 
 ## Usage
