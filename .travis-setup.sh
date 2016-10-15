@@ -27,12 +27,12 @@ fi
 case "$BUILD" in
   stack)
     # However, we only need stack to download GHC for stack builds.
-    travis_retry stack --no-terminal setup;
+    travis_retry stack --stack-yaml $STACK_YAML --no-terminal setup;
     ;;
   cabal)
 mkdir -p $HOME/.cabal
 cat > $HOME/.cabal/config <<EOF
-remote-repo: hackage.haskell.org:http://hackage.fpcomplete.com/
+remote-repo: hackage.fpcomplete.com:http://hackage.fpcomplete.com/
 remote-repo-cache: $HOME/.cabal/packages
 jobs: \$ncpus
 EOF

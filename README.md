@@ -3,6 +3,7 @@
 ![Version v0.1.0.0](https://img.shields.io/badge/version-v0.1.0.0-brightgreen.svg)
 ![License Apache-2.0](https://img.shields.io/badge/license-Apache_2.0-blue.svg)
 [![Linux and OS X Build Status](https://travis-ci.org/ariskou/skroutz-haskell-api.svg?branch=master)](https://travis-ci.org/ariskou/skroutz-haskell-api)
+[![Windows Build Status](https://ci.appveyor.com/api/projects/status/ntgm8hw6066rewjy/branch/master?svg=true)](https://ci.appveyor.com/project/ariskou/skroutz-haskell-api/branch/master)
 
 Haskell bindings for the [Skroutz.gr](https://www.skroutz.gr) product search and comparison service [API v3](http://developer.skroutz.gr/api/v3).
 

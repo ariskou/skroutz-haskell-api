@@ -12,38 +12,112 @@ sudo: false
 
 cache:
     directories:
-        - $HOME/.ghc
-        - $HOME/.cabal
+        #- $HOME/.ghc
+        #- $HOME/.cabal
         - $HOME/.stack
 
 matrix:
   include:
-    #- env: BUILD=cabal CABALVER=1.22 GHCVER=7.10.3
-      #compiler: ": #GHC 7.10.3"
-      #addons: {apt: {packages: [cabal-install-1.22,ghc-7.10.3], sources: [hvr-ghc]}}
+    # Cabal-based configurations - linux only
+      # Cabal 1.22 and GHC 7.10.3
+    - env: BUILD=cabal CABALVER=1.22 GHCVER=7.10.3 STACK_YAML=none
+      compiler: ": #GHC 7.10.3"
+      addons: {apt: {packages: [cabal-install-1.22,ghc-7.10.3], sources: [hvr-ghc]}}
 
-    #- env: BUILD=cabal CABALVER=1.24 GHCVER=8.0.1
-      #compiler: ": #GHC 8.0.1"
-      #addons: {apt: {packages: [cabal-install-1.24,ghc-8.0.1], sources: [hvr-ghc]}}
+    - env: BUILD=cabal CABALVER=1.22 GHCVER=7.10.3 STACK_YAML=stack-lts-6.yaml
+      compiler: ": #GHC 7.10.3"
+      addons: {apt: {packages: [cabal-install-1.22,ghc-7.10.3], sources: [hvr-ghc]}}
 
+    - env: BUILD=cabal CABALVER=1.22 GHCVER=7.10.3 STACK_YAML=stack-lts-6-servant-0.7.1.yaml
+      compiler: ": #GHC 7.10.3"
+      addons: {apt: {packages: [cabal-install-1.22,ghc-7.10.3], sources: [hvr-ghc]}}
+
+    - env: BUILD=cabal CABALVER=1.22 GHCVER=7.10.3 STACK_YAML=stack-lts-6-servant-0.9.0.1.yaml
+      compiler: ": #GHC 7.10.3"
+      addons: {apt: {packages: [cabal-install-1.22,ghc-7.10.3], sources: [hvr-ghc]}}
+
+      # Cabal 1.24 and GHC 8.0.1
+    - env: BUILD=cabal CABALVER=1.24 GHCVER=8.0.1 STACK_YAML=none
+      compiler: ": #GHC 8.0.1"
+      addons: {apt: {packages: [cabal-install-1.24,ghc-8.0.1], sources: [hvr-ghc]}}
+
+    - env: BUILD=cabal CABALVER=1.24 GHCVER=8.0.1 STACK_YAML=stack-lts-7.yaml
+      compiler: ": #GHC 8.0.1"
+      addons: {apt: {packages: [cabal-install-1.24,ghc-8.0.1], sources: [hvr-ghc]}}
+
+    - env: BUILD=cabal CABALVER=1.24 GHCVER=8.0.1 STACK_YAML=stack-lts-7-servant-0.7.1.yaml
+      compiler: ": #GHC 8.0.1"
+      addons: {apt: {packages: [cabal-install-1.24,ghc-8.0.1], sources: [hvr-ghc]}}
+
+    - env: BUILD=cabal CABALVER=1.24 GHCVER=8.0.1 STACK_YAML=stack-lts-7-servant-0.9.0.1.yaml
+      compiler: ": #GHC 8.0.1"
+      addons: {apt: {packages: [cabal-install-1.24,ghc-8.0.1], sources: [hvr-ghc]}}
+
+    # Stack-based configurations - linux
+      # LTS-6 and GHC 7.10.3
     - env: BUILD=stack GHCVER=7.10.3 STACK_YAML=stack-lts-6.yaml
       compiler: ": #stack 7.10.3"
       addons: {apt: {packages: [ghc-7.10.3], sources: [hvr-ghc]}}
 
+    - env: BUILD=stack GHCVER=7.10.3 STACK_YAML=stack-lts-6-servant-0.7.1.yaml
+      compiler: ": #stack 7.10.3"
+      addons: {apt: {packages: [ghc-7.10.3], sources: [hvr-ghc]}}
+
+    - env: BUILD=stack GHCVER=7.10.3 STACK_YAML=stack-lts-6-servant-0.9.0.1.yaml
+      compiler: ": #stack 7.10.3"
+      addons: {apt: {packages: [ghc-7.10.3], sources: [hvr-ghc]}}
+
+      # LTS-7 and GHC 8.0.1
     - env: BUILD=stack GHCVER=8.0.1 STACK_YAML=stack-lts-7.yaml
       compiler: ": #stack 8.0.1"
       addons: {apt: {packages: [ghc-8.0.1], sources: [hvr-ghc]}}
+
+    - env: BUILD=stack GHCVER=8.0.1 STACK_YAML=stack-lts-7-servant-0.7.1.yaml
+      compiler: ": #stack 8.0.1"
+      addons: {apt: {packages: [ghc-8.0.1], sources: [hvr-ghc]}}
+
+    - env: BUILD=stack GHCVER=8.0.1 STACK_YAML=stack-lts-7-servant-0.9.0.1.yaml
+      compiler: ": #stack 8.0.1"
+      addons: {apt: {packages: [ghc-8.0.1], sources: [hvr-ghc]}}
+
+    # Stack-based configurations - OS X
+      # LTS-6 and GHC 7.10.3
+    - env: BUILD=stack GHCVER=7.10.3 STACK_YAML=stack-lts-6.yaml
+      compiler: ": #stack 7.10.3 osx"
+      os: osx
+
+    #- env: BUILD=stack GHCVER=7.10.3 STACK_YAML=stack-lts-6-servant-0.7.1.yaml
+      #compiler: ": #stack 7.10.3 osx"
+      #os: osx
+
+    #- env: BUILD=stack GHCVER=7.10.3 STACK_YAML=stack-lts-6-servant-0.9.0.1.yaml
+      #compiler: ": #stack 7.10.3 osx"
+      #os: osx
+
+      # LTS-7 and GHC 8.0.1
+    - env: BUILD=stack GHCVER=8.0.1 STACK_YAML=stack-lts-7.yaml
+      compiler: ": #stack 8.0.1 osx"
+      os: osx
+
+    #- env: BUILD=stack GHCVER=8.0.1 STACK_YAML=stack-lts-7-servant-0.7.1.yaml
+      #compiler: ": #stack 8.0.1 osx"
+      #os: osx
+
+    #- env: BUILD=stack GHCVER=8.0.1 STACK_YAML=stack-lts-7-servant-0.9.0.1.yaml
+      #compiler: ": #stack 8.0.1 osx"
+      #os: osx
 
 # Note: the distinction between `before_install` and `install` is not important.
 # - in before_install we install build tools
 # - in install we install (haskell) dependencies
 before_install:
+ - rvm get head # https://github.com/travis-ci/travis-ci/issues/6307
  - unset CC
  - case "$BUILD" in
      stack)
        export PATH=$HOME/.local/bin:/opt/ghc/$GHCVER/bin:$PATH;;
      cabal)
-       export PATH=$HOME/.cabal/bin:/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH;;
+       export PATH=$HOME/.cabal/bin:$HOME/.local/bin:/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH;;
    esac
  - ./.travis-setup.sh
 
@@ -51,34 +125,41 @@ install:
  - echo "$(ghc --version) [$(ghc --print-project-git-commit-id 2> /dev/null || echo '?')]"
  - case "$BUILD" in
      stack)
-       stack --no-terminal test --only-dependencies;;
+       stack --stack-yaml $STACK_YAML --no-terminal test --only-dependencies;;
      cabal)
        cabal --version;
        travis_retry cabal update;
-       rm -f $HOME/.cabal/bin/stack;
-       echo "stack is located at $(which stack)";
-       stack --version;
-       rm -f $(stack --compiler=ghc-$GHCVER path --dist-dir)/stack-*.tar.gz &&
-       stack --compiler=ghc-$GHCVER sdist --pvp-bounds=both &&
-       tar xf $(stack --compiler=ghc-$GHCVER path --dist-dir)/stack-*.tar.gz --wildcards --strip-components=1 '*/skroutz-haskell-api.cabal' &&
-       cabal install --only-dependencies --enable-tests --enable-benchmarks --force-reinstalls --ghc-options=-O0 --reorder-goals --max-backjumps=-1;;
+       if [ -f $STACK_YAML ];
+       then
+         echo "File $STACK_YAML exists. Using stack to generate dependency bounds for cabal.";
+         rm -f $(stack --stack-yaml $STACK_YAML --compiler=ghc-$GHCVER path --dist-dir)/skroutz-haskell-api-*.tar.gz &&
+         stack --stack-yaml $STACK_YAML --compiler=ghc-$GHCVER sdist --pvp-bounds=both &&
+         tar xf $(stack --stack-yaml $STACK_YAML --compiler=ghc-$GHCVER path --dist-dir)/skroutz-haskell-api-*.tar.gz --wildcards --strip-components=1 '*/skroutz-haskell-api.cabal' &&
+         cabal install --only-dependencies --enable-tests --enable-benchmarks --force-reinstalls --reorder-goals --max-backjumps=-1;
+       else
+         echo "File $STACK_YAML does not exist. Resolving dependency bounds directly from hackage.";
+         cabal install --only-dependencies --enable-tests --enable-benchmarks --force-reinstalls --reorder-goals --max-backjumps=-1;
+       fi;;
    esac
 
 script:
- - set -e; case "$BUILD" in
+ - case "$BUILD" in
      stack)
-       stack --no-terminal test --haddock --no-haddock-deps --ghc-options="-Werror";;
+       stack --stack-yaml $STACK_YAML --no-terminal test --haddock --no-haddock-deps --ghc-options="-O0 -Werror";;
      cabal)
-       cabal configure --enable-tests --enable-benchmarks -v2 --ghc-options="-O0 -Werror";
-       cabal build;
-       cabal test;
-       cabal check;
-       cabal sdist;
-       cabal copy;
-       cd test/integration;
-       true stack setup --compiler=ghc-$GHCVER;
-       true stack test --compiler=ghc-$GHCVER;
-       cd ../..;
+       echo "== Starting configure ==" &&
+       cabal configure --enable-tests --enable-benchmarks -v2 --ghc-options="-O0 -Werror" &&
+       echo "== Starting build ==" &&
+       cabal build &&
+       echo "== Exack package versions used by cabal ==" &&
+       cabal freeze --enable-tests --enable-benchmarks --reorder-goals --max-backjumps=-1 --dry-run &&
+       echo "== Starting tests ==" &&
+       cabal test --jobs=1 --show-details=streaming &&
+       echo "== Starting check ==" &&
+       cabal check &&
+       echo "== Starting sdist ==" &&
+       cabal sdist &&
+       echo "== Starting installability check ==" &&
        SRC_TGZ=$(cabal info . | awk '{print $2;exit}').tar.gz &&
-       (cd dist && cabal install --force-reinstalls "$SRC_TGZ");;
+       (cd dist && cabal install --force-reinstalls --ghc-options="-O0 -Werror" "$SRC_TGZ");;
    esac

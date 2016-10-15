@@ -1,0 +1,34 @@
+# Disabled cache in hope of improving reliability of AppVeyor builds
+#cache:
+#- "c:\\sr" # stack root, short paths == fewer problems
+
+build: off
+
+before_test:
+- curl -sS -ostack.zip -L --insecure http://www.stackage.org/stack/windows-i386
+- 7z x stack.zip stack.exe
+
+clone_folder: "c:\\src"
+
+environment:
+  global:
+    STACK_ROOT: "c:\\sr"
+    API_IDENTIFIER:
+      secure: NwrKtqLM7hNlQFsq4fmkirjsoHMfjPnBx224tKjRiQA=
+    API_SECRET:
+      secure: Piivi4zOHGY2cjp/+JIVsSEFTZBDuiroQzszf7nBkSfP74WE3ax+OFTP8wOjIGFpDFOO3mIyZXlPJ9rNKI6hBdWKEbB5NRV0Vi8XpMpXArmsNQoYger/6myx8qmtRk06
+
+  matrix:
+  - STACK_YAML: stack-lts-6.yaml
+  - STACK_YAML: stack-lts-6-servant-0.7.1.yaml
+  - STACK_YAML: stack-lts-6-servant-0.9.0.1.yaml
+  - STACK_YAML: stack-lts-7.yaml
+  - STACK_YAML: stack-lts-7-servant-0.7.1.yaml
+  - STACK_YAML: stack-lts-7-servant-0.9.0.1.yaml
+
+test_script:
+- stack --stack-yaml %STACK_YAML% setup > nul
+# The ugly echo "" hack is to avoid complaints about 0 being an invalid file
+# descriptor
+- echo "" | stack --stack-yaml %STACK_YAML% --no-terminal test --ghc-options=-O0
+ 
