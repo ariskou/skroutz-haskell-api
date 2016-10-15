@@ -79,9 +79,9 @@ library
   ghc-options: -Wall
   build-depends:
       base >= 4.7 && < 5
-    , aeson
-    , bytestring
-    , http-client
+    , aeson >= 0.10.0.0 && < 1.1
+    , bytestring >=0.9
+    , http-client >= 0.4.31.1 && < 0.6
     , servant >= 0.7.1 && < 1.0
     , servant-client >= 0.7.1 && < 1.0
     , text
@@ -173,9 +173,9 @@ executable example1
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >= 4.7 && < 5
-    , aeson
-    , bytestring
-    , http-client
+    , aeson >= 0.10.0.0 && < 1.1
+    , bytestring >=0.9
+    , http-client >= 0.4.31.1 && < 0.6
     , servant >= 0.7.1 && < 1.0
     , servant-client >= 0.7.1 && < 1.0
     , text
@@ -194,9 +194,9 @@ test-suite spec
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >= 4.7 && < 5
-    , aeson
-    , bytestring
-    , http-client
+    , aeson >= 0.10.0.0 && < 1.1
+    , bytestring >=0.9
+    , http-client >= 0.4.31.1 && < 0.6
     , servant >= 0.7.1 && < 1.0
     , servant-client >= 0.7.1 && < 1.0
     , text
